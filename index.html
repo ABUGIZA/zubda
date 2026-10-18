@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#161511">
+  <title>زبدة — لا تشوف المقطع، اقرأ زبدته</title>
+  <meta name="description" content="تطبيق ويندوز مجاني: الصق رابط مقطع من يوتيوب أو X، ويسمعه ويشوفه كامل ويعطيك زبدته في دقائق قراءة — باشتراكك في Claude أو ChatGPT.">
+  <meta property="og:title" content="زبدة — لا تشوف المقطع، اقرأ زبدته">
+  <meta property="og:description" content="ساعة مقطع ← خمس دقائق قراءة. مجاني لويندوز، باشتراكك في Claude أو ChatGPT.">
+  <meta property="og:image" content="https://abugiza.github.io/zubda/assets/og.png">
+  <meta property="og:url" content="https://abugiza.github.io/zubda/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <a class="mark" href="./" aria-label="Zubda">زبدة</a>
+      <nav class="nav-links">
+        <a href="docs.html" data-t="nav_docs" class="hide-sm">الشرح</a>
+        <a href="https://github.com/ABUGIZA/zubda/releases" data-t="nav_releases" class="hide-sm">الإصدارات</a>
+        <button class="lang" type="button" id="lang">English</button>
+        <a class="btn primary small dl" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe" data-t="nav_get">تحميل</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero wrap">
+      <span class="pill rv"><b data-t="pill_b">مجاني</b><span data-t="pill">لويندوز 10 و11 · باشتراكك في Claude أو ChatGPT</span></span>
+      <h1 class="rv" data-t="h1" data-html>لا تشوف المقطع.<br><span class="soft">اقرأ زبدته.</span></h1>
+      <p class="sub rv" data-t="sub">الصق رابط مقطع طويل من يوتيوب أو X، وزبدة تسمعه وتشوفه كامل — كل كلمة انقالت وكل شي ظهر على الشاشة — وتطوي الحشو، وتعطيك اللي يفيدك في دقائق قراءة.</p>
+      <div class="ctas rv">
+        <a class="btn primary dl" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10.2 4.5v6.9H3Zm8.1-1.1L21 3v8.4h-9.9ZM3 12.5h7.2v6.9L3 18.4Zm8.1 0H21V21l-9.9-1.4Z"/></svg><span data-t="get_win">تحميل لويندوز</span></a>
+        <a class="btn ghost" href="docs.html"><span data-t="how">شوف كيف يشتغل</span><svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg></a>
+      </div>
+      <div class="spec rv"><span data-t="spec1">مجاني</span><span>Windows 10 / 11</span><span class="ver" dir="ltr">v1.0.0</span><span data-t="spec4">بدون مفتاح API</span></div>
+    </div>
+
+    <!-- the signature: an hour of video folds into minutes of reading as you scroll -->
+    <div class="fold" id="fold">
+      <div class="fold-stick">
+        <div class="wrap">
+          <div class="fold-stage">
+            <div class="pleats" id="pleats"></div>
+            <canvas id="reel" aria-label="مقطع مدته ساعة ينطوي إلى خمس دقائق قراءة"></canvas>
+          </div>
+        </div>
+        <div class="fold-read"><span class="from" id="from">58:12</span><span class="arrow"></span><span class="to" data-t="to">5 دقائق قراءة</span></div>
+        <div class="fold-legend"><span class="k-core"><i></i><span data-t="lg_core">جوهر</span></span><span class="k-detail"><i></i><span data-t="lg_detail">تفاصيل</span></span><span class="k-fold"><i></i><span data-t="lg_fold">حشو ينطوي</span></span><span class="k-pin"><i></i><span data-t="lg_pin">كل خط معلومة، أطوله أهمه</span></span></div>
+      </div>
+    </div>
+
+    <section class="sec" id="demo">
+      <div class="wrap">
+        <div class="demo-head">
+          <div>
+            <span class="eyebrow" data-t="demo_eye">من التطبيق نفسه</span>
+            <h2 data-t="demo_h" data-html>الصق الرابط.<br><span class="soft">والباقي عليه.</span></h2>
+          </div>
+          <div class="tabs" role="tablist">
+            <button type="button" role="tab" class="on" data-clip="youtube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0033"/><path d="M10 9v6l5.2-3Z" fill="#fff"/></svg>YouTube</button>
+            <button type="button" role="tab" data-clip="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#f2ede0" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</button>
+          </div>
+        </div>
+        <div class="screen rv">
+          <video id="clip" autoplay muted loop playsinline disablepictureinpicture preload="metadata"></video>
+          <span class="note"><b>2×</b><span data-t="clip_note">مسجّل من التطبيق الحقيقي</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="does" style="padding-top:0">
+      <div class="wrap">
+        <span class="eyebrow" data-t="does_eye">وش يسوي</span>
+        <h2 data-t="does_h" data-html>كل اللي يفيدك من المقطع.<br><span class="soft">وولا ثانية من الحشو.</span></h2>
+        <div class="does">
+          <div class="do"><span class="g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="M12 7.5v9"/></svg></span><div><span class="n">01</span><h3 data-t="d1_h">يشوف الشاشة، ما يكتفي بالكلام</h3><p data-t="d1_p">يقرأ كل لقطة: الكود، الأرقام، الإعدادات، الروابط. اللي ظهر وما انقال، يوصلك بنصّه الحرفي.</p></div></div>
+          <div class="do"><span class="g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5" stroke-dasharray="3 2.4"/><path d="m8.5 12.2 2.4 2.4 4.6-4.9"/></svg></span><div><span class="n">02</span><h3 data-t="d2_h">يحكم لك: يستاهل تشوفه أو لا</h3><p data-t="d2_p">حكم واضح، وكثافة الفائدة من 10، واللحظات الوحيدة اللي لازم تشوفها بعينك — مع وقتها.</p></div></div>
+          <div class="do"><span class="g"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m12.6 12.6 4.4 4.4"/><path d="M6.6 7.2a1.9 1.9 0 1 1 2.6 1.8c-.5.2-.7.6-.7 1.1M8.5 11.6v.2"/></svg></span><div><span class="n">03</span><h3 data-t="d3_h">اسأل المقطع، أو مكتبتك كلها</h3><p data-t="d3_p">كل جواب يجي من المقطع نفسه مع الدقيقة اللي انقال فيها. تضغط الوقت ويفتح المقطع عندها.</p></div></div>
+          <div class="do"><span class="g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><path d="m17 16 3 2-3 2Z" fill="currentColor"/></svg></span><div><span class="n">04</span><h3 data-t="d4_h">قائمة تشغيل كاملة أو قناة</h3><p data-t="d4_p">الصق رابط قائمة، أو قناة ويأخذ آخر عشرة مقاطع، ويتخطى اللي حللته قبل.</p></div></div>
+          <div class="do"><span class="g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.8h8l4.5 4.5v13.9H6Z"/><path d="M13.5 2.8v5h5"/><path d="m10.2 12 4.3 2.6-4.3 2.6Z" fill="currentColor"/></svg></span><div><span class="n">05</span><h3 data-t="d5_h">ملفات من جهازك</h3><p data-t="d5_p">اسحب أي فيديو أو تسجيل صوتي للنافذة — محاضرة، اجتماع، دورة — ويتحلل مثل أي رابط.</p></div></div>
+          <div class="do"><span class="g"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 1.8h5.2L12.5 5v9.2H4Z"/><path d="M9 1.8V5.2h3.5M6 8.5h4.5M6 11h3"/></svg></span><div><span class="n">06</span><h3 data-t="d6_h">خذها معك: Markdown أو PDF</h3><p data-t="d6_p">احفظ الزبدة بلقطاتها في ملف، وانقلها لـ Notion أو أرسلها لأحد.</p></div></div>
+        </div>
+        <div class="sources rv">
+          <span class="src"><svg viewBox="0 0 24 24"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0033"/><path d="M10 9v6l5.2-3Z" fill="#fff"/></svg>YouTube</span>
+          <span class="src"><svg viewBox="0 0 24 24"><path fill="#f2ede0" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</span>
+          <span class="src"><svg viewBox="0 0 24 24"><path fill="#fff" d="M16.8 3.2h-2.9v12.1a2.7 2.7 0 1 1-1.9-2.6V9.7a5.7 5.7 0 1 0 4.8 5.6V9.2a7.1 7.1 0 0 0 4.1 1.3V7.6a4.1 4.1 0 0 1-4.1-4.4Z"/></svg>TikTok</span>
+          <span class="src"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="#f2ede0" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#f2ede0" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="#f2ede0"/></svg>Instagram</span>
+          <span class="src"><svg viewBox="0 0 24 24" fill="none" stroke="#f2ede0" stroke-width="1.5"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.6 3.5 5.4 3.5 8.5s-1.1 5.9-3.5 8.5c-2.4-2.6-3.5-5.4-3.5-8.5S9.6 6.1 12 3.5Z"/></svg><span data-t="src_more">مواقع أكثر</span></span>
+          <span class="src"><svg viewBox="0 0 24 24" fill="none" stroke="#f2ede0" stroke-width="1.5" stroke-linejoin="round"><path d="M6 2.8h8l4.5 4.5v13.9H6Z"/><path d="M13.5 2.8v5h5"/></svg><span data-t="src_file">ملف من جهازك</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="plan" style="padding-top:0">
+      <div class="wrap plan">
+        <div class="rv">
+          <span class="eyebrow" data-t="plan_eye">اشتراكك، جهازك</span>
+          <h2 data-t="plan_h" data-html>يشتغل باشتراكك.<br><span class="soft">وما يطلع من جهازك.</span></h2>
+          <ul class="facts">
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m6.5 10.2 2.3 2.3 4.7-5"/></svg><span data-t="f1">تربط Claude أو ChatGPT بضغطة، والدخول في صفحتهم الرسمية. ما تحتاج مفتاح API ولا تدفع شي إضافي.</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m6.5 10.2 2.3 2.3 4.7-5"/></svg><span data-t="f2">التنزيل والسمع والمشاهدة كلها على جهازك. مكتبتك محفوظة عندك، ما ترسل لأي سيرفر لنا.</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m6.5 10.2 2.3 2.3 4.7-5"/></svg><span data-t="f3">إذا عندك كرت NVIDIA يسمع أسرع بكثير. وإذا ما عندك، يقرأ ترجمة المقطع الجاهزة ويشتغل على أي جهاز.</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m6.5 10.2 2.3 2.3 4.7-5"/></svg><span data-t="f4">يتحدث لحاله: لما ينزل إصدار جديد يظهر لك زر «تحديث جاهز». كل تحديث موقّع، والتطبيق يرفض أي ملف ما يطابق التوقيع.</span></li>
+          </ul>
+        </div>
+        <div class="accounts rv">
+          <div class="acc"><span class="logo"><img src="assets/claude.svg" alt=""></span><div><b>Claude</b><small data-t="claude_d">اشتراك Pro أو Max</small></div><svg class="ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="#3b3a30" stroke-width="2.4"/><circle cx="18" cy="18" r="15" fill="none" stroke="#7fcf96" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="94.2" stroke-dashoffset="16" transform="rotate(-90 18 18)"/></svg></div>
+          <div class="acc"><span class="logo"><img src="assets/openai.svg" alt=""></span><div><b>ChatGPT</b><small data-t="chatgpt_d">اشتراك Plus أو Pro</small></div><svg class="ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="#3b3a30" stroke-width="2.4"/><circle cx="18" cy="18" r="15" fill="none" stroke="#7fcf96" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="94.2" stroke-dashoffset="34" transform="rotate(-90 18 18)"/></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="get" id="get">
+      <div class="wrap">
+        <span class="eyebrow" data-t="get_eye">جاهز؟</span>
+        <h2 class="rv" data-t="get_h">نزّل زبدة، ووفّر ساعات من المشاهدة.</h2>
+        <div class="ctas rv">
+          <a class="btn primary dl" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10.2 4.5v6.9H3Zm8.1-1.1L21 3v8.4h-9.9ZM3 12.5h7.2v6.9L3 18.4Zm8.1 0H21V21l-9.9-1.4Z"/></svg><span data-t="get_win">تحميل لويندوز</span></a>
+        </div>
+        <div class="spec"><span data-t="spec1">مجاني</span><span>Windows 10 / 11</span><span class="ver" dir="ltr">v1.0.0</span><span data-t="size" dir="ltr">14 MB</span></div>
+
+        <div class="smart rv">
+          <div>
+            <h3 data-t="ss_h">ويندوز بيسألك أول مرة</h3>
+            <p data-t="ss_p">زبدة مجاني وما عليه شهادة توقيع مدفوعة، فويندوز يعرض تحذير SmartScreen أول مرة تشغّل فيها المثبّت. ضغطتين وتكمل:</p>
+            <ol><li data-t="ss_1">اضغط «مزيد من المعلومات»</li><li data-t="ss_2">اضغط «تشغيل على أي حال»</li></ol>
+          </div>
+          <div class="ss" id="ss" aria-hidden="true">
+            <h4 data-t="ss_title">قام Windows بحماية الكمبيوتر</h4>
+            <p data-t="ss_body">منع Microsoft Defender SmartScreen تطبيقاً غير معروف من البدء.</p>
+            <span class="more" id="ssMore" data-t="ss_more">مزيد من المعلومات</span>
+            <div class="info"><span data-t="ss_app">التطبيق:</span> Zubda-Setup.exe<br><span data-t="ss_pub">الناشر:</span> <span data-t="ss_unknown">ناشر غير معروف</span></div>
+            <div class="bar"><span class="run" id="ssRun" data-t="ss_run">تشغيل على أي حال</span><span data-t="ss_no">عدم التشغيل</span></div>
+            <svg class="cur" viewBox="0 0 26 26"><path d="M5 3l15 9.2-6.6 1.6 3.9 7.4-3 1.5-3.9-7.5L5 20Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            <span class="ring" id="ssRing"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a class="mark" href="./" aria-label="Zubda">زبدة</a>
+      <a href="docs.html" data-t="nav_docs">الشرح</a>
+      <a href="https://github.com/ABUGIZA/zubda/releases" data-t="nav_releases">الإصدارات</a>
+      <a href="https://github.com/ABUGIZA/zubda/issues" data-t="nav_issue">بلّغ عن مشكلة</a>
+      <span class="end" data-t="foot">مجاني. باشتراكك، على جهازك.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="assets/site.js"></script>
+</body>
+</html>
