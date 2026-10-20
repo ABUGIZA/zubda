@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#161511">
+  <meta name="theme-color" content="#14171d">
   <title>زبدة — لا تشوف المقطع، اقرأ زبدته</title>
-  <meta name="description" content="تطبيق ويندوز مجاني: الصق رابط مقطع من يوتيوب أو X، ويسمعه ويشوفه كامل ويعطيك زبدته في دقائق قراءة — باشتراكك في Claude أو ChatGPT.">
+  <meta name="description" content="تطبيق ويندوز مجاني: الصق رابط مقطع من يوتيوب أو X أو تيك توك، ويسمعه ويشوفه كامل ويعطيك زبدته في دقائق قراءة — بحسابك في ChatGPT (حتى المجاني) أو Claude.">
   <meta property="og:title" content="زبدة — لا تشوف المقطع، اقرأ زبدته">
-  <meta property="og:description" content="ساعة مقطع ← خمس دقائق قراءة. مجاني لويندوز، باشتراكك في Claude أو ChatGPT.">
+  <meta property="og:description" content="ربع ساعة مقطع، 3,685 كلمة، تنقرأ في ثلاث أسطر. أكثر من مقطع مع بعض، بالموديل اللي تختاره. مجاني لويندوز، بحسابك في ChatGPT (حتى المجاني) أو Claude.">
   <meta property="og:image" content="https://abugiza.github.io/zubda/assets/og.png">
   <meta property="og:url" content="https://abugiza.github.io/zubda/">
   <meta name="twitter:card" content="summary_large_image">
@@ -16,141 +16,294 @@
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
-  <header class="nav" id="nav">
+<body data-page="home">
+  <header class="nav" data-nav>
     <div class="wrap">
-      <a class="mark" href="./" aria-label="Zubda">زبدة</a>
-      <nav class="nav-links">
-        <a href="docs.html" data-t="nav_docs" class="hide-sm">الشرح</a>
+      <a class="mark" href="./" aria-label="Zubda"><span>زبدة</span></a>
+      <nav class="links">
+        <a href="new.html" data-t="nav_new" class="hide-sm" data-here="new">الجديد</a>
+        <a href="docs.html" data-t="nav_docs" class="hide-sm" data-here="docs">الشرح</a>
         <a href="https://github.com/ABUGIZA/zubda/releases" data-t="nav_releases" class="hide-sm">الإصدارات</a>
-        <button class="lang" type="button" id="lang">English</button>
-        <a class="btn primary small dl" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe" data-t="nav_get">تحميل</a>
+        <button class="lang" type="button" data-lang>English</button>
+        <a class="btn primary small" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe" data-t="nav_get">تحميل</a>
       </nav>
     </div>
   </header>
 
   <main>
     <div class="hero wrap">
-      <span class="pill rv"><b data-t="pill_b">مجاني</b><span data-t="pill">لويندوز 10 و11 · باشتراكك في Claude أو ChatGPT</span></span>
-      <h1 class="rv" data-t="h1" data-html>لا تشوف المقطع.<br><span class="soft">اقرأ زبدته.</span></h1>
-      <p class="sub rv" data-t="sub">الصق رابط مقطع طويل من يوتيوب أو X، وزبدة تسمعه وتشوفه كامل — كل كلمة انقالت وكل شي ظهر على الشاشة — وتطوي الحشو، وتعطيك اللي يفيدك في دقائق قراءة.</p>
-      <div class="ctas rv">
-        <a class="btn primary dl" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10.2 4.5v6.9H3Zm8.1-1.1L21 3v8.4h-9.9ZM3 12.5h7.2v6.9L3 18.4Zm8.1 0H21V21l-9.9-1.4Z"/></svg><span data-t="get_win">تحميل لويندوز</span></a>
-        <a class="btn ghost" href="docs.html"><span data-t="how">شوف كيف يشتغل</span><svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg></a>
+      <span class="pill rv"><b data-t="pill_b">مجاني</b><span data-t="pill">لويندوز 10 و11 · بحسابك في ChatGPT (حتى المجاني) أو Claude</span></span>
+      <h1 class="rv"><span data-t="h1a">لا تشوف المقطع.</span> <span class="line2"><span data-t="h1b">اقرأ</span> <em class="hl" data-t="h1c">زبدته.</em></span></h1>
+      <p class="sub rv" data-t="sub">الصق رابط مقطع طويل من يوتيوب أو X أو تيك توك. زبدة تسمعه وتشوفه كامل — كل كلمة انقالت وكل شي ظهر على الشاشة — وتطوي الحشو، وتعطيك اللي يفيدك في دقائق قراءة.</p>
+      <div class="act rv">
+        <div class="ctas">
+          <a class="btn primary" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10.2 4.5v6.9H3Zm8.1-1.1L21 3v8.4h-9.9ZM3 12.5h7.2v6.9L3 18.4Zm8.1 0H21V21l-9.9-1.4Z"/></svg><span data-t="get_win">تحميل لويندوز</span></a>
+          <a class="btn ghost" href="docs.html"><span data-t="how">شوف كيف يشتغل</span><svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3.5 5.5 8l4.5 4.5"/></svg></a>
+        </div>
+        <div class="spec"><span data-t="spec1">مجاني</span><span>Windows 10 / 11</span><span><bdi class="ver" dir="ltr">v1.1.0</bdi></span><span data-t="spec4">بدون مفتاح API</span></div>
       </div>
-      <div class="spec rv"><span data-t="spec1">مجاني</span><span>Windows 10 / 11</span><span class="ver" dir="ltr">v1.0.0</span><span data-t="spec4">بدون مفتاح API</span></div>
     </div>
 
-    <!-- the signature: an hour of video folds into minutes of reading as you scroll -->
-    <div class="fold" id="fold">
-      <div class="fold-stick">
-        <div class="wrap">
-          <div class="fold-stage">
-            <div class="pleats" id="pleats"></div>
-            <canvas id="reel" aria-label="مقطع مدته ساعة ينطوي إلى خمس دقائق قراءة"></canvas>
+    <!-- the signature: the video's own words, read whole; what matters gets marked and becomes the essence -->
+    <section class="read wrap-w rv" id="read" aria-label="قراءة مقطع حقيقي" data-t-label="rd_label">
+      <div class="reader" id="reader">
+        <header class="rd-bar">
+          <span class="rd-src"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0033"/><path d="M10 9v6l5.2-3Z" fill="#fff"/></svg><span class="rd-title" data-t="sc_title">Claude مع Gmail: وكيل بريد يحجز المواعيد ويُباع بـ 500 دولار شهرياً</span></span>
+          <span class="rd-meta"><span dir="ltr" class="mono" id="rdWords">0 / 3,685</span><span data-t="rd_words">كلمة</span></span>
+          <span class="rd-clock mono" dir="ltr"><span id="rdNow">0:00</span><span class="of">/ 15:28</span></span>
+        </header>
+        <div class="rd-body">
+          <div class="rd-page" dir="ltr">
+            <div class="rd-text" id="rdText"></div>
+            <span class="rd-line" aria-hidden="true"></span>
           </div>
+          <aside class="rd-out">
+            <div class="rd-out-h"><b data-t="rd_caught">اللي انمسك</b><span class="mono" dir="ltr"><span id="rdCount">0</span> / 18</span></div>
+            <ol class="rd-notes" id="rdNotes"></ol>
+            <div class="rd-final" id="rdFinal">
+              <div class="rd-verdict"><svg class="ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/><circle class="arc" cx="22" cy="22" r="18" pathLength="100"/><text x="22" y="26.5" text-anchor="middle">7</text></svg><div><b data-t="sc_worth">يستاهل</b><small data-t="rd_score">فائدته 7 من 10</small></div></div>
+              <ul class="rd-tldr">
+                <li data-t="b1">رُد على العميل لحظة تسجيله: النموذج يرسل الطلب لـ Gmail، وسكربت Google Apps Script مع Claude يرد خلال 1–3 دقائق ويحجز في التقويم.</li>
+                <li data-t="b2">عقل الوكيل ينبني من موقع العيادة بمهارة agent-prompt-builder وFirecrawl، والاختبارات كلها كلّفت أقل من دولار.</li>
+                <li data-t="b3">التسعير 500 دولار شهرياً للوكيل: 20 عميل و4 مواقع بالشهر = 12,000 دولار.</li>
+              </ul>
+            </div>
+          </aside>
         </div>
-        <div class="fold-read"><span class="from" id="from">58:12</span><span class="arrow"></span><span class="to" data-t="to">5 دقائق قراءة</span></div>
-        <div class="fold-legend"><span class="k-core"><i></i><span data-t="lg_core">جوهر</span></span><span class="k-detail"><i></i><span data-t="lg_detail">تفاصيل</span></span><span class="k-fold"><i></i><span data-t="lg_fold">حشو ينطوي</span></span><span class="k-pin"><i></i><span data-t="lg_pin">كل خط معلومة، أطوله أهمه</span></span></div>
       </div>
-    </div>
+      <div class="rd-legend">
+        <span class="k-hl"><i></i><span data-t="rd_k1">مظلّل: صار في الزبدة</span></span>
+        <span class="k-st"><i></i><span data-t="rd_k2">مشطوب: حشو انطوى</span></span>
+        <span class="k-sum" data-t="rd_k3">3,685 كلمة إنجليزي ← ثلاث أسطر بالعربي</span>
+      </div>
+    </section>
 
     <section class="sec" id="demo">
       <div class="wrap">
-        <div class="demo-head">
-          <div>
-            <span class="eyebrow" data-t="demo_eye">من التطبيق نفسه</span>
-            <h2 data-t="demo_h" data-html>الصق الرابط.<br><span class="soft">والباقي عليه.</span></h2>
-          </div>
-          <div class="tabs" role="tablist">
-            <button type="button" role="tab" class="on" data-clip="youtube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0033"/><path d="M10 9v6l5.2-3Z" fill="#fff"/></svg>YouTube</button>
-            <button type="button" role="tab" data-clip="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#f2ede0" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</button>
-          </div>
+        <div class="head rv">
+          <span class="eyebrow" data-t="demo_eye">من التطبيق نفسه</span>
+          <h2><span data-t="demo_h1">الصق الرابط.</span> <span class="soft" data-t="demo_h2" data-html>والباقي <em class="hl">عليه.</em></span></h2>
         </div>
-        <div class="screen rv">
-          <video id="clip" autoplay muted loop playsinline disablepictureinpicture preload="metadata"></video>
-          <span class="note"><b>2×</b><span data-t="clip_note">مسجّل من التطبيق الحقيقي</span></span>
+        <div class="player rv">
+          <div class="player-bar">
+            <div class="seg" role="tablist">
+              <button type="button" role="tab" class="on" aria-selected="true" data-clip="youtube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0033"/><path d="M10 9v6l5.2-3Z" fill="#fff"/></svg>YouTube</button>
+              <button type="button" role="tab" aria-selected="false" data-clip="x"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</button>
+            </div>
+            <span class="note"><span data-t="clip_note">مسجّل من التطبيق الحقيقي</span></span>
+          </div>
+          <div class="screen"><video id="clip" autoplay muted loop playsinline disablepictureinpicture preload="metadata"></video></div>
         </div>
+        <ul class="caps rv">
+          <li><span class="n mono">01</span><b data-t="i1_h">اسأل المقطع، أو مكتبتك كلها</b><span data-t="i1_p">كل جواب من المقطع نفسه مع الدقيقة اللي انقال فيها.</span></li>
+          <li><span class="n mono">02</span><b data-t="i2_h">قائمة تشغيل أو قناة</b><span data-t="i2_p">الصق رابط قائمة، أو قناة ويأخذ آخر عشرة مقاطع.</span></li>
+          <li><span class="n mono">03</span><b data-t="i3_h">ملفات من جهازك</b><span data-t="i3_p">اسحب فيديو أو تسجيل صوتي للنافذة: محاضرة، اجتماع، دورة.</span></li>
+          <li><span class="n mono">04</span><b data-t="i4_h">نسخت رابط؟</b><span data-t="i4_p">ترجع لزبدة وتلقاها تسألك: تلخّصه؟ ضغطة وحدة.</span></li>
+        </ul>
       </div>
     </section>
 
-    <section class="sec" id="does" style="padding-top:0">
+    <section class="sec" id="tabs">
       <div class="wrap">
-        <span class="eyebrow" data-t="does_eye">وش يسوي</span>
-        <h2 data-t="does_h" data-html>كل اللي يفيدك من المقطع.<br><span class="soft">وولا ثانية من الحشو.</span></h2>
-        <div class="does">
-          <div class="do"><span class="g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5"/><path d="M12 7.5v9"/></svg></span><div><span class="n">01</span><h3 data-t="d1_h">يشوف الشاشة، ما يكتفي بالكلام</h3><p data-t="d1_p">يقرأ كل لقطة: الكود، الأرقام، الإعدادات، الروابط. اللي ظهر وما انقال، يوصلك بنصّه الحرفي.</p></div></div>
-          <div class="do"><span class="g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5" stroke-dasharray="3 2.4"/><path d="m8.5 12.2 2.4 2.4 4.6-4.9"/></svg></span><div><span class="n">02</span><h3 data-t="d2_h">يحكم لك: يستاهل تشوفه أو لا</h3><p data-t="d2_p">حكم واضح، وكثافة الفائدة من 10، واللحظات الوحيدة اللي لازم تشوفها بعينك — مع وقتها.</p></div></div>
-          <div class="do"><span class="g"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m12.6 12.6 4.4 4.4"/><path d="M6.6 7.2a1.9 1.9 0 1 1 2.6 1.8c-.5.2-.7.6-.7 1.1M8.5 11.6v.2"/></svg></span><div><span class="n">03</span><h3 data-t="d3_h">اسأل المقطع، أو مكتبتك كلها</h3><p data-t="d3_p">كل جواب يجي من المقطع نفسه مع الدقيقة اللي انقال فيها. تضغط الوقت ويفتح المقطع عندها.</p></div></div>
-          <div class="do"><span class="g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><path d="m17 16 3 2-3 2Z" fill="currentColor"/></svg></span><div><span class="n">04</span><h3 data-t="d4_h">قائمة تشغيل كاملة أو قناة</h3><p data-t="d4_p">الصق رابط قائمة، أو قناة ويأخذ آخر عشرة مقاطع، ويتخطى اللي حللته قبل.</p></div></div>
-          <div class="do"><span class="g"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.8h8l4.5 4.5v13.9H6Z"/><path d="M13.5 2.8v5h5"/><path d="m10.2 12 4.3 2.6-4.3 2.6Z" fill="currentColor"/></svg></span><div><span class="n">05</span><h3 data-t="d5_h">ملفات من جهازك</h3><p data-t="d5_p">اسحب أي فيديو أو تسجيل صوتي للنافذة — محاضرة، اجتماع، دورة — ويتحلل مثل أي رابط.</p></div></div>
-          <div class="do"><span class="g"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 1.8h5.2L12.5 5v9.2H4Z"/><path d="M9 1.8V5.2h3.5M6 8.5h4.5M6 11h3"/></svg></span><div><span class="n">06</span><h3 data-t="d6_h">خذها معك: Markdown أو PDF</h3><p data-t="d6_p">احفظ الزبدة بلقطاتها في ملف، وانقلها لـ Notion أو أرسلها لأحد.</p></div></div>
+        <div class="head rv">
+          <span class="eyebrow" data-t="tabs_eye">جديد في 1.1</span>
+          <h2><span data-t="tabs_h1">أكثر من مقطع.</span> <span class="soft" data-t="tabs_h2" data-html>كل واحد <em class="hl">في تبويب.</em></span></h2>
+          <p class="lede" data-t="tabs_p">افتح تبويب جديد والصق فيه أي رابط: يوتيوب، X، تيك توك، إنستقرام، أو ملف من جهازك. يشتغلون مع بعض، وتتنقل بينهم مثل المتصفح.</p>
         </div>
-        <div class="sources rv">
-          <span class="src"><svg viewBox="0 0 24 24"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0033"/><path d="M10 9v6l5.2-3Z" fill="#fff"/></svg>YouTube</span>
-          <span class="src"><svg viewBox="0 0 24 24"><path fill="#f2ede0" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</span>
-          <span class="src"><svg viewBox="0 0 24 24"><path fill="#fff" d="M16.8 3.2h-2.9v12.1a2.7 2.7 0 1 1-1.9-2.6V9.7a5.7 5.7 0 1 0 4.8 5.6V9.2a7.1 7.1 0 0 0 4.1 1.3V7.6a4.1 4.1 0 0 1-4.1-4.4Z"/></svg>TikTok</span>
-          <span class="src"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="#f2ede0" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#f2ede0" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="#f2ede0"/></svg>Instagram</span>
-          <span class="src"><svg viewBox="0 0 24 24" fill="none" stroke="#f2ede0" stroke-width="1.5"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.6 3.5 5.4 3.5 8.5s-1.1 5.9-3.5 8.5c-2.4-2.6-3.5-5.4-3.5-8.5S9.6 6.1 12 3.5Z"/></svg><span data-t="src_more">مواقع أكثر</span></span>
-          <span class="src"><svg viewBox="0 0 24 24" fill="none" stroke="#f2ede0" stroke-width="1.5" stroke-linejoin="round"><path d="M6 2.8h8l4.5 4.5v13.9H6Z"/><path d="M13.5 2.8v5h5"/></svg><span data-t="src_file">ملف من جهازك</span></span>
+        <div class="win rv" id="tabwin" aria-hidden="true">
+          <div class="win-tabs">
+            <span class="wt on"><span class="wt-g" data-g="youtube"></span><span class="wt-t" data-t="tw1">Claude مع Gmail: وكيل بريد…</span><span class="wt-s"></span></span>
+            <span class="wt"><span class="wt-g" data-g="x"></span><span class="wt-t" data-t="tw2">ثريد: كيف نبني منتج في أسبوع</span><span class="wt-s"></span></span>
+            <span class="wt"><span class="wt-g" data-g="tiktok"></span><span class="wt-t" data-t="tw3">وصفة خبز بثلاث مكونات</span><span class="wt-s"></span></span>
+            <span class="wt-add"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 3.5v9M3.5 8h9"/></svg></span>
+          </div>
+          <div class="lanes" id="lanes"></div>
+          <div class="win-foot"><span class="wf-dot"></span><span id="tabnote">مقطعين يشتغلون الحين، والثالث ينتظر دوره</span></div>
         </div>
+        <p class="load rv"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="14" height="10" rx="1.5"/><path d="M7 17h6M10 14v3"/><path d="M6.5 11.2 8.6 8.6l2 1.6 2.9-3.4"/></svg><span data-t="tabs_load">كل مقطع زيادة يشغّل جهازك أكثر شوي ويصرف من حدّ اشتراكك أسرع. الافتراضي مقطعين مع بعض، والباقي ينتظر دوره، وتقدر تخليه واحد أو ثلاثة من الإعدادات.</span></p>
       </div>
     </section>
 
-    <section class="sec" id="plan" style="padding-top:0">
-      <div class="wrap plan">
-        <div class="rv">
+    <section class="sec" id="speed">
+      <div class="wrap">
+        <div class="head rv">
+          <span class="eyebrow" data-t="sp_eye">محرك أسرع</span>
+          <h2><span data-t="sp_h1">نفس المقطع.</span> <span class="soft" data-t="sp_h2" data-html><em class="hl">بنص الوقت</em> تقريباً.</span></h2>
+        </div>
+        <div class="race rv" id="race">
+          <div class="race-num" dir="ltr"><span class="was mono">6:10</span><svg viewBox="0 0 40 12" aria-hidden="true"><path d="M1 6h36M32 1.5 37.5 6 32 10.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="now mono">3:14</span></div>
+          <div class="ruler" id="ruler" dir="ltr"></div>
+          <div class="lane-row old" dir="ltr">
+            <span class="who"><b class="mono">1.0</b><small data-t="sp_old">قبل</small></span>
+            <div class="track">
+              <span class="sg s1" style="--a:0;--b:29"><span data-t="st_fetch">تنزيل</span></span>
+              <span class="sg s2" style="--a:29;--b:55"><span data-t="st_listen">سماع</span></span>
+              <span class="sg s3" style="--a:55;--b:85"><span data-t="st_watch">مشاهدة</span></span>
+              <span class="sg s4" style="--a:85;--b:228"><span data-t="st_understand">فهم</span></span>
+              <span class="sg s5" style="--a:228;--b:369"><span data-t="st_distill">كتابة الزبدة</span></span>
+            </div>
+          </div>
+          <div class="lane-row now" dir="ltr">
+            <span class="who"><b class="mono">1.1</b><small data-t="sp_new">الحين</small></span>
+            <div class="track two">
+              <span class="sg s1" style="--a:0;--b:22"><span data-t="st_fetch">تنزيل</span></span>
+              <span class="sg s2 up" style="--a:22;--b:52"><span data-t="st_listen">سماع</span></span>
+              <span class="sg s3 dn" style="--a:22;--b:37"><span data-t="st_watch">مشاهدة</span></span>
+              <span class="sg s4" style="--a:52;--b:121"><span data-t="st_understand">فهم</span></span>
+              <span class="sg s5" style="--a:121;--b:194"><span data-t="st_distill">كتابة الزبدة</span></span>
+            </div>
+          </div>
+        </div>
+        <p class="fine rv" data-t="sp_note">قياس فعلي: مقطع يوتيوب مدته 15:28، باشتراك Claude وموديل Opus 5.5 بتفكير متوازن، على جهاز فيه كرت NVIDIA. الوقت عندك يختلف حسب جهازك والمقطع والإنترنت.</p>
+        <ol class="why rv">
+          <li><span class="n mono">01</span><h3 data-t="w1_h">يسمع ويشوف بنفس الوقت</h3><p data-t="w1_p">قبل كان يخلص السماع وبعدين يبدأ يشوف. الحين الاثنين يمشون مع بعض.</p></li>
+          <li><span class="n mono">02</span><h3 data-t="w2_h">يقسم المقطع على قد ما فيه</h3><p data-t="w2_p">الجزء المليان كلام ولقطات ياخذ وقت أقل، والهادي ياخذ أطول، فتخلص كل الأجزاء مع بعض.</p></li>
+          <li><span class="n mono">03</span><h3 data-t="w3_h">يكتب الزبدة على أجزاء</h3><p data-t="w3_p">الملخص والنقاط والخطوات تنكتب بنفس الوقت وتنجمع، بدل ما تنكتب وحدة ورا الثانية.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="sec" id="essence">
+      <div class="wrap">
+        <div class="head rv">
+          <span class="eyebrow" data-t="es_eye">اللي يوصلك</span>
+          <h2><span data-t="es_h1">زبدة واضحة.</span> <span class="soft" data-t="es_h2" data-html><em class="hl">بدون حشو</em>، وبدون لف ودوران.</span></h2>
+        </div>
+        <article class="card rv" id="spec">
+          <header class="card-head">
+            <span class="src"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0033"/><path d="M10 9v6l5.2-3Z" fill="#fff"/></svg><span dir="ltr" class="mono">15:28</span></span>
+            <h3 class="card-title" data-t="sc_title">Claude مع Gmail: وكيل بريد يحجز المواعيد ويُباع بـ 500 دولار شهرياً</h3>
+            <span class="by mono" dir="ltr">Opus 5.5 · 3:14</span>
+          </header>
+          <div class="card-tools">
+            <div class="seg" role="tablist" data-hl="mode"><button type="button" class="on" aria-selected="true" data-mode="brief" data-t="view_brief">مختصر</button><button type="button" aria-selected="false" data-mode="full" data-t="view_full">كامل</button></div>
+            <button type="button" class="copy" data-copy data-hl="copy"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.5"/><path d="M10.5 5.5v-2a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2"/></svg><span data-t="copy">نسخ</span></button>
+          </div>
+          <div class="card-cols">
+            <div class="card-main">
+              <div class="verdict" data-hl="verdict">
+                <svg class="ring" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="18"/><circle class="arc" cx="22" cy="22" r="18" pathLength="100"/><text x="22" y="26.5" text-anchor="middle">7</text></svg>
+                <div><b data-t="sc_worth">يستاهل</b><p data-t="sc_reason">أغلبه بناء عملي فيه prompts وأدوات وخطوات وأرقام تكلفة وتسعير. الحشو قليل.</p></div>
+              </div>
+              <ul class="brief" data-show="brief">
+                <li data-t="b1">رُد على العميل لحظة تسجيله: النموذج يرسل الطلب لـ Gmail، وسكربت Google Apps Script مع Claude يرد خلال 1–3 دقائق ويحجز في التقويم.</li>
+                <li data-t="b2">عقل الوكيل ينبني من موقع العيادة بمهارة agent-prompt-builder وFirecrawl، والاختبارات كلها كلّفت أقل من دولار.</li>
+                <li data-t="b3">التسعير 500 دولار شهرياً للوكيل: 20 عميل و4 مواقع بالشهر = 12,000 دولار.</li>
+              </ul>
+              <div class="full" data-show="full" hidden>
+                <section><h4 data-t="k1_h">الرد لحظة التسجيل يضاعف المبيعات 4 مرات</h4><ul><li data-t="k1_1">المضاعفة تصير بدون ما تغيّر الإعلانات ولا سكربت البيع.</li><li data-t="k1_2">يحجز المواعيد لحاله عبر البريد وWhatsApp وSMS.</li></ul></section>
+                <section><h4 data-t="k2_h">الـ prompt من 7 كتل، واثنتين منها تصنع البيع</h4><ul><li data-t="k2_1">Conversation Flow: ثلاث أسئلة توجّه العميل للحجز.</li><li data-t="k2_2">Always Respond First: أقرّ بكلامه، جاوب، وبعدين اسأل.</li></ul></section>
+                <section><h4 data-t="k3_h">حاولوا يكسرون الوكيل وما قدروا</h4><ul><li data-t="k3_1">سألوه عن سعر التنظيف: 120$، نفس اللي في الموقع.</li><li data-t="k3_2">طلبوا موعد يوم الأحد: قال العيادة مسكّرة واقترح موعدين.</li></ul></section>
+              </div>
+            </div>
+            <div class="card-side" data-hl="tr">
+              <span class="side-h" data-t="sec_transcript">النص الكامل</span>
+              <label class="search"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m12.6 12.6 4.4 4.4"/></svg><input data-trq dir="ltr" spellcheck="false" aria-label="search"><span class="count mono" data-trcount></span></label>
+              <div class="lines" data-trlines dir="ltr"></div>
+            </div>
+          </div>
+        </article>
+        <ol class="marks rv">
+          <li data-m="verdict"><span class="n mono">01</span><h3 data-t="m1_h">حكم من أول سطر</h3><p data-t="m1_p">يستاهل تشوفه أو لا، ومن كم يفيد، واللحظات الوحيدة اللي لازم تشوفها بعينك.</p></li>
+          <li data-m="mode"><span class="n mono">02</span><h3 data-t="m2_h">مختصر أو كامل</h3><p data-t="m2_p">مستعجل؟ ثلاث أسطر. فاضي؟ كل نقطة بتفاصيلها، كل فكرة في سطر.</p></li>
+          <li data-m="copy"><span class="n mono">03</span><h3 data-t="m3_h">انسخ بضغطة</h3><p data-t="m3_p">جنب كل قسم زر نسخ، وتقدر تحفظ الزبدة كلها Markdown أو PDF.</p></li>
+          <li data-m="tr"><span class="n mono">04</span><h3 data-t="m4_h">النص كامل، وتبحث فيه</h3><p data-t="m4_p">كل كلمة انقالت بوقتها. اكتب كلمة ويطلع لك وين انقالت.</p></li>
+        </ol>
+        <dl class="tally rv">
+          <div><dt class="mono">154</dt><dd data-t="ta_frames">لقطة شافها</dd></div>
+          <div><dt class="mono">88</dt><dd data-t="ta_notes">معلومة التقطها</dd></div>
+          <div><dt class="mono">22</dt><dd data-t="ta_steps">خطوة تطبّقها</dd></div>
+          <div><dt class="mono">41s</dt><dd data-t="ta_fill">حشو انطوى</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sec" id="models">
+      <div class="wrap">
+        <div class="head rv">
+          <span class="eyebrow" data-t="mo_eye">جديد في 1.1</span>
+          <h2><span data-t="mo_h1">اختر الموديل.</span> <span class="soft" data-t="mo_h2" data-html>أو خلّه على <em class="hl">الافتراضي.</em></span></h2>
+          <p class="lede" data-t="mo_p">زبدة تعرض الموديلات اللي يعطيك اشتراكك، وعلى واحد منها «الافتراضي». تقدر تختار مستوى التفكير، وتشغّل الوضع السريع. وفوق في التطبيق يبان دايماً أي موديل شغّال.</p>
+        </div>
+        <div class="settings rv" id="msettings">
+          <div class="st-top">
+            <div class="seg" data-prov role="radiogroup"><button type="button" role="radio" data-p="claude"><img src="assets/claude.svg" alt="">Claude</button><button type="button" role="radio" data-p="chatgpt"><img src="assets/openai.svg" alt="">ChatGPT</button></div>
+            <span class="chip"><img data-mlogo src="assets/claude.svg" alt=""><span data-mchip>Opus 5.5</span></span>
+          </div>
+          <div class="mlist" data-mlist role="radiogroup"></div>
+          <div class="st-rows">
+            <div class="st-row"><span class="lab" data-t="set_thinking">مستوى التفكير</span>
+              <div class="seg" data-think role="radiogroup"><button type="button" role="radio" data-v="light" data-t="think_light">خفيف</button><button type="button" role="radio" data-v="balanced" data-t="think_balanced">متوازن</button><button type="button" role="radio" data-v="deep" data-t="think_deep">عميق</button></div></div>
+            <div class="st-row"><span class="lab" data-t="set_fast">الوضع السريع</span><button type="button" class="tog" data-fast role="switch" aria-checked="false" data-t-label="set_fast" aria-label="الوضع السريع"><i></i></button></div>
+          </div>
+          <p class="warn" data-fastwarn hidden></p>
+        </div>
+        <p class="honest rv"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6.2v.2"/></svg><span data-t="mo_fast">الوضع السريع أسرع بحوالي الضعفين. في Claude يشتغل بس إذا مفعّل «Extra usage» في حسابك، وهذا تدفعه لـ Anthropic فوق اشتراكك. إذا مو مفعّل، زبدة تكمل بالسرعة العادية وتقول لك.</span></p>
+      </div>
+    </section>
+
+    <section class="sec" id="plan">
+      <div class="wrap">
+        <div class="head rv">
           <span class="eyebrow" data-t="plan_eye">اشتراكك، جهازك</span>
-          <h2 data-t="plan_h" data-html>يشتغل باشتراكك.<br><span class="soft">وما يطلع من جهازك.</span></h2>
-          <ul class="facts">
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m6.5 10.2 2.3 2.3 4.7-5"/></svg><span data-t="f1">تربط Claude أو ChatGPT بضغطة، والدخول في صفحتهم الرسمية. ما تحتاج مفتاح API ولا تدفع شي إضافي.</span></li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m6.5 10.2 2.3 2.3 4.7-5"/></svg><span data-t="f2">التنزيل والسمع والمشاهدة كلها على جهازك. مكتبتك محفوظة عندك، ما ترسل لأي سيرفر لنا.</span></li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m6.5 10.2 2.3 2.3 4.7-5"/></svg><span data-t="f3">إذا عندك كرت NVIDIA يسمع أسرع بكثير. وإذا ما عندك، يقرأ ترجمة المقطع الجاهزة ويشتغل على أي جهاز.</span></li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8"/><path d="m6.5 10.2 2.3 2.3 4.7-5"/></svg><span data-t="f4">يتحدث لحاله: لما ينزل إصدار جديد يظهر لك زر «تحديث جاهز». كل تحديث موقّع، والتطبيق يرفض أي ملف ما يطابق التوقيع.</span></li>
-          </ul>
+          <h2><span data-t="plan_h1">يشتغل باشتراكك.</span> <span class="soft" data-t="plan_h2" data-html>وما يطلع <em class="hl">من جهازك.</em></span></h2>
         </div>
-        <div class="accounts rv">
-          <div class="acc"><span class="logo"><img src="assets/claude.svg" alt=""></span><div><b>Claude</b><small data-t="claude_d">اشتراك Pro أو Max</small></div><svg class="ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="#3b3a30" stroke-width="2.4"/><circle cx="18" cy="18" r="15" fill="none" stroke="#7fcf96" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="94.2" stroke-dashoffset="16" transform="rotate(-90 18 18)"/></svg></div>
-          <div class="acc"><span class="logo"><img src="assets/openai.svg" alt=""></span><div><b>ChatGPT</b><small data-t="chatgpt_d">اشتراك Plus أو Pro</small></div><svg class="ring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="#3b3a30" stroke-width="2.4"/><circle cx="18" cy="18" r="15" fill="none" stroke="#7fcf96" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="94.2" stroke-dashoffset="34" transform="rotate(-90 18 18)"/></svg></div>
+        <div class="connect rv" id="connect" aria-hidden="true">
+          <div class="cn-head"><span class="logo"><img src="assets/claude.svg" alt=""></span><div><b>Claude</b><small data-t="claude_d">اشتراك Pro أو Max</small></div><span class="cn-time mono" data-clock>0:00</span></div>
+          <ol class="crail">
+            <li data-s="0"><i data-bar></i><div><b data-t="cs_dl">تنزيل أداة Claude الرسمية</b><small><bdi data-mb>0 / 270 MB</bdi></small></div></li>
+            <li data-s="1"><i></i><div><b data-t="cs_setup">تجهيز الأداة على جهازك</b><small data-t="cs_setup_d">ثواني وتخلص</small></div></li>
+            <li data-s="2"><i></i><div><b data-t="cs_signin">تسجيل الدخول في المتصفح</b><small data-t="cs_signin_d">وافق في الصفحة اللي انفتحت، وارجع هنا.</small><span class="reopen" data-t="cs_reopen">ما انفتحت؟ افتحها مرة ثانية</span></div></li>
+            <li data-s="3"><i></i><div><b data-t="cs_plan">التأكد من اشتراكك</b><small><bdi>Max</bdi></small></div></li>
+          </ol>
+          <div class="cn-done"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 10.4 3.2 3.1L15 6.5"/></svg><span data-t="cs_ok">تم الربط</span></div>
         </div>
+        <ul class="facts rv">
+          <li><svg class="ck" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 7.2 C6 6.6 13 6.9 17.6 6.2 L17.9 13.6 C13 14.3 7 13.9 2.2 14.5Z" fill="var(--butter-wash)"/><path d="m6 10.3 2.6 2.5L14.2 7" fill="none" stroke="var(--butter)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p data-t="f1">تربط Claude أو ChatGPT بضغطة، والدخول في صفحتهم الرسمية. ما تحتاج مفتاح API ولا تدفع شي إضافي.</p></li>
+          <li><svg class="ck" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 7.2 C6 6.6 13 6.9 17.6 6.2 L17.9 13.6 C13 14.3 7 13.9 2.2 14.5Z" fill="var(--butter-wash)"/><path d="m6 10.3 2.6 2.5L14.2 7" fill="none" stroke="var(--butter)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p data-t="f5">وأنت تربط، تشوف كل خطوة: كم نزل من الأداة، ووين وصل الدخول، وكم صار له. ولو صفحة الدخول ما انفتحت، فيه زر يفتحها مرة ثانية.</p></li>
+          <li><svg class="ck" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 7.2 C6 6.6 13 6.9 17.6 6.2 L17.9 13.6 C13 14.3 7 13.9 2.2 14.5Z" fill="var(--butter-wash)"/><path d="m6 10.3 2.6 2.5L14.2 7" fill="none" stroke="var(--butter)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p data-t="f2">التنزيل والسمع والمشاهدة كلها على جهازك. مكتبتك محفوظة عندك، ما ترسل لأي سيرفر لنا.</p></li>
+          <li><svg class="ck" viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 7.2 C6 6.6 13 6.9 17.6 6.2 L17.9 13.6 C13 14.3 7 13.9 2.2 14.5Z" fill="var(--butter-wash)"/><path d="m6 10.3 2.6 2.5L14.2 7" fill="none" stroke="var(--butter)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><p data-t="f6">إذا وصلت حدّ اشتراكك، يوقف مؤقتاً ويكمل لحاله وقت ما يرجع الحد. ولو سكّرت الجهاز، المقاطع اللي ما خلصت تكمل أول ما تفتح زبدة.</p></li>
+        </ul>
       </div>
     </section>
 
     <section class="get" id="get">
       <div class="wrap">
-        <span class="eyebrow" data-t="get_eye">جاهز؟</span>
-        <h2 class="rv" data-t="get_h">نزّل زبدة، ووفّر ساعات من المشاهدة.</h2>
+        <span class="eyebrow rv" data-t="get_eye">جاهز؟</span>
+        <h2 class="rv"><span data-t="get_h1">نزّل زبدة،</span> <em class="hl" data-t="get_h2">ووفّر ساعات من المشاهدة.</em></h2>
         <div class="ctas rv">
-          <a class="btn primary dl" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10.2 4.5v6.9H3Zm8.1-1.1L21 3v8.4h-9.9ZM3 12.5h7.2v6.9L3 18.4Zm8.1 0H21V21l-9.9-1.4Z"/></svg><span data-t="get_win">تحميل لويندوز</span></a>
+          <a class="btn primary big" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5 10.2 4.5v6.9H3Zm8.1-1.1L21 3v8.4h-9.9ZM3 12.5h7.2v6.9L3 18.4Zm8.1 0H21V21l-9.9-1.4Z"/></svg><span data-t="get_win">تحميل لويندوز</span></a>
         </div>
-        <div class="spec"><span data-t="spec1">مجاني</span><span>Windows 10 / 11</span><span class="ver" dir="ltr">v1.0.0</span><span data-t="size" dir="ltr">14 MB</span></div>
-
+        <div class="spec rv"><span data-t="spec1">مجاني</span><span>Windows 10 / 11</span><span><bdi class="ver" dir="ltr">v1.1.0</bdi></span><span><bdi data-t="size" dir="ltr">34 MB</bdi></span></div>
         <div class="smart rv">
-          <div>
+          <div class="smart-t">
             <h3 data-t="ss_h">ويندوز بيسألك أول مرة</h3>
             <p data-t="ss_p">زبدة مجاني وما عليه شهادة توقيع مدفوعة، فويندوز يعرض تحذير SmartScreen أول مرة تشغّل فيها المثبّت. ضغطتين وتكمل:</p>
-            <ol><li data-t="ss_1">اضغط «مزيد من المعلومات»</li><li data-t="ss_2">اضغط «تشغيل على أي حال»</li></ol>
+            <ol><li><span class="n mono">1</span><span data-t="ss_1">اضغط «مزيد من المعلومات»</span></li><li><span class="n mono">2</span><span data-t="ss_2">اضغط «تشغيل على أي حال»</span></li></ol>
           </div>
           <div class="ss" id="ss" aria-hidden="true">
             <h4 data-t="ss_title">قام Windows بحماية الكمبيوتر</h4>
             <p data-t="ss_body">منع Microsoft Defender SmartScreen تطبيقاً غير معروف من البدء.</p>
-            <span class="more" id="ssMore" data-t="ss_more">مزيد من المعلومات</span>
+            <span class="more" data-ss-more data-t="ss_more">مزيد من المعلومات</span>
             <div class="info"><span data-t="ss_app">التطبيق:</span> Zubda-Setup.exe<br><span data-t="ss_pub">الناشر:</span> <span data-t="ss_unknown">ناشر غير معروف</span></div>
-            <div class="bar"><span class="run" id="ssRun" data-t="ss_run">تشغيل على أي حال</span><span data-t="ss_no">عدم التشغيل</span></div>
+            <div class="bar"><span class="run" data-ss-run data-t="ss_run">تشغيل على أي حال</span><span data-t="ss_no">عدم التشغيل</span></div>
             <svg class="cur" viewBox="0 0 26 26"><path d="M5 3l15 9.2-6.6 1.6 3.9 7.4-3 1.5-3.9-7.5L5 20Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg>
-            <span class="ring" id="ssRing"></span>
+            <span class="ring" data-ss-ring></span>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="foot">
     <div class="wrap">
-      <a class="mark" href="./" aria-label="Zubda">زبدة</a>
-      <a href="docs.html" data-t="nav_docs">الشرح</a>
-      <a href="https://github.com/ABUGIZA/zubda/releases" data-t="nav_releases">الإصدارات</a>
-      <a href="https://github.com/ABUGIZA/zubda/issues" data-t="nav_issue">بلّغ عن مشكلة</a>
+      <a class="mark" href="./" aria-label="Zubda"><span>زبدة</span></a>
+      <nav>
+        <a href="docs.html" data-t="nav_docs">الشرح</a>
+        <a href="new.html" data-t="nav_new">الجديد</a>
+        <a href="https://github.com/ABUGIZA/zubda/releases" data-t="nav_releases">الإصدارات</a>
+        <a href="https://github.com/ABUGIZA/zubda/issues" data-t="nav_issue">بلّغ عن مشكلة</a>
+      </nav>
       <span class="end" data-t="foot">مجاني. باشتراكك، على جهازك.</span>
     </div>
   </footer>

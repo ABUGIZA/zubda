@@ -4,147 +4,535 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#161511">
+  <meta name="theme-color" content="#14171d">
   <title>الشرح — زبدة</title>
-  <meta name="description" content="كيف تثبّت زبدة، تربط حسابك، وتطلع زبدة أي مقطع.">
+  <meta name="description" content="كيف تثبّت زبدة، تربط حسابك، تختار الموديل، وتطلع زبدة أي مقطع — أو أكثر من مقطع مع بعض.">
   <meta property="og:title" content="الشرح — زبدة">
   <meta property="og:image" content="https://abugiza.github.io/zubda/assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/fonts.css">
   <link rel="stylesheet" href="assets/site.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body data-page="docs">
-  <header class="nav" id="nav">
-    <div class="wrap">
-      <a class="mark" href="./" aria-label="Zubda">زبدة</a>
-      <nav class="nav-links">
-        <a href="docs.html" class="on hide-sm" data-t="nav_docs">الشرح</a>
+  <!-- one icon family for the whole guide: 20px grid, 1.5 stroke, round ends -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-start" viewBox="0 0 20 20"><path d="M5 17.5V3"/><path d="M5 3.8h9.6l-2.2 3.4 2.2 3.4H5"/></symbol>
+      <symbol id="i-install" viewBox="0 0 20 20"><path d="M10 2.8v9.4"/><path d="M6.4 8.8 10 12.4l3.6-3.6"/><path d="M3.4 12.8v2.4a2 2 0 0 0 2 2h9.2a2 2 0 0 0 2-2v-2.4"/></symbol>
+      <symbol id="i-connect" viewBox="0 0 20 20"><path d="m8.2 11.8 3.6-3.6"/><path d="m7.1 9.3-1.8 1.8a2.7 2.7 0 0 0 3.8 3.8l1.8-1.8"/><path d="m12.9 10.7 1.8-1.8a2.7 2.7 0 0 0-3.8-3.8L9.1 6.9"/></symbol>
+      <symbol id="i-read" viewBox="0 0 20 20"><rect x="3" y="4" width="14" height="12" rx="2.4"/><path d="m8.6 7.6 3.6 2.4-3.6 2.4Z"/></symbol>
+      <symbol id="i-tabs" viewBox="0 0 20 20"><path d="M2.8 7.6h14.4v7.6a1.8 1.8 0 0 1-1.8 1.8H4.6a1.8 1.8 0 0 1-1.8-1.8Z"/><path d="M2.8 7.6V5.2a1.6 1.6 0 0 1 1.6-1.6h3.4l1 4"/><path d="m9.6 7.6-.8-4h4.4l.8 4"/></symbol>
+      <symbol id="i-essence" viewBox="0 0 20 20"><rect x="4" y="2.8" width="12" height="14.4" rx="2.2"/><path d="M7 7h6"/><path d="M7 10h6"/><path d="M7 13h3.6"/></symbol>
+      <symbol id="i-ask" viewBox="0 0 20 20"><path d="M4.4 4h11.2a1.8 1.8 0 0 1 1.8 1.8v6.8a1.8 1.8 0 0 1-1.8 1.8H9.2l-3.6 2.8v-2.8H4.4a1.8 1.8 0 0 1-1.8-1.8V5.8A1.8 1.8 0 0 1 4.4 4Z"/><path d="M7 8.2h6"/><path d="M7 11h3.6"/></symbol>
+      <symbol id="i-model" viewBox="0 0 20 20"><rect x="5.6" y="5.6" width="8.8" height="8.8" rx="1.8"/><path d="M8 3v2.6M12 3v2.6M8 14.4V17M12 14.4V17M3 8h2.6M3 12h2.6M14.4 8H17M14.4 12H17"/></symbol>
+      <symbol id="i-settings" viewBox="0 0 20 20"><path d="M3.5 6.2h7.3M15.3 6.2h1.2M3.5 13.8h1.2M9.2 13.8h7.3"/><circle cx="13" cy="6.2" r="2.2"/><circle cx="7" cy="13.8" r="2.2"/></symbol>
+      <symbol id="i-updates" viewBox="0 0 20 20"><path d="M16.4 10a6.4 6.4 0 1 1-1.9-4.5"/><path d="M16.6 3v3.4h-3.4"/></symbol>
+      <symbol id="i-privacy" viewBox="0 0 20 20"><rect x="4.2" y="8.8" width="11.6" height="8.6" rx="2.2"/><path d="M6.8 8.8V6.6a3.2 3.2 0 0 1 6.4 0v2.2"/><path d="M10 12.2v2"/></symbol>
+      <symbol id="i-faq" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.4"/><path d="M7.8 8a2.3 2.3 0 1 1 3.3 2.1c-.7.3-1.1.8-1.1 1.5v.3"/><path d="M10 14.3v.1"/></symbol>
+      <symbol id="i-search" viewBox="0 0 20 20"><circle cx="9" cy="9" r="5.6"/><path d="m13.2 13.2 3.8 3.8"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 20 20"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M13 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 20 20"><path d="m4.8 10.4 3.4 3.2L15.2 6.4"/></symbol>
+      <symbol id="i-hash" viewBox="0 0 20 20"><path d="M8 3.5 6.6 16.5M13.4 3.5 12 16.5M4 7.6h12.6M3.4 12.4H16"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 20 20"><path d="M12.2 5 7.2 10l5 5"/></symbol>
+      <symbol id="i-note" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.4"/><path d="M10 9v4.8"/><path d="M10 6.3v.1"/></symbol>
+      <symbol id="i-warn" viewBox="0 0 20 20"><path d="M8.6 3.6a1.6 1.6 0 0 1 2.8 0l6.1 10.8a1.6 1.6 0 0 1-1.4 2.4H3.9a1.6 1.6 0 0 1-1.4-2.4Z"/><path d="M10 8v3.6"/><path d="M10 14v.1"/></symbol>
+      <symbol id="i-safe" viewBox="0 0 20 20"><path d="M10 2.6 16 5v4.8c0 3.6-2.5 6.3-6 7.6-3.5-1.3-6-4-6-7.6V5Z"/><path d="m7.4 10 1.9 1.9 3.4-3.6"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 20 20"><rect x="4.5" y="8.5" width="11" height="8" rx="2"/><path d="M7 8.5V6.5a3 3 0 0 1 6 0v2"/></symbol>
+      <symbol id="i-tip" viewBox="0 0 20 20"><path d="M7.6 14.6h4.8M8.2 17.2h3.6"/><path d="M10 2.6a5.2 5.2 0 0 0-3.1 9.4c.6.4.9 1 .9 1.7v.9h4.4v-.9c0-.7.3-1.3.9-1.7A5.2 5.2 0 0 0 10 2.6Z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 20 20"><path d="M3.5 6h13M3.5 10h13M3.5 14h8"/></symbol>
+      <symbol id="i-close" viewBox="0 0 20 20"><path d="m5 5 10 10M15 5 5 15"/></symbol>
+      <symbol id="i-device" viewBox="0 0 20 20"><rect x="2.6" y="3.6" width="14.8" height="10" rx="1.8"/><path d="M7 17h6M10 13.6V17"/></symbol>
+      <symbol id="i-out" viewBox="0 0 20 20"><path d="M10 12.6V3.2"/><path d="M6.6 6.6 10 3.2l3.4 3.4"/><path d="M4 11.4v3.8a1.8 1.8 0 0 0 1.8 1.8h8.4a1.8 1.8 0 0 0 1.8-1.8v-3.8"/></symbol>
+      <symbol id="i-lang" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.4"/><path d="M2.8 10h14.4"/><path d="M10 2.6c2 2 3 4.5 3 7.4s-1 5.4-3 7.4c-2-2-3-4.5-3-7.4s1-5.4 3-7.4Z"/></symbol>
+      <symbol id="i-user" viewBox="0 0 20 20"><circle cx="10" cy="7" r="3.4"/><path d="M3.8 17a6.2 6.2 0 0 1 12.4 0"/></symbol>
+      <symbol id="i-wave" viewBox="0 0 20 20"><path d="M3 10h1.6M6.2 6.6v6.8M9.4 3.8v12.4M12.6 6.6v6.8M15.8 9v2"/></symbol>
+      <symbol id="i-gear" viewBox="0 0 20 20"><circle cx="10" cy="10" r="2.6"/><path d="M10 2.8v2M10 15.2v2M2.8 10h2M15.2 10h2M4.9 4.9l1.4 1.4M13.7 13.7l1.4 1.4M4.9 15.1l1.4-1.4M13.7 6.3l1.4-1.4"/></symbol>
+      <symbol id="i-file" viewBox="0 0 20 20"><path d="M5.6 2.8h6l3.6 3.6v9a1.8 1.8 0 0 1-1.8 1.8H5.6a1.8 1.8 0 0 1-1.8-1.8V4.6a1.8 1.8 0 0 1 1.8-1.8Z"/><path d="M11.4 2.8v3.8h3.8"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="nav" data-nav>
+    <div class="wrap-w">
+      <a class="mark" href="./" aria-label="Zubda"><span>زبدة</span></a>
+      <nav class="links">
+        <a href="new.html" data-t="nav_new" class="hide-sm" data-here="new">الجديد</a>
+        <a href="docs.html" data-t="nav_docs" class="hide-sm" data-here="docs">الشرح</a>
         <a href="https://github.com/ABUGIZA/zubda/releases" data-t="nav_releases" class="hide-sm">الإصدارات</a>
-        <button class="lang" type="button" id="lang">English</button>
-        <a class="btn primary small dl" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe" data-t="nav_get">تحميل</a>
+        <button class="lang" type="button" data-lang>English</button>
+        <a class="btn primary small" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe" data-t="nav_get">تحميل</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap docs">
-    <nav class="toc" id="toc">
-      <a href="#install" data-t="t_install">التثبيت</a>
-      <a href="#connect" data-t="t_connect">ربط حسابك</a>
-      <a href="#read" data-t="t_read">استخراج الزبدة</a>
-      <a href="#essence" data-t="t_essence">قراءة الزبدة</a>
-      <a href="#ask" data-t="t_ask">اسأل</a>
-      <a href="#save" data-t="t_save">احفظها</a>
-      <a href="#settings" data-t="t_settings">الإعدادات</a>
-      <a href="#updates" data-t="t_updates">التحديثات</a>
-      <a href="#privacy" data-t="t_privacy">الخصوصية</a>
-      <a href="#faq" data-t="t_faq">أسئلة شائعة</a>
-    </nav>
+  <!-- phone: where you are, the pages, and search -->
+  <div class="dbar" data-dbar>
+    <button type="button" class="dbar-pg" data-menu aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg><span data-dbar-grp></span><svg class="ic sep"><use href="#i-chev"/></svg><b data-dbar-pg></b></button>
+    <button type="button" class="dbar-find" data-find data-t-label="g_find" aria-label="ابحث في الشرح"><svg class="ic"><use href="#i-search"/></svg></button>
+  </div>
 
-    <article class="doc">
-      <h1 data-t="doc_h">كيف تستخدم زبدة</h1>
-      <p class="lede" data-t="doc_lede">خمس دقائق تكفي: تثبّت، تربط حسابك، وتلصق أول رابط. هذا كل شي بالترتيب.</p>
+  <div class="dk wrap-w">
+    <aside class="side" data-side>
+      <button type="button" class="find" data-find>
+        <svg class="ic"><use href="#i-search"/></svg><span data-t="g_find">ابحث في الشرح</span>
+        <span class="keys" dir="ltr"><kbd>Ctrl</kbd><kbd>K</kbd></span>
+      </button>
+      <nav class="tree" aria-label="الشرح" data-t-label="nav_docs">
+        <div class="grp">
+          <span class="grp-h" data-t="g_grp_start">البداية</span>
+          <a href="#start"><svg class="ic"><use href="#i-start"/></svg><span data-t="g_start">نظرة سريعة</span></a>
+          <a href="#install"><svg class="ic"><use href="#i-install"/></svg><span data-t="g_install">التثبيت</span></a>
+          <a href="#connect"><svg class="ic"><use href="#i-connect"/></svg><span data-t="g_connect">ربط حسابك</span></a>
+        </div>
+        <div class="grp">
+          <span class="grp-h" data-t="g_grp_use">الاستخدام</span>
+          <a href="#read"><svg class="ic"><use href="#i-read"/></svg><span data-t="g_read">استخراج الزبدة</span></a>
+          <a href="#tabs"><svg class="ic"><use href="#i-tabs"/></svg><span data-t="g_tabs">أكثر من مقطع</span></a>
+          <a href="#essence"><svg class="ic"><use href="#i-essence"/></svg><span data-t="g_essence">قراءة الزبدة</span></a>
+          <a href="#ask"><svg class="ic"><use href="#i-ask"/></svg><span data-t="g_ask">اسأل واحفظ</span></a>
+        </div>
+        <div class="grp">
+          <span class="grp-h" data-t="g_grp_tune">الضبط</span>
+          <a href="#model"><svg class="ic"><use href="#i-model"/></svg><span data-t="g_model">الموديل والسرعة</span></a>
+          <a href="#settings"><svg class="ic"><use href="#i-settings"/></svg><span data-t="g_settings">الإعدادات</span></a>
+          <a href="#updates"><svg class="ic"><use href="#i-updates"/></svg><span data-t="g_updates">التحديثات</span></a>
+        </div>
+        <div class="grp">
+          <span class="grp-h" data-t="g_grp_help">مساعدة</span>
+          <a href="#privacy"><svg class="ic"><use href="#i-privacy"/></svg><span data-t="g_privacy">الخصوصية</span></a>
+          <a href="#faq"><svg class="ic"><use href="#i-faq"/></svg><span data-t="g_faq">أسئلة شائعة</span></a>
+        </div>
+      </nav>
+    </aside>
 
-      <section id="install">
-        <h2><span class="n">01</span><span data-t="t_install">التثبيت</span></h2>
-        <ol>
-          <li data-t="i1" data-html>حمّل <b>Zubda-Setup.exe</b> من زر التحميل أعلى الصفحة.</li>
-          <li data-t="i2" data-html>شغّله. ويندوز بيعرض <b>تحذير SmartScreen</b> لأن زبدة ما عليه شهادة توقيع مدفوعة: اضغط «مزيد من المعلومات» ثم «تشغيل على أي حال».</li>
-          <li data-t="i3" data-html>المثبّت ما يطلب صلاحيات مدير. أول مرة ينزّل محرك التطبيق (حوالي 400 ميجا) ويأخذ دقائق حسب سرعة الإنترنت.</li>
-          <li data-t="i4" data-html>بعدها تفتح زبدة من قائمة ابدأ أو من سطح المكتب.</li>
-        </ol>
-        <div class="callout"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 9v5M10 6.2v.2"/></svg><p data-t="i_note" data-html>يحتاج Windows 10 أو 11 (<bdi dir="ltr">64-bit</bdi>). أول تشغيل ينزّل محرك السمع (حوالي 1.6 جيجا) ومحرك يوتيوب لحالهم، وتشوف تقدّمهم في الإعدادات.</p></div>
+    <main class="pages" data-pages>
+      <!-- ============================================================ start -->
+      <section class="pg" id="start" data-grp="g_grp_start" data-ic="i-start">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_start">البداية</span></p>
+          <h1 data-t="g_start">نظرة سريعة</h1>
+          <p class="pg-lede" data-t="g_start_l">خمس دقائق تكفي: تثبّت، تربط حسابك، وتلصق أول رابط.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="start-need" data-t="g_need">اللي تحتاجه</h2>
+          <dl class="kv">
+            <div><dt data-t="g_need_os_k">الجهاز</dt><dd data-t="g_need_os" data-html>Windows 10 أو 11 (<bdi dir="ltr">64-bit</bdi>)</dd></div>
+            <div><dt data-t="g_need_plan_k">الحساب</dt><dd data-t="g_need_plan" data-html>حساب <bdi>ChatGPT</bdi> (حتى المجاني)، أو <bdi>Claude Pro</bdi> أو <bdi>Max</bdi></dd></div>
+            <div><dt data-t="g_need_key_k">مفتاح API</dt><dd data-t="g_need_key">ما تحتاجه.</dd></div>
+            <div><dt data-t="g_need_space_k">المساحة</dt><dd data-t="g_need_space">حوالي 1.3 جيجا للمحركات (2.1 لو جهازك فيه كرت NVIDIA)، وتنزل لحالها أول مرة.</dd></div>
+            <div><dt data-t="g_need_gpu_k">كرت الشاشة</dt><dd data-t="g_need_gpu" data-html>اختياري. كرت <bdi>NVIDIA</bdi> يسرّع السمع، وبدونه يشتغل بالمعالج.</dd></div>
+          </dl>
+
+          <h2 id="start-steps" data-t="g_three">ثلاث خطوات</h2>
+          <ol class="steps">
+            <li><h3 data-t="g_q1">ثبّت زبدة</h3><p data-t="g_q1p">حمّل المثبّت وشغّله، وما يطلب صلاحيات مدير.</p><a class="go" href="#install"><span data-t="g_install">التثبيت</span><svg class="ic"><use href="#i-chev"/></svg></a></li>
+            <li><h3 data-t="g_q2">اربط حسابك</h3><p data-t="g_q2p">تدخل من صفحة Claude أو ChatGPT الرسمية، بضغطة.</p><a class="go" href="#connect"><span data-t="g_connect">ربط حسابك</span><svg class="ic"><use href="#i-chev"/></svg></a></li>
+            <li><h3 data-t="g_q3">الصق رابط</h3><p data-t="g_q3p" data-html>الصق رابط المقطع واضغط <span class="ui">استخرج الزبدة</span>.</p><a class="go" href="#read"><span data-t="g_read">استخراج الزبدة</span><svg class="ic"><use href="#i-chev"/></svg></a></li>
+          </ol>
+          <figure class="clipbox"><video data-demo="youtube" autoplay muted loop playsinline disablepictureinpicture preload="none"></video></figure>
+        </div>
       </section>
 
-      <section id="connect">
-        <h2><span class="n">02</span><span data-t="t_connect">ربط حسابك</span></h2>
-        <p data-t="c1">زبدة ما تبيع شي ولا تطلب مفتاح API: تشتغل باشتراكك أنت. أول تشغيل يعرض لك ثلاث شاشات تعريف، ثم تختار حسابك:</p>
-        <ul>
-          <li data-t="c2" data-html><b>Claude</b> — اشتراك Pro أو Max. زبدة تثبّت أداة Claude Code الرسمية وتفتح لك صفحة دخول Claude.</li>
-          <li data-t="c3" data-html><b>ChatGPT</b> — اشتراك Plus أو Pro. زبدة تثبّت أداة Codex الرسمية وتفتح لك صفحة دخول ChatGPT.</li>
-        </ul>
-        <p data-t="c4">قبل الربط تسألك زبدة سؤال واحد: «تربط حسابك؟». الدخول يتم في صفحة الشركة الرسمية، وكلمة سرّك ما تمر على زبدة. تقدر تربط الاثنين وتبدّل بينهم من الإعدادات.</p>
+      <!-- ============================================================ install -->
+      <section class="pg" id="install" data-grp="g_grp_start" data-ic="i-install">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_start">البداية</span></p>
+          <h1 data-t="g_install">التثبيت</h1>
+          <p class="pg-lede" data-t="g_install_l">مثبّت واحد بدون صلاحيات مدير، ويجهّز الباقي لحاله.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="install-steps" data-t="g_i_steps">الخطوات</h2>
+          <ol class="steps">
+            <li><h3 data-t="g_i1">حمّل المثبّت</h3><p data-t="g_i1p" data-html>حمّل <b dir="ltr">Zubda-Setup.exe</b> من زر التحميل أعلى الصفحة.</p></li>
+            <li><h3 data-t="g_i2">شغّله، وتخطّ تحذير ويندوز</h3><p data-t="g_i2p" data-html>ويندوز يعرض تحذير <bdi>SmartScreen</bdi> لأن زبدة ما عليه شهادة توقيع مدفوعة. اضغط <span class="ui">مزيد من المعلومات</span> ثم <span class="ui">تشغيل على أي حال</span>.</p>
+              <div class="ss-stage">
+                <div class="ss" id="ss" aria-hidden="true">
+                  <h4 data-t="ss_title">قام Windows بحماية الكمبيوتر</h4>
+                  <p data-t="ss_body">منع Microsoft Defender SmartScreen تطبيقاً غير معروف من البدء.</p>
+                  <span class="more" data-ss-more data-t="ss_more">مزيد من المعلومات</span>
+                  <div class="info"><span data-t="ss_app">التطبيق:</span> Zubda-Setup.exe<br><span data-t="ss_pub">الناشر:</span> <span data-t="ss_unknown">ناشر غير معروف</span></div>
+                  <div class="bar"><span class="run" data-ss-run data-t="ss_run">تشغيل على أي حال</span><span data-t="ss_no">عدم التشغيل</span></div>
+                  <svg class="cur" viewBox="0 0 26 26"><path d="M5 3l15 9.2-6.6 1.6 3.9 7.4-3 1.5-3.9-7.5L5 20Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                  <span class="ring" data-ss-ring></span>
+                </div>
+              </div>
+            </li>
+            <li><h3 data-t="g_i3">خلّه يجهّز</h3><p data-t="g_i3p">أول مرة ينزّل محرك التطبيق (حوالي 400 ميجا)، ويأخذ دقائق حسب سرعة الإنترنت.</p></li>
+            <li><h3 data-t="g_i4">افتح زبدة</h3><p data-t="g_i4p">من قائمة ابدأ أو من سطح المكتب.</p></li>
+          </ol>
+
+          <h2 id="install-first" data-t="g_i_first">أول تشغيل</h2>
+          <p data-t="g_i_first_p">أول ما تفتح زبدة، ينزّل محركين لحاله وتشوف تقدّمهم في الإعدادات:</p>
+          <dl class="kv">
+            <div><dt data-t="g_eng_listen_k">محرك السمع</dt><dd data-t="g_eng_listen">حوالي 0.8 جيجا، أو 1.6 لو جهازك فيه كرت NVIDIA. يسمع المقطع ويكتب كلامه.</dd></div>
+            <div><dt data-t="g_eng_yt_k">محرك يوتيوب</dt><dd data-t="g_eng_yt">ينزّل المقاطع من يوتيوب والمواقع الثانية.</dd></div>
+          </dl>
+          <div class="co"><svg class="ic"><use href="#i-tip"/></svg><div><b class="co-h" data-t="g_tip">معلومة</b><p data-t="g_i_retry" data-html>لو تعطّل تنزيل محرك، تقدر تعيده من <span class="ui">الإعدادات</span> ← <span class="ui">المحركات</span>.</p></div></div>
+        </div>
       </section>
 
-      <section id="read">
-        <h2><span class="n">03</span><span data-t="t_read">استخراج الزبدة</span></h2>
-        <ul>
-          <li data-t="r1" data-html>الصق الرابط في الخانة واضغط <b>استخرج الزبدة</b> — أو اضغط <kbd>Ctrl</kbd> <kbd>V</kbd> في أي مكان بالنافذة ويبدأ مباشرة.</li>
-          <li data-t="r2" data-html>يقبل يوتيوب، X، تيك توك، انستقرام، فيميو ومواقع أكثر. ولو عندك ملف فيديو أو صوت، <b>اسحبه للنافذة</b>.</li>
-          <li data-t="r3" data-html>رابط <b>قائمة تشغيل</b> يضيف كل مقاطعها، ورابط <b>قناة</b> يضيف آخر عشرة. اللي حللته قبل يتخطاه.</li>
-          <li data-t="r4">تشوف كل مرحلة وهي تشتغل: جلب، سماع، مشاهدة، فهم، تقطير، تدقيق — وتقدر تتنقل وهو يكمل في الخلفية.</li>
-        </ul>
-        <div class="screen"><video data-demo="youtube" autoplay muted loop playsinline disablepictureinpicture preload="none"></video><span class="note"><b>2×</b><span data-t="clip_note">مسجّل من التطبيق الحقيقي</span></span></div>
+      <!-- ============================================================ connect -->
+      <section class="pg" id="connect" data-grp="g_grp_start" data-ic="i-connect">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_start">البداية</span></p>
+          <h1 data-t="g_connect">ربط حسابك</h1>
+          <p class="pg-lede" data-t="g_connect_l">زبدة ما تبيع شي ولا تطلب مفتاح API: تشتغل بحسابك أنت — وحساب ChatGPT المجاني يكفي.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="connect-plans" data-t="g_c_plans">أي حساب؟</h2>
+          <div class="tbl"><table>
+            <thead><tr><th data-t="g_c_th1">الحساب</th><th data-t="g_c_th2">الباقة</th><th data-t="g_c_th3">وش تثبّت زبدة</th></tr></thead>
+            <tbody>
+              <tr><td><span class="prov"><img src="assets/claude.svg" alt="">Claude</span></td><td><bdi>Pro</bdi> · <bdi>Max</bdi></td><td data-t="g_c_tool1" data-html>أداة <bdi>Claude Code</bdi> الرسمية</td></tr>
+              <tr><td><span class="prov"><img src="assets/openai.svg" alt="">ChatGPT</span></td><td><bdi>Free</bdi> · <bdi>Go</bdi> · <bdi>Plus</bdi> · <bdi>Pro</bdi></td><td data-t="g_c_tool2" data-html>أداة <bdi>Codex</bdi> الرسمية</td></tr>
+            </tbody>
+          </table></div>
+          <p data-t="g_c_free" data-html><b>ما عندك اشتراك؟</b> اربط <bdi>ChatGPT</bdi> بحسابك المجاني: زبدة تشتغل كاملة على موديل <bdi>Luna</bdi> وما تدفع شي. ما عندك حساب أصلاً؟ سوّ واحد مجاني في <bdi>chatgpt.com</bdi> بإيميلك، بدون بطاقة. المجاني حدّه أصغر، وفي مقطع ربع ساعة طلّع 22 نقطة جوهرية مقابل 30 مع <bdi>Claude Opus</bdi>. أما <bdi>Claude</bdi> المجاني فما يشمل <bdi>Claude Code</bdi>، فيحتاج <bdi>Pro</bdi> أو أعلى.</p>
+          <p data-t="g_c_both">تقدر تربط الاثنين وتبدّل بينهم من الإعدادات.</p>
+
+          <h2 id="connect-steps" data-t="g_c_how">كيف يتم الربط</h2>
+          <p data-t="g_c_how_p">أول تشغيل يسألك بأي لغة تبي التطبيق والزبدة، ويعرّفك بزبدة في ثلاث شاشات، ثم يسألك سؤال واحد: «تربط حسابك؟». بعدها تشوف كل خطوة بوقتها:</p>
+          <div class="connect" id="connect-live" aria-hidden="true">
+            <div class="cn-head"><span class="logo"><img src="assets/claude.svg" alt=""></span><div><b>Claude</b><small data-t="claude_d">اشتراك Pro أو Max</small></div><span class="cn-time mono" data-clock>0:00</span></div>
+            <ol class="crail">
+              <li data-s="0"><i data-bar></i><div><b data-t="cs_dl">تنزيل أداة Claude الرسمية</b><small><bdi data-mb>0 / 270 MB</bdi></small></div></li>
+              <li data-s="1"><i></i><div><b data-t="cs_setup">تجهيز الأداة على جهازك</b><small data-t="cs_setup_d">ثواني وتخلص</small></div></li>
+              <li data-s="2"><i></i><div><b data-t="cs_signin">تسجيل الدخول في المتصفح</b><small data-t="cs_signin_d">وافق في الصفحة اللي انفتحت، وارجع هنا.</small><span class="reopen" data-t="cs_reopen">ما انفتحت؟ افتحها مرة ثانية</span></div></li>
+              <li data-s="3"><i></i><div><b data-t="cs_plan">التأكد من اشتراكك</b><small><bdi>Max</bdi></small></div></li>
+            </ol>
+            <div class="cn-done"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 10.4 3.2 3.1L15 6.5"/></svg><span data-t="cs_ok">تم الربط</span></div>
+          </div>
+          <p data-t="g_c_reopen" data-html>صفحة الدخول ما انفتحت؟ اضغط <span class="ui">افتحها مرة ثانية</span>.</p>
+          <div class="co safe"><svg class="ic"><use href="#i-safe"/></svg><div><b class="co-h" data-t="g_safe">أمان</b><p data-t="g_c_safe">الدخول يتم في صفحة الشركة الرسمية، وكلمة سرّك ما تمر على زبدة.</p></div></div>
+
+          <h2 id="connect-after" data-t="g_c_after">بعد الربط</h2>
+          <p data-t="g_c_after_p" data-html>يطلع لك إيميل الحساب اللي انربط وباقته، مع سؤال: <span class="ui">هو اللي تبغاه؟</span> تأكد منه، خصوصاً لو عندك أكثر من حساب. بعدها تختار الموديل، والافتراضي محدد لك من البداية.</p>
+
+          <h2 id="connect-switch" data-t="g_c_sw">بدّل الحساب أو اطلع منه</h2>
+          <p data-t="g_c_sw_p" data-html>إيميل الحساب المربوط وباقته ظاهرين دائماً في <span class="ui">الإعدادات ← الحساب</span>. ربطت حساب غير اللي فيه اشتراكك؟ اضغط <span class="ui">بدّل الحساب</span>. صفحة الدخول تفتح على الحساب المفتوح في متصفحك، فلو تبغى غيره افتح <bdi>chatgpt.com</bdi> أو <bdi>claude.ai</bdi> وبدّل له هناك، ثم ارجع واضغط <span class="ui">كمّل</span>.</p>
+          <div class="co"><svg class="ic"><use href="#i-tip"/></svg><div><b class="co-h" data-t="g_tip">معلومة</b><p data-t="g_c_sw_t" data-html><span class="ui">اطلع</span> يطلّع زبدة فقط. حسابك في المتصفح، وبرامج مثل <bdi>Claude Code</bdi> أو <bdi>Codex</bdi> لو عندك، ما تتأثر، ومكتبتك تبقى كما هي.</p></div></div>
+
+          <h2 id="connect-none" data-t="g_c_none">بدون حساب</h2>
+          <p data-t="g_c_none_p">تقدر تستخدم زبدة بدون أي حساب، بجزء منها: تنزّل المقطع، وتكتب كل كلمة انقالت بوقتها، وتلقط كل مشهد تغيّر في الشاشة. كل هذا على جهازك. اللي يحتاج فهم يسويه الذكاء الاصطناعي في حسابك، فينقفل لين تربط:</p>
+          <ul class="secs">
+            <li><svg class="ic"><use href="#i-essence"/></svg><b data-t="g_lk1">الزبدة والنقاط المهمة</b><p data-t="g_lk1p">يكتبها الذكاء الاصطناعي: هو اللي يفهم الكلام والصور، ويختار المهم ويرتّبه لك.</p></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><b data-t="g_lk2">يستاهل وقتك؟</b><p data-t="g_lk2p">الحكم يحتاج أحد فهم المقطع كله، مو بس سمعه.</p></li>
+            <li><svg class="ic"><use href="#i-device"/></svg><b data-t="g_lk3">قراءة الشاشات</b><p data-t="g_lk3p">الكود والأرقام والروابط اللي ظهرت، يقرأها الذكاء الاصطناعي ويشرحها.</p></li>
+            <li><svg class="ic"><use href="#i-ask"/></svg><b data-t="g_lk4">اسأل المقطع ومكتبتك</b><p data-t="g_lk4p">الجواب يحتاج أحد يفهم سؤالك ويدوّر عليه في الكلام والمشاهد.</p></li>
+          </ul>
+          <p data-t="g_c_none_after" data-html>لما تربط حساب، افتح المقطع واضغط <span class="ui">كمّل الزبدة الحين</span>: يكمل من حيث وقف، بدون ما ينزّل المقطع أو يسمعه من جديد.</p>
+          <a class="go" href="#model"><span data-t="g_model">الموديل والسرعة</span><svg class="ic"><use href="#i-chev"/></svg></a>
+        </div>
       </section>
 
-      <section id="essence">
-        <h2><span class="n">04</span><span data-t="t_essence">قراءة الزبدة</span></h2>
-        <p data-t="e1">فوق التقرير شريط المقطع: كل ما فيه من لقطات وصوت، والحشو مطوي في طيّات. مرّر الماوس عليه تشوف اللقطة والمعلومة عند أي ثانية، واضغط أي مكان وينقلك للنقطة.</p>
-        <ul>
-          <li data-t="e2" data-html><b>الحكم</b>: يستاهل المشاهدة، أو جزء منه، أو تكفيك الزبدة — مع كثافة الفائدة من 10.</li>
-          <li data-t="e3" data-html><b>الزبدة</b> في سطور، ثم <b>النقاط الجوهرية</b> كل وحدة بوقتها، والخطوات، والأرقام، والأدوات والروابط.</li>
-          <li data-t="e4" data-html><b>ظهر على الشاشة وما انقال</b>: كود وإعدادات ونصوص بلقطتها ونصّها الحرفي، مع زر نسخ.</li>
-          <li data-t="e5" data-html><b>شوفها بنفسك</b>: اللحظات الوحيدة اللي الكلام ما يغني فيها عن الصورة.</li>
-          <li data-t="e6">كل وقت تشوفه رابط: يفتح المقطع الأصلي عند تلك الثانية.</li>
-        </ul>
-        <div class="screen"><video data-demo="x" autoplay muted loop playsinline disablepictureinpicture preload="none"></video><span class="note"><b>2×</b><span data-t="clip_note">مسجّل من التطبيق الحقيقي</span></span></div>
+      <!-- ============================================================ read -->
+      <section class="pg" id="read" data-grp="g_grp_use" data-ic="i-read">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_use">الاستخدام</span></p>
+          <h1 data-t="g_read">استخراج الزبدة</h1>
+          <p class="pg-lede" data-t="g_read_l">رابط واحد يكفي، والباقي على زبدة.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="read-paste" data-t="g_r_paste">الصق الرابط</h2>
+          <p data-t="g_r_paste_p" data-html>الصق الرابط في الخانة واضغط <span class="ui">استخرج الزبدة</span>، أو اضغط <kbd>Ctrl</kbd> <kbd>V</kbd> في أي مكان بالنافذة ويبدأ مباشرة.</p>
+          <p data-t="g_r_clip" data-html>نسخت رابط مقطع من مكان ثاني؟ أول ما ترجع لزبدة تسألك <span class="ui">تلخّصه؟</span> وضغطة وحدة تكفي.</p>
+
+          <h2 id="read-sources" data-t="g_r_src">وش يقبل</h2>
+          <ul class="plats">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0033"/><path d="M10 9v6l5.2-3Z" fill="#fff"/></svg>YouTube</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.8 3.2h-2.9v12.1a2.7 2.7 0 1 1-1.9-2.6V9.7a5.7 5.7 0 1 0 4.8 5.6V9.2a7.1 7.1 0 0 0 4.1 1.3V7.6a4.1 4.1 0 0 1-4.1-4.4Z"/></svg>TikTok</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".6" fill="currentColor"/></svg>Instagram</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 7.4c-.1 2-1.5 4.7-4.2 8.2-2.8 3.6-5.1 5.4-7.1 5.4-1.2 0-2.2-1.1-3-3.3L6.1 12c-.6-2.2-1.2-3.3-1.9-3.3-.1 0-.7.3-1.6 1L1.6 8.4 4.6 5.8c1.3-1.2 2.3-1.8 3-1.8 1.6-.2 2.6.9 3 3.3.4 2.6.7 4.2.9 4.8.5 2.1 1 3.2 1.5 3.2.4 0 1.1-.7 1.9-2 .9-1.3 1.3-2.4 1.4-3.1.1-1.2-.4-1.8-1.4-1.8-.5 0-1 .1-1.5.3 1-3.3 2.9-4.9 5.7-4.8 2.1.1 3.1 1.4 3 4Z"/></svg>Vimeo</li>
+            <li class="more" data-t="g_r_more" dir="auto">ومواقع أكثر</li>
+          </ul>
+          <div class="tbl"><table>
+            <thead><tr><th data-t="g_r_th1">تضيف</th><th data-t="g_r_th2">زبدة تسوي</th></tr></thead>
+            <tbody>
+              <tr><td data-t="g_r_k1">رابط مقطع</td><td data-t="g_r_v1">تطلّع زبدته.</td></tr>
+              <tr><td data-t="g_r_k2">رابط قائمة تشغيل</td><td data-t="g_r_v2">تضيف كل مقاطعها.</td></tr>
+              <tr><td data-t="g_r_k3">رابط قناة</td><td data-t="g_r_v3">تضيف آخر عشرة مقاطع.</td></tr>
+              <tr><td data-t="g_r_k4">ملف فيديو أو صوت</td><td data-t="g_r_v4">اسحبه للنافذة، وتقرأه مثل أي مقطع.</td></tr>
+            </tbody>
+          </table></div>
+          <p data-t="g_r_skip">المقاطع اللي حللتها قبل تتخطاها، فما تتكرر.</p>
+
+          <h2 id="read-stages" data-t="g_r_stages">المراحل</h2>
+          <ol class="flow">
+            <li data-t="g_s1">تنزيل</li><li data-t="g_s2">سماع ومشاهدة</li><li data-t="g_s3">فهم</li><li data-t="g_s4">كتابة الزبدة</li><li data-t="g_s5">تدقيق</li>
+          </ol>
+          <p data-t="g_r_bg">تشوف كل مرحلة وهي تشتغل، وتقدر تتنقل في التطبيق وهو يكمل في الخلفية.</p>
+          <figure class="clipbox"><video data-demo="youtube" autoplay muted loop playsinline disablepictureinpicture preload="none"></video></figure>
+        </div>
       </section>
 
-      <section id="ask">
-        <h2><span class="n">05</span><span data-t="t_ask">اسأل</span></h2>
-        <p data-t="a1">آخر كل تقرير خانة «اسأل المقطع»: اسأل عن أي شي ما اتضح، ويجاوب من المقطع نفسه مع الدقيقة. وفي المكتبة خانة «اسأل مكتبتك كلها»: يجمع الجواب من كل مقاطعك، ويذكر كل معلومة من أي مقطع وعند أي وقت.</p>
+      <!-- ============================================================ tabs -->
+      <section class="pg" id="tabs" data-grp="g_grp_use" data-ic="i-tabs">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_use">الاستخدام</span></p>
+          <h1 data-t="g_tabs">أكثر من مقطع</h1>
+          <p class="pg-lede" data-t="g_tabs_l">كل مقطع في تبويب، مثل المتصفح.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="tabs-open" data-t="g_t_open">افتح تبويب</h2>
+          <p data-t="g_t_open_p" data-html>فوق النافذة شريط تبويبات. اضغط <span class="ui">+</span> لتبويب جديد، والصق فيه رابط من أي منصة.</p>
+          <dl class="keyt">
+            <div><dt dir="ltr"><kbd>Ctrl</kbd><kbd>T</kbd></dt><dd data-t="g_k_t">تبويب جديد</dd></div>
+            <div><dt dir="ltr"><kbd>Ctrl</kbd><kbd>V</kbd></dt><dd data-t="g_k_v">الصق الرابط وابدأ</dd></div>
+            <div><dt dir="ltr"><kbd>Ctrl</kbd><kbd>W</kbd></dt><dd data-t="g_k_w">سكّر التبويب</dd></div>
+            <div><dt><kbd class="wide" data-t="g_k_mid">ضغطة العجلة</kbd></dt><dd data-t="g_k_w2">سكّر التبويب</dd></div>
+          </dl>
+          <p data-t="g_t_close">تسكير التبويب ما يوقف المقطع، وزبدته تنتظرك في المكتبة.</p>
+
+          <h2 id="tabs-state" data-t="g_t_state">حالة كل تبويب</h2>
+          <ul class="legend">
+            <li><svg class="tst" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="var(--line-2)" stroke-width="2"/><circle class="arc" cx="10" cy="10" r="7" fill="none" stroke="var(--butter)" stroke-width="2" stroke-linecap="round" pathLength="100" stroke-dasharray="62 100" transform="rotate(-90 10 10)"/></svg><b data-t="g_st_run">يشتغل</b><span data-t="g_st_run_p">الدائرة تمتلي مع التقدّم.</span></li>
+            <li><svg class="tst" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="var(--ink-3)" stroke-width="2" stroke-dasharray="3 3.3"/></svg><b data-t="g_st_wait">ينتظر دوره</b><span data-t="g_st_wait_p">دائرة متقطعة، ويبدأ أول ما يفضى مكان.</span></li>
+            <li><svg class="tst" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="var(--butter)"/><path d="m6.4 10.2 2.4 2.3 4.8-5" fill="none" stroke="var(--butter-ink)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><b data-t="g_st_done">خلص</b><span data-t="g_st_done_p">علامة صح، والزبدة جاهزة.</span></li>
+          </ul>
+
+          <h2 id="tabs-load" data-t="g_t_load">كم مقطع مع بعض</h2>
+          <p data-t="g_t_load_p" data-html>الافتراضي مقطعين مع بعض، والباقي ينتظر دوره. تقدر تخليه واحد أو ثلاثة من <span class="ui">الإعدادات</span> ← <span class="ui">الموديل</span>.</p>
+          <div class="co warn"><svg class="ic"><use href="#i-warn"/></svg><div><b class="co-h" data-t="g_warn">انتبه</b><p data-t="g_t_load_w">كل مقطع زيادة يشغّل جهازك أكثر شوي (المعالج والذاكرة وكرت الشاشة) ويصرف من حدّ اشتراكك أسرع. الخطوات الثقيلة على جهازك تمشي بالدور عشان ما يثقل.</p></div></div>
+        </div>
       </section>
 
-      <section id="save">
-        <h2><span class="n">06</span><span data-t="t_save">احفظها</span></h2>
-        <p data-t="s1" data-html>من رأس التقرير اضغط <b>Markdown</b> أو <b>PDF</b>. الملف ينحفظ في مجلد التنزيلات داخل «Zubda» مع لقطاته. ملف Markdown ينقل كما هو لـ Notion وObsidian.</p>
+      <!-- ============================================================ essence -->
+      <section class="pg" id="essence" data-grp="g_grp_use" data-ic="i-essence">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_use">الاستخدام</span></p>
+          <h1 data-t="g_essence">قراءة الزبدة</h1>
+          <p class="pg-lede" data-t="g_essence_l">تقرير واحد يقول لك هل يستاهل المشاهدة، ووش فيه، ووين تلقاه.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="essence-reel" data-t="g_e_reel">شريط المقطع</h2>
+          <p data-t="g_e_reel_p">فوق التقرير شريط فيه كل لقطات المقطع وصوته، والحشو مطوي في طيّات. مرّر الماوس عليه تشوف اللقطة والمعلومة عند أي ثانية، واضغط أي مكان وينقلك للنقطة.</p>
+
+          <h2 id="essence-parts" data-t="g_e_parts">وش في التقرير</h2>
+          <ol class="parts">
+            <li><b data-t="g_e1">الحكم</b><p data-t="g_e1p">يستاهل المشاهدة، أو جزء منه، أو تكفيك الزبدة. مع كثافة الفائدة من 10.</p></li>
+            <li><b data-t="g_e2">الزبدة</b><p data-t="g_e2p">المقطع كله في سطور.</p></li>
+            <li><b data-t="g_e3">النقاط الجوهرية</b><p data-t="g_e3p">كل نقطة بوقتها وكل فكرة في سطر، ثم الخطوات، والأدوات والروابط.</p></li>
+            <li><b data-t="g_e4">ظهر على الشاشة وما انقال</b><p data-t="g_e4p">كود وإعدادات ونصوص بلقطتها ونصّها الحرفي. اللقطات تظهر بس لما تضيف شي ما يوصله الكلام.</p></li>
+            <li><b data-t="g_e5">شوفها بنفسك</b><p data-t="g_e5p">اللحظات الوحيدة اللي الكلام ما يغني فيها عن الصورة.</p></li>
+            <li><b data-t="g_e6">النص الكامل</b><p data-t="g_e6p">بأوقاته، مع خانة بحث: اكتب كلمة ويطلع لك وين انقالت.</p></li>
+          </ol>
+          <div class="co"><svg class="ic"><use href="#i-tip"/></svg><div><b class="co-h" data-t="g_tip">معلومة</b><p data-t="g_e_links">كل وقت تشوفه رابط يفتح المقطع الأصلي عند تلك الثانية. وجنب كل قسم زر نسخ.</p></div></div>
+
+          <h2 id="essence-mode" data-t="g_e_mode">مختصر أو كامل</h2>
+          <p data-t="g_e_mode_p">فوق التقرير تختار، وزبدة تتذكر اختيارك:</p>
+          <div class="pair">
+            <div><b data-t="view_brief">مختصر</b><p data-t="g_e_brief">الحكم والزبدة في سطور. للي يبي يقرر بسرعة.</p></div>
+            <div><b data-t="view_full">كامل</b><p data-t="g_e_full">كل شي: النقاط والخطوات واللقطات والنص الكامل.</p></div>
+          </div>
+          <figure class="clipbox"><video data-demo="x" autoplay muted loop playsinline disablepictureinpicture preload="none"></video></figure>
+        </div>
       </section>
 
-      <section id="settings">
-        <h2><span class="n">07</span><span data-t="t_settings">الإعدادات</span></h2>
-        <ul>
-          <li data-t="st1" data-html><b>الحساب</b>: اربط Claude أو ChatGPT، واختر المستخدم الآن. المؤشر أعلى النافذة يوضح كم باقي من حد اشتراكك ومتى يتجدد.</li>
-          <li data-t="st2" data-html><b>اللغة</b>: لغة التطبيق، ولغة الزبدة نفسها — مقطع إنجليزي تقدر تقرأ زبدته بالعربي.</li>
-          <li data-t="st3" data-html><b>التحليل</b>: نموذج Claude (Opus أدق، Sonnet أخف على حدّك)، واستخدام ترجمة المقطع الجاهزة، والاحتفاظ بملف الفيديو.</li>
-          <li data-t="st4" data-html><b>المحركات</b>: محرك يوتيوب، ومحرك السمع، وتسريع كرت الشاشة — تتنزل لحالها، وتقدر تعيد أي واحد.</li>
-        </ul>
+      <!-- ============================================================ ask + save -->
+      <section class="pg" id="ask" data-grp="g_grp_use" data-ic="i-ask">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_use">الاستخدام</span></p>
+          <h1 data-t="g_ask">اسأل واحفظ</h1>
+          <p class="pg-lede" data-t="g_ask_l">اسأل المقطع أو مكتبتك كلها، واحفظ الزبدة في ملف.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="ask-video" data-t="g_a_video">اسأل المقطع</h2>
+          <p data-t="g_a_video_p" data-html>آخر كل تقرير خانة <span class="ui">اسأل المقطع</span>. اسأل عن أي شي ما اتضح، ويجاوب من المقطع نفسه مع الدقيقة.</p>
+
+          <h2 id="ask-library" data-t="g_a_lib">اسأل مكتبتك</h2>
+          <p data-t="g_a_lib_p" data-html>في المكتبة خانة <span class="ui">اسأل مكتبتك كلها</span>. يجمع الجواب من كل مقاطعك، ويذكر كل معلومة من أي مقطع وعند أي وقت.</p>
+
+          <h2 id="save" data-t="g_a_save">احفظها</h2>
+          <p data-t="g_a_save_p" data-html>من رأس التقرير اضغط <span class="ui">Markdown</span> أو <span class="ui">PDF</span>.</p>
+          <dl class="kv">
+            <div><dt data-t="g_sv_where_k">وين ينحفظ</dt><dd data-t="g_sv_where">في مجلد التنزيلات، داخل «Zubda»، مع لقطاته.</dd></div>
+            <div><dt><bdi>Markdown</bdi></dt><dd data-t="g_sv_md" data-html>ينقل كما هو لـ <bdi>Notion</bdi> و <bdi>Obsidian</bdi>.</dd></div>
+            <div><dt><bdi>PDF</bdi></dt><dd data-t="g_sv_pdf">ملف جاهز للقراءة والإرسال.</dd></div>
+          </dl>
+        </div>
       </section>
 
-      <section id="updates">
-        <h2><span class="n">08</span><span data-t="t_updates">التحديثات</span></h2>
-        <p data-t="u1" data-html>لما ينزل إصدار جديد يظهر في أعلى النافذة زر <b>«تحديث جاهز»</b>. تضغطه، يقرأ لك وش الجديد، ويثبّت ويعيد فتح زبدة في ثواني. مكتبتك وإعداداتك ما تتأثر.</p>
-        <p data-t="u2">كل تحديث موقّع رقمياً بمفتاح زبدة، والتطبيق يتأكد من التوقيع وبصمة الملف قبل التثبيت؛ أي ملف ما يطابق ينرفض. والتحديث ما يوصلك إلا بعد ما ينشر كاملاً ومجرّباً.</p>
+      <!-- ============================================================ model -->
+      <section class="pg" id="model" data-grp="g_grp_tune" data-ic="i-model">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_tune">الضبط</span></p>
+          <h1 data-t="g_model">الموديل والسرعة</h1>
+          <p class="pg-lede" data-t="g_model_l">الافتراضي يكفي أغلب المقاطع. وهذا كيف تغيّره لو حبيت.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="model-pick" data-t="g_m_pick">الموديل</h2>
+          <p data-t="g_m_pick_p">في الإعدادات تشوف الموديلات اللي يعطيك اشتراكك، وعلى واحد منها «الافتراضي». في Claude الافتراضي Opus 5.5، وفيه Fable 5.1 للمقاطع الأصعب، وSonnet وHaiku أسرع وأخف على حدّك. جرّب:</p>
+          <div class="settings" id="msettings">
+            <div class="st-top">
+              <div class="seg" data-prov role="radiogroup"><button type="button" role="radio" data-p="claude"><img src="assets/claude.svg" alt="">Claude</button><button type="button" role="radio" data-p="chatgpt"><img src="assets/openai.svg" alt="">ChatGPT</button></div>
+              <span class="chip"><img data-mlogo src="assets/claude.svg" alt=""><span data-mchip>Opus 5.5</span></span>
+            </div>
+            <div class="mlist" data-mlist role="radiogroup"></div>
+            <div class="st-rows">
+              <div class="st-row"><span class="lab" data-t="set_thinking">مستوى التفكير</span>
+                <div class="seg" data-think role="radiogroup"><button type="button" role="radio" data-v="light" data-t="think_light">خفيف</button><button type="button" role="radio" data-v="balanced" data-t="think_balanced">متوازن</button><button type="button" role="radio" data-v="deep" data-t="think_deep">عميق</button></div></div>
+              <div class="st-row"><span class="lab" data-t="set_fast">الوضع السريع</span><button type="button" class="tog" data-fast role="switch" aria-checked="false" data-t-label="set_fast" aria-label="الوضع السريع"><i></i></button></div>
+            </div>
+            <p class="warn" data-fastwarn hidden></p>
+          </div>
+          <p data-t="g_m_top">فوق النافذة يبان دايماً أي موديل شغّال، وبأي مستوى تفكير.</p>
+
+          <h2 id="model-think" data-t="g_m_think">مستوى التفكير</h2>
+          <ul class="levels">
+            <li><svg class="bars" viewBox="0 0 22 16" aria-hidden="true"><rect x="1" y="10" width="5" height="5" rx="1.2" class="f"/><rect x="8.5" y="6" width="5" height="9" rx="1.2"/><rect x="16" y="1" width="5" height="14" rx="1.2"/></svg><b data-t="think_light">خفيف</b><p data-t="g_lv1">أسرع، وأخف على حدّك.</p></li>
+            <li class="def"><span class="dtag" data-t="default_tag">الافتراضي</span><svg class="bars" viewBox="0 0 22 16" aria-hidden="true"><rect x="1" y="10" width="5" height="5" rx="1.2" class="f"/><rect x="8.5" y="6" width="5" height="9" rx="1.2" class="f"/><rect x="16" y="1" width="5" height="14" rx="1.2"/></svg><b data-t="think_balanced">متوازن</b><p data-t="g_lv2">يكفي أغلب المقاطع.</p></li>
+            <li><svg class="bars" viewBox="0 0 22 16" aria-hidden="true"><rect x="1" y="10" width="5" height="5" rx="1.2" class="f"/><rect x="8.5" y="6" width="5" height="9" rx="1.2" class="f"/><rect x="16" y="1" width="5" height="14" rx="1.2" class="f"/></svg><b data-t="think_deep">عميق</b><p data-t="g_lv3">فهم أدق، ووقت أطول، واستهلاك أكثر.</p></li>
+          </ul>
+
+          <h2 id="model-fast" data-t="g_m_fast">الوضع السريع</h2>
+          <p data-t="g_m_fast_p">أسرع بحوالي الضعفين. ويختلف حسب حسابك:</p>
+          <div class="tbl"><table>
+            <tbody>
+              <tr><td><span class="prov"><img src="assets/openai.svg" alt="">ChatGPT</span></td><td data-t="g_f_gpt">يشتغل على طول، ويصرف من حدّك أسرع.</td></tr>
+              <tr><td><span class="prov"><img src="assets/claude.svg" alt="">Claude</span></td><td data-t="g_f_claude" data-html>يشتغل بس إذا مفعّل <bdi>«Extra usage»</bdi> في حسابك على <bdi>claude.ai</bdi>، وهذا تدفعه لـ <bdi>Anthropic</bdi> فوق اشتراكك. إذا مو مفعّل، زبدة تكمل بالسرعة العادية وتقول لك.</td></tr>
+            </tbody>
+          </table></div>
+        </div>
       </section>
 
-      <section id="privacy">
-        <h2><span class="n">09</span><span data-t="t_privacy">الخصوصية</span></h2>
-        <p data-t="p1">التنزيل والسمع والمشاهدة كلها على جهازك. اللي يروح لـ Claude أو ChatGPT هو نص المقطع ولقطاته عشان يفهمها — عن طريق أداتهم الرسمية وحسابك أنت. ما في سيرفر لزبدة، ولا حساب عندنا، ولا تتبّع.</p>
-        <p data-t="p2" data-html>مكتبتك في <b dir="ltr">%LOCALAPPDATA%\Zubda</b> على جهازك.</p>
+      <!-- ============================================================ settings -->
+      <section class="pg" id="settings" data-grp="g_grp_tune" data-ic="i-settings">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_tune">الضبط</span></p>
+          <h1 data-t="g_settings">الإعدادات</h1>
+          <p class="pg-lede" data-t="g_settings_l">خمسة أقسام، وكل شي في مكانه.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="settings-all" data-t="g_set_all">الأقسام</h2>
+          <ul class="secs">
+            <li><svg class="ic"><use href="#i-user"/></svg><b data-t="g_set1">الحساب</b><p data-t="g_set1p">اربط Claude أو ChatGPT، واختر المستخدم الآن. المؤشر أعلى النافذة يوضح كم باقي من حد اشتراكك ومتى يتجدد.</p></li>
+            <li><svg class="ic"><use href="#i-lang"/></svg><b data-t="g_set2">اللغة</b><p data-t="g_set2p">لغة التطبيق، ولغة الزبدة نفسها: مقطع إنجليزي تقدر تقرأ زبدته بالعربي.</p></li>
+            <li><svg class="ic"><use href="#i-model"/></svg><b data-t="g_set3">الموديل</b><p data-t="g_set3p">الموديل، ومستوى التفكير، والوضع السريع، وكم مقطع يشتغل مع بعض.</p></li>
+            <li><svg class="ic"><use href="#i-wave"/></svg><b data-t="g_set4">التحليل</b><p data-t="g_set4p">استخدام ترجمة المقطع الجاهزة، والاحتفاظ بملف الفيديو.</p></li>
+            <li><svg class="ic"><use href="#i-gear"/></svg><b data-t="g_set5">المحركات</b><p data-t="g_set5p">محرك يوتيوب، ومحرك السمع، وتسريع كرت الشاشة. تتنزل لحالها، وتقدر تعيد أي واحد.</p></li>
+          </ul>
+        </div>
       </section>
 
-      <section id="faq" class="faq">
-        <h2><span class="n">10</span><span data-t="t_faq">أسئلة شائعة</span></h2>
-        <details><summary data-t="q1">كم يستهلك من حد اشتراكي؟</summary><p data-t="q1a">يعتمد على طول المقطع. مقطع ربع ساعة يأخذ جزء صغير من حد الخمس ساعات في Claude Max. المؤشر أعلى النافذة يوريك الباقي دائماً.</p></details>
-        <details><summary data-t="q2">ما عندي كرت NVIDIA، يشتغل؟</summary><p data-t="q2a">إيه. إذا للمقطع ترجمة جاهزة (أغلب يوتيوب) يقرأها مباشرة. وإذا ما له، يسمعه بالمعالج — أبطأ لكنه يشتغل.</p></details>
-        <details><summary data-t="q3">كم ياخذ وقت؟</summary><p data-t="q3a">عادةً بضع دقائق، حسب طول المقطع وجهازك والنموذج. تقدر تلصق كذا رابط وتكمل شغلك؛ تنحل بالدور.</p></details>
-        <details><summary data-t="q4">يشتغل على ماك أو جوال؟</summary><p data-t="q4a">حالياً ويندوز 10 و11 فقط.</p></details>
-        <details><summary data-t="q5">المقاطع الخاصة أو المدفوعة؟</summary><p data-t="q5a">زبدة تقرأ المقاطع العامة. للمقاطع الخاصة نزّلها بطريقتك المشروعة واسحب الملف للنافذة.</p></details>
-        <details><summary data-t="q6">كيف أزيله؟</summary><p data-t="q6a">من إعدادات ويندوز ← التطبيقات ← Zubda ← إزالة. مكتبتك تبقى في مجلدها لو حبيت ترجع؛ احذف المجلد إذا ما تبيها.</p></details>
-        <details><summary data-t="q7">لقيت مشكلة</summary><p data-t="q7a" data-html>زبدة تكتب لك وش صار وأيش الخطوة الجاية على الشاشة. وإذا ما انحلت، <a href="https://github.com/ABUGIZA/zubda/issues">بلّغ عنها هنا</a>.</p></details>
-      </section>
-    </article>
-  </main>
+      <!-- ============================================================ updates -->
+      <section class="pg" id="updates" data-grp="g_grp_tune" data-ic="i-updates">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_tune">الضبط</span></p>
+          <h1 data-t="g_updates">التحديثات</h1>
+          <p class="pg-lede" data-t="g_updates_l">التحديث يوصلك داخل التطبيق، وتثبّته بضغطة.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="updates-how" data-t="g_u_how">كيف يوصلك</h2>
+          <ol class="steps">
+            <li><h3 data-t="g_u1" data-html>يظهر زر <span class="ui">تحديث جاهز</span></h3><p data-t="g_u1p">في أعلى النافذة، أول ما ينزل إصدار جديد.</p></li>
+            <li><h3 data-t="g_u2">تضغطه</h3><p data-t="g_u2p">يقرأ لك وش الجديد قبل ما يثبّت.</p></li>
+            <li><h3 data-t="g_u3">يثبّت ويعيد الفتح</h3><p data-t="g_u3p">في ثواني. مكتبتك وإعداداتك ما تتأثر.</p></li>
+          </ol>
 
-  <footer>
-    <div class="wrap">
-      <a class="mark" href="./" aria-label="Zubda">زبدة</a>
-      <a href="./" data-t="nav_home">الرئيسية</a>
-      <a href="https://github.com/ABUGIZA/zubda/releases" data-t="nav_releases">الإصدارات</a>
-      <a href="https://github.com/ABUGIZA/zubda/issues" data-t="nav_issue">بلّغ عن مشكلة</a>
+          <h2 id="updates-signed" data-t="g_u_sign">موقّع ومجرّب</h2>
+          <div class="co safe"><svg class="ic"><use href="#i-safe"/></svg><div><b class="co-h" data-t="g_safe">أمان</b><p data-t="g_u_sign_p">كل تحديث موقّع رقمياً بمفتاح زبدة، والتطبيق يتأكد من التوقيع وبصمة الملف قبل التثبيت. أي ملف ما يطابق ينرفض.</p></div></div>
+          <p data-t="g_u_tested">والتحديث ما يوصلك إلا بعد ما ينشر كاملاً ومجرّباً.</p>
+          <a class="go" href="new.html"><span data-t="g_u_new">وش الجديد في كل إصدار</span><svg class="ic"><use href="#i-chev"/></svg></a>
+        </div>
+      </section>
+
+      <!-- ============================================================ privacy -->
+      <section class="pg" id="privacy" data-grp="g_grp_help" data-ic="i-privacy">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_help">مساعدة</span></p>
+          <h1 data-t="g_privacy">الخصوصية</h1>
+          <p class="pg-lede" data-t="g_privacy_l">ما في سيرفر لزبدة، ولا حساب عندنا، ولا تتبّع.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="privacy-where" data-t="g_p_where">وين يصير كل شي</h2>
+          <div class="pair where">
+            <div><span class="wh"><svg class="ic"><use href="#i-device"/></svg><b data-t="g_p_here">على جهازك</b></span>
+              <ul><li data-t="g_p_h1">تنزيل المقطع</li><li data-t="g_p_h2">السمع والمشاهدة</li><li data-t="g_p_h3" data-html>مكتبتك، في <bdi class="path" dir="ltr">%LOCALAPPDATA%\Zubda</bdi></li></ul></div>
+            <div><span class="wh"><svg class="ic"><use href="#i-out"/></svg><b data-t="g_p_there">يروح لـ Claude أو ChatGPT</b></span>
+              <ul><li data-t="g_p_t1">نص المقطع ولقطاته، عشان يفهمها</li><li data-t="g_p_t2">عن طريق أداتهم الرسمية وحسابك أنت</li></ul></div>
+          </div>
+
+          <h2 id="privacy-remove" data-t="g_p_rm">إزالة زبدة</h2>
+          <p data-t="g_p_rm_p" data-html>من إعدادات ويندوز ← التطبيقات ← <bdi>Zubda</bdi> ← إزالة. مكتبتك تبقى في مجلدها لو حبيت ترجع، واحذف المجلد إذا ما تبيها.</p>
+        </div>
+      </section>
+
+      <!-- ============================================================ faq -->
+      <section class="pg" id="faq" data-grp="g_grp_help" data-ic="i-faq">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">الشرح</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_help">مساعدة</span></p>
+          <h1 data-t="g_faq">أسئلة شائعة</h1>
+          <p class="pg-lede" data-t="g_faq_l">الأسئلة اللي تجينا أكثر، بجواب قصير.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">نسخ الصفحة</span></button></div>
+        </header>
+        <div class="pg-body">
+          <div class="faq">
+            <details id="faq-free"><summary data-t="q9">ما عندي اشتراك، يشتغل؟</summary><p data-t="q9a">إيه. اربط حساب <bdi>ChatGPT</bdi> المجاني (أو سوّ واحد في <bdi>chatgpt.com</bdi> بإيميلك) وزبدة تشتغل كاملة على موديل <bdi>Luna</bdi>. الاشتراك يعطيك موديلات أقوى وحد أكبر، لكنه مو شرط.</p></details>
+            <details id="faq-switch"><summary data-t="q10">ربطت الحساب الغلط، كيف أبدّل؟</summary><p data-t="q10a">من الإعدادات ← الحساب اضغط «بدّل الحساب». صفحة الدخول تفتح على الحساب المفتوح في متصفحك، فبدّل للحساب الصحيح في الموقع أول. إيميل الحساب وباقته ظاهرين دائماً، فتعرف أي حساب مربوط.</p></details>
+            <details id="faq-none"><summary data-t="q11">أقدر أستخدمها بدون أي حساب؟</summary><p data-t="q11a">إيه، بجزء منها: تنزّل المقطع وتكتب كل كلمة وتلقط المشاهد على جهازك. الزبدة نفسها والنقاط وسؤال المقطع تحتاج الذكاء الاصطناعي، فتنقفل لين تربط حساب. وحساب ChatGPT المجاني يكفي.</p></details>
+            <details id="faq-limit"><summary data-t="q1">كم يستهلك من حد اشتراكي؟</summary><p data-t="q1a">يعتمد على طول المقطع. مقطع ربع ساعة يأخذ جزء صغير من حد الخمس ساعات في Claude Max. المؤشر أعلى النافذة يوريك الباقي دائماً.</p></details>
+            <details id="faq-gpu"><summary data-t="q2">ما عندي كرت NVIDIA، يشتغل؟</summary><p data-t="q2a">إيه. إذا للمقطع ترجمة جاهزة (أغلب يوتيوب) يقرأها مباشرة. وإذا ما له، يسمعه بالمعالج: أبطأ لكنه يشتغل.</p></details>
+            <details id="faq-time"><summary data-t="q3">كم ياخذ وقت؟</summary><p data-t="q3a">مقطع ربع ساعة ياخذ حوالي ثلاث دقائق مع Claude، حسب جهازك والموديل ومستوى التفكير. تقدر تفتح كذا تبويب وتكمل شغلك.</p></details>
+            <details id="faq-cap"><summary data-t="q8">وصلت حد اشتراكي وأنا ألخّص؟</summary><p data-t="q8a">ما يضيع شي. زبدة توقف مؤقتاً، توريك متى يرجع الحد، وتكمل لحالها وقتها، بس خلّها مفتوحة. ولو سكّرت الجهاز، المقاطع اللي ما خلصت تكمل أول ما تفتح زبدة.</p></details>
+            <details id="faq-mac"><summary data-t="q4">يشتغل على ماك أو جوال؟</summary><p data-t="q4a">حالياً ويندوز 10 و11 فقط.</p></details>
+            <details id="faq-private"><summary data-t="q5">المقاطع الخاصة أو المدفوعة؟</summary><p data-t="q5a">زبدة تقرأ المقاطع العامة. للمقاطع الخاصة نزّلها بطريقتك المشروعة واسحب الملف للنافذة.</p></details>
+            <details id="faq-remove"><summary data-t="q6">كيف أزيله؟</summary><p data-t="q6a">من إعدادات ويندوز ← التطبيقات ← Zubda ← إزالة. مكتبتك تبقى في مجلدها لو حبيت ترجع؛ احذف المجلد إذا ما تبيها.</p></details>
+            <details id="faq-bug"><summary data-t="q7">لقيت مشكلة</summary><p data-t="q7a" data-html>زبدة تكتب لك وش صار وأيش الخطوة الجاية على الشاشة. وإذا ما انحلت، <a href="https://github.com/ABUGIZA/zubda/issues">بلّغ عنها هنا</a>.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <nav class="pager" data-pager aria-label="الصفحات"></nav>
+      <p class="pg-end"><span data-t="g_updated">آخر تحديث</span> <bdi data-t="g_date">19 أكتوبر 2026</bdi><span class="dot"></span><a href="https://github.com/ABUGIZA/zubda/issues" data-t="g_fix">لقيت خطأ في الشرح؟ بلّغ عنه</a></p>
+    </main>
+
+    <aside class="rail" data-rail>
+      <span class="rail-h" data-t="g_onpage">في هذه الصفحة</span>
+      <nav class="onpage" data-onpage></nav>
+      <div class="rail-get">
+        <span class="rg-top"><b data-t="g_get">حمّل زبدة</b><bdi class="ver mono" dir="ltr">v1.1.0</bdi></span>
+        <span class="rg-d" data-t="g_get_d">مجاني · ويندوز 10 و11</span>
+        <a class="btn primary small" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe" data-t="nav_get">تحميل</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- search: one field, results under it as you type -->
+  <div class="pal" data-pal hidden>
+    <div class="pal-box" role="dialog" aria-modal="true" aria-label="ابحث في الشرح" data-t-label="g_find">
+      <label class="pal-in"><svg class="ic"><use href="#i-search"/></svg><input type="search" data-palq autocomplete="off" spellcheck="false"><kbd>Esc</kbd></label>
+      <div class="pal-list" data-pall role="listbox"></div>
+      <div class="pal-foot"><span><kbd>↑</kbd><kbd>↓</kbd><span data-t="g_k_move">تنقّل</span></span><span><kbd>Enter</kbd><span data-t="g_k_open">افتح</span></span><span><kbd>Esc</kbd><span data-t="g_k_close">إغلاق</span></span></div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div class="wrap-w">
+      <a class="mark" href="./" aria-label="Zubda"><span>زبدة</span></a>
+      <nav>
+        <a href="docs.html" data-t="nav_docs">الشرح</a>
+        <a href="new.html" data-t="nav_new">الجديد</a>
+        <a href="https://github.com/ABUGIZA/zubda/releases" data-t="nav_releases">الإصدارات</a>
+        <a href="https://github.com/ABUGIZA/zubda/issues" data-t="nav_issue">بلّغ عن مشكلة</a>
+      </nav>
       <span class="end" data-t="foot">مجاني. باشتراكك، على جهازك.</span>
     </div>
   </footer>
 
   <script type="module" src="assets/site.js"></script>
+  <script type="module" src="assets/docs.js"></script>
 </body>
 </html>
