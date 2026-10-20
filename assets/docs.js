@@ -1,6 +1,6 @@
 // The guide: one page at a time, a sidebar of groups, quick search, copy page, an on-this-page rail and a pager.
 // Without this script every page simply shows one under the other.
-import { T, lang, onLang, esc } from './core.js?v=b3d2898';
+import { T, lang, onLang, esc } from './core.js?v=a81821d';
 
 const AR_WORDS = {
   g_find_ph: 'اكتب كلمة: تثبيت، حد الاشتراك، PDF…', g_none: 'ما لقينا شي بهذي الكلمة. جرّب كلمة ثانية.', g_pages: 'الصفحات',
