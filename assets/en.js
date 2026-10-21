@@ -75,6 +75,8 @@ export const EN = {
   new_title: 'What’s new — Zubda', new_eye: 'Changelog', new_h: 'What’s new in Zubda',
   new_lede: 'Every version and what changed in it, in plain words. Updates reach you inside the app, signed and tested.',
   tag_new: 'New', tag_faster: 'Faster', tag_clearer: 'Clearer', tag_sturdier: 'Sturdier', tag_easier: 'Easier', tag_first: 'First release', tag_lighter: 'Lighter',
+  v122_h: 'Listening works on Windows set to Arabic', v122_date: '21 October 2026',
+  g1_h: 'Listening works on Windows set to Arabic', g1_p: "On computers with Windows set to Arabic, a video stopped at «Listen» with a 'utf-8' codec error at the first Arabic word. Fixed: press «Carry on» on that video and it carries on from the same files.",
   v121_h: 'Send works, and the essence in your language', v121_date: '21 October 2026',
   f1_h: 'Send always works', f1_p: 'In the «Chat» look it could stop after changing the thinking level or a little while after opening the app. What you type no longer clears itself either.',
   f2_h: 'The essence in your language, in one press', f2_p: 'If it comes out in another language, a button under it writes it again from the same files, without downloading or listening, and the next videos follow.',
