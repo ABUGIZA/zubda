@@ -1,7 +1,7 @@
 // What every page of every design shares: the two languages, reveals, the real clips,
 // the latest release, and the guide's contents list. A design adds its own words with boot().
-import { EN as BASE } from './en.js?v=e8879ec';
-import { DOCS_EN } from './docs-en.js?v=e8879ec';
+import { EN as BASE } from './en.js?v=3e0ece0';
+import { DOCS_EN } from './docs-en.js?v=3e0ece0';
 
 export const EN = { ...BASE, ...DOCS_EN };
 // words only scripts use (the page has no element holding their Arabic)
@@ -86,7 +86,7 @@ function clips() {
   const clip = document.getElementById('clip');
   if (clip) {
     let which = 'youtube';
-    const load = () => { clip.src = `assets/demo/${which}-${lang}.mp4?v=e8879ec`; clip.play().catch(() => {}); };
+    const load = () => { clip.src = `assets/demo/${which}-${lang}.mp4?v=3e0ece0`; clip.play().catch(() => {}); };
     const tabs = document.querySelectorAll('[data-clip]');
     tabs.forEach((b) => b.addEventListener('click', () => {
       which = b.dataset.clip;
@@ -99,7 +99,7 @@ function clips() {
   }
   const demos = [...document.querySelectorAll('video[data-demo]')];
   if (demos.length) {
-    const load = (v) => { v.src = `assets/demo/${v.dataset.demo}-${lang}.mp4?v=e8879ec`; v.play().catch(() => {}); };
+    const load = (v) => { v.src = `assets/demo/${v.dataset.demo}-${lang}.mp4?v=3e0ece0`; v.play().catch(() => {}); };
     const vio = new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting && !e.target.src) load(e.target); }, { rootMargin: '300px' });
     demos.forEach((v) => { vio.observe(v); v.addEventListener('contextmenu', (e) => e.preventDefault()); });
     onLang(() => demos.forEach((v) => { if (v.src) load(v); }));

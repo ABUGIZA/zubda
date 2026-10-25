@@ -1,5 +1,5 @@
-import { boot, T, lang, onLang, still, whileSeen, fmt, esc } from './core.js?v=e8879ec';
-import { S, modelPicker, specCard, playJobs, playConnect, smartScreen, GLYPH } from './widgets.js?v=e8879ec';
+import { boot, T, lang, onLang, still, whileSeen, fmt, esc } from './core.js?v=3e0ece0';
+import { S, modelPicker, specCard, playJobs, playConnect, smartScreen, GLYPH } from './widgets.js?v=3e0ece0';
 
 boot({
   en: {
