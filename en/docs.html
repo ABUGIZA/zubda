@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-page-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#14171d">
+  <title>Zubda guide — install, connect ChatGPT or Claude, summarize</title>
+  <meta name="description" content="How to install Zubda on Windows, connect your ChatGPT or Claude account, pick a model and summarize YouTube, X and TikTok videos, plus common questions.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://abugiza.github.io/zubda/en/docs.html">
+  <link rel="alternate" hreflang="ar" href="https://abugiza.github.io/zubda/docs.html">
+  <link rel="alternate" hreflang="en" href="https://abugiza.github.io/zubda/en/docs.html">
+  <link rel="alternate" hreflang="x-default" href="https://abugiza.github.io/zubda/en/docs.html">
+  <link rel="sitemap" type="application/xml" href="https://abugiza.github.io/zubda/sitemap.xml">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zubda">
+  <meta property="og:title" content="Zubda guide — install, connect ChatGPT or Claude, summarize">
+  <meta property="og:description" content="How to install Zubda on Windows, connect your ChatGPT or Claude account, pick a model and summarize YouTube, X and TikTok videos, plus common questions.">
+  <meta property="og:url" content="https://abugiza.github.io/zubda/en/docs.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_SA">
+  <meta property="og:image" content="https://abugiza.github.io/zubda/assets/og-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Zubda — don’t watch the video, read its essence">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zubda guide — install, connect ChatGPT or Claude, summarize">
+  <meta name="twitter:description" content="How to install Zubda on Windows, connect your ChatGPT or Claude account, pick a model and summarize YouTube, X and TikTok videos, plus common questions.">
+  <meta name="twitter:image" content="https://abugiza.github.io/zubda/assets/og-en.png">
+  <meta name="twitter:image:alt" content="Zubda — don’t watch the video, read its essence">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://abugiza.github.io/zubda/#website","url":"https://abugiza.github.io/zubda/","name":"Zubda","alternateName":"زبدة","inLanguage":["ar","en"]},{"@type":"SoftwareApplication","@id":"https://abugiza.github.io/zubda/#app","name":"Zubda","alternateName":"زبدة","description":"How to install Zubda on Windows, connect your ChatGPT or Claude account, pick a model and summarize YouTube, X and TikTok videos, plus common questions.","url":"https://abugiza.github.io/zubda/en/","applicationCategory":"MultimediaApplication","applicationSubCategory":"Video summarizer","operatingSystem":"Windows 10, Windows 11","downloadUrl":"https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe","installUrl":"https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe","image":"https://abugiza.github.io/zubda/assets/og-en.png","screenshot":"https://abugiza.github.io/zubda/assets/og-en.png","inLanguage":["ar","en"],"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"releaseNotes":"https://abugiza.github.io/zubda/en/new.html","author":{"@type":"Person","name":"ABUGIZA","url":"https://github.com/ABUGIZA"},"softwareVersion":"1.3.2","datePublished":"2026-10-26","fileSize":"35 MB"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Zubda","item":"https://abugiza.github.io/zubda/en/"},{"@type":"ListItem","position":2,"name":"Guide","item":"https://abugiza.github.io/zubda/en/docs.html"}]},{"@type":"FAQPage","@id":"https://abugiza.github.io/zubda/en/docs.html#faq","inLanguage":"en","mainEntity":[{"@type":"Question","name":"I don’t pay for anything. Does it work?","acceptedAnswer":{"@type":"Answer","text":"Yes. Connect a free ChatGPT account (or make one at chatgpt.com with your email) and Zubda works in full on the Luna model. A subscription gives stronger models and a bigger limit, but it isn’t required."}},{"@type":"Question","name":"I connected the wrong account. How do I switch?","acceptedAnswer":{"@type":"Answer","text":"In Settings → Account, press “Switch account”. The sign-in page opens on the account that’s open in your browser, so switch to the right one on the site first. The account’s email and plan always show, so you know which one is connected."}},{"@type":"Question","name":"Can I use it with no account at all?","acceptedAnswer":{"@type":"Answer","text":"Yes, in part: it downloads the video, writes down every word and catches the scenes on your computer. The essence, the key points and asking the video need the AI, so they stay locked until you connect an account. A free ChatGPT account is enough."}},{"@type":"Question","name":"How much of my plan does it use?","acceptedAnswer":{"@type":"Answer","text":"It depends on the video’s length. A fifteen-minute video takes a small part of Claude Max’s five-hour limit. The meter at the top always shows what’s left."}},{"@type":"Question","name":"I have no NVIDIA card. Does it work?","acceptedAnswer":{"@type":"Answer","text":"Yes. If the video has captions (most of YouTube) it reads them directly. If not, it listens on the processor: slower, but it works."}},{"@type":"Question","name":"How long does it take?","acceptedAnswer":{"@type":"Answer","text":"A fifteen-minute video takes about three minutes with Claude, depending on your computer, the model and the thinking level. You can open several tabs and keep working."}},{"@type":"Question","name":"I hit my plan’s limit mid-way?","acceptedAnswer":{"@type":"Answer","text":"Nothing is lost. Zubda pauses, shows when the limit comes back, and carries on by itself then; just keep it open. And if you shut your computer down, unfinished videos carry on as soon as you open Zubda."}},{"@type":"Question","name":"Does it work on Mac or phones?","acceptedAnswer":{"@type":"Answer","text":"Windows 10 and 11 only, for now."}},{"@type":"Question","name":"Private or paid videos?","acceptedAnswer":{"@type":"Answer","text":"Zubda reads public videos. For a private one, download it the legitimate way and drag the file onto the window."}},{"@type":"Question","name":"How do I uninstall it?","acceptedAnswer":{"@type":"Answer","text":"Windows Settings → Apps → Zubda → Uninstall. Your library stays in its folder in case you come back; delete the folder if you don’t want it."}},{"@type":"Question","name":"I found a problem","acceptedAnswer":{"@type":"Answer","text":"Zubda tells you on screen what happened and what to do next. If that doesn’t solve it, report it here."}}]}]}</script>
+  <link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/fonts.css?v=5c13f02">
+  <link rel="stylesheet" href="../assets/site.css?v=5c13f02">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body data-page="docs">
+  <!-- one icon family for the whole guide: 20px grid, 1.5 stroke, round ends -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-start" viewBox="0 0 20 20"><path d="M5 17.5V3"/><path d="M5 3.8h9.6l-2.2 3.4 2.2 3.4H5"/></symbol>
+      <symbol id="i-install" viewBox="0 0 20 20"><path d="M10 2.8v9.4"/><path d="M6.4 8.8 10 12.4l3.6-3.6"/><path d="M3.4 12.8v2.4a2 2 0 0 0 2 2h9.2a2 2 0 0 0 2-2v-2.4"/></symbol>
+      <symbol id="i-connect" viewBox="0 0 20 20"><path d="m8.2 11.8 3.6-3.6"/><path d="m7.1 9.3-1.8 1.8a2.7 2.7 0 0 0 3.8 3.8l1.8-1.8"/><path d="m12.9 10.7 1.8-1.8a2.7 2.7 0 0 0-3.8-3.8L9.1 6.9"/></symbol>
+      <symbol id="i-read" viewBox="0 0 20 20"><rect x="3" y="4" width="14" height="12" rx="2.4"/><path d="m8.6 7.6 3.6 2.4-3.6 2.4Z"/></symbol>
+      <symbol id="i-tabs" viewBox="0 0 20 20"><path d="M2.8 7.6h14.4v7.6a1.8 1.8 0 0 1-1.8 1.8H4.6a1.8 1.8 0 0 1-1.8-1.8Z"/><path d="M2.8 7.6V5.2a1.6 1.6 0 0 1 1.6-1.6h3.4l1 4"/><path d="m9.6 7.6-.8-4h4.4l.8 4"/></symbol>
+      <symbol id="i-essence" viewBox="0 0 20 20"><rect x="4" y="2.8" width="12" height="14.4" rx="2.2"/><path d="M7 7h6"/><path d="M7 10h6"/><path d="M7 13h3.6"/></symbol>
+      <symbol id="i-ask" viewBox="0 0 20 20"><path d="M4.4 4h11.2a1.8 1.8 0 0 1 1.8 1.8v6.8a1.8 1.8 0 0 1-1.8 1.8H9.2l-3.6 2.8v-2.8H4.4a1.8 1.8 0 0 1-1.8-1.8V5.8A1.8 1.8 0 0 1 4.4 4Z"/><path d="M7 8.2h6"/><path d="M7 11h3.6"/></symbol>
+      <symbol id="i-model" viewBox="0 0 20 20"><rect x="5.6" y="5.6" width="8.8" height="8.8" rx="1.8"/><path d="M8 3v2.6M12 3v2.6M8 14.4V17M12 14.4V17M3 8h2.6M3 12h2.6M14.4 8H17M14.4 12H17"/></symbol>
+      <symbol id="i-settings" viewBox="0 0 20 20"><path d="M3.5 6.2h7.3M15.3 6.2h1.2M3.5 13.8h1.2M9.2 13.8h7.3"/><circle cx="13" cy="6.2" r="2.2"/><circle cx="7" cy="13.8" r="2.2"/></symbol>
+      <symbol id="i-updates" viewBox="0 0 20 20"><path d="M16.4 10a6.4 6.4 0 1 1-1.9-4.5"/><path d="M16.6 3v3.4h-3.4"/></symbol>
+      <symbol id="i-privacy" viewBox="0 0 20 20"><rect x="4.2" y="8.8" width="11.6" height="8.6" rx="2.2"/><path d="M6.8 8.8V6.6a3.2 3.2 0 0 1 6.4 0v2.2"/><path d="M10 12.2v2"/></symbol>
+      <symbol id="i-faq" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.4"/><path d="M7.8 8a2.3 2.3 0 1 1 3.3 2.1c-.7.3-1.1.8-1.1 1.5v.3"/><path d="M10 14.3v.1"/></symbol>
+      <symbol id="i-search" viewBox="0 0 20 20"><circle cx="9" cy="9" r="5.6"/><path d="m13.2 13.2 3.8 3.8"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 20 20"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M13 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 20 20"><path d="m4.8 10.4 3.4 3.2L15.2 6.4"/></symbol>
+      <symbol id="i-hash" viewBox="0 0 20 20"><path d="M8 3.5 6.6 16.5M13.4 3.5 12 16.5M4 7.6h12.6M3.4 12.4H16"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 20 20"><path d="M12.2 5 7.2 10l5 5"/></symbol>
+      <symbol id="i-note" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.4"/><path d="M10 9v4.8"/><path d="M10 6.3v.1"/></symbol>
+      <symbol id="i-warn" viewBox="0 0 20 20"><path d="M8.6 3.6a1.6 1.6 0 0 1 2.8 0l6.1 10.8a1.6 1.6 0 0 1-1.4 2.4H3.9a1.6 1.6 0 0 1-1.4-2.4Z"/><path d="M10 8v3.6"/><path d="M10 14v.1"/></symbol>
+      <symbol id="i-safe" viewBox="0 0 20 20"><path d="M10 2.6 16 5v4.8c0 3.6-2.5 6.3-6 7.6-3.5-1.3-6-4-6-7.6V5Z"/><path d="m7.4 10 1.9 1.9 3.4-3.6"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 20 20"><rect x="4.5" y="8.5" width="11" height="8" rx="2"/><path d="M7 8.5V6.5a3 3 0 0 1 6 0v2"/></symbol>
+      <symbol id="i-tip" viewBox="0 0 20 20"><path d="M7.6 14.6h4.8M8.2 17.2h3.6"/><path d="M10 2.6a5.2 5.2 0 0 0-3.1 9.4c.6.4.9 1 .9 1.7v.9h4.4v-.9c0-.7.3-1.3.9-1.7A5.2 5.2 0 0 0 10 2.6Z"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 20 20"><path d="M3.5 6h13M3.5 10h13M3.5 14h8"/></symbol>
+      <symbol id="i-close" viewBox="0 0 20 20"><path d="m5 5 10 10M15 5 5 15"/></symbol>
+      <symbol id="i-device" viewBox="0 0 20 20"><rect x="2.6" y="3.6" width="14.8" height="10" rx="1.8"/><path d="M7 17h6M10 13.6V17"/></symbol>
+      <symbol id="i-out" viewBox="0 0 20 20"><path d="M10 12.6V3.2"/><path d="M6.6 6.6 10 3.2l3.4 3.4"/><path d="M4 11.4v3.8a1.8 1.8 0 0 0 1.8 1.8h8.4a1.8 1.8 0 0 0 1.8-1.8v-3.8"/></symbol>
+      <symbol id="i-lang" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.4"/><path d="M2.8 10h14.4"/><path d="M10 2.6c2 2 3 4.5 3 7.4s-1 5.4-3 7.4c-2-2-3-4.5-3-7.4s1-5.4 3-7.4Z"/></symbol>
+      <symbol id="i-user" viewBox="0 0 20 20"><circle cx="10" cy="7" r="3.4"/><path d="M3.8 17a6.2 6.2 0 0 1 12.4 0"/></symbol>
+      <symbol id="i-wave" viewBox="0 0 20 20"><path d="M3 10h1.6M6.2 6.6v6.8M9.4 3.8v12.4M12.6 6.6v6.8M15.8 9v2"/></symbol>
+      <symbol id="i-gear" viewBox="0 0 20 20"><circle cx="10" cy="10" r="2.6"/><path d="M10 2.8v2M10 15.2v2M2.8 10h2M15.2 10h2M4.9 4.9l1.4 1.4M13.7 13.7l1.4 1.4M4.9 15.1l1.4-1.4M13.7 6.3l1.4-1.4"/></symbol>
+      <symbol id="i-file" viewBox="0 0 20 20"><path d="M5.6 2.8h6l3.6 3.6v9a1.8 1.8 0 0 1-1.8 1.8H5.6a1.8 1.8 0 0 1-1.8-1.8V4.6a1.8 1.8 0 0 1 1.8-1.8Z"/><path d="M11.4 2.8v3.8h3.8"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="nav" data-nav>
+    <div class="wrap-w">
+      <a class="mark" href="./" aria-label="Zubda"><span>زبدة</span></a>
+      <nav class="links">
+        <a href="new.html" data-t="nav_new" class="hide-sm" data-here="new">What’s new</a>
+        <a href="docs.html" data-t="nav_docs" class="hide-sm" data-here="docs">Guide</a>
+        <a href="https://github.com/ABUGIZA/zubda/releases" data-t="nav_releases" class="hide-sm">Releases</a>
+        <a class="lang" href="https://abugiza.github.io/zubda/docs.html" hreflang="ar" lang="ar" data-lang>العربية</a>
+        <a class="btn primary small" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe" data-t="nav_get">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- phone: where you are, the pages, and search -->
+  <div class="dbar" data-dbar>
+    <button type="button" class="dbar-pg" data-menu aria-expanded="false"><svg class="ic"><use href="#i-menu"/></svg><span data-dbar-grp></span><svg class="ic sep"><use href="#i-chev"/></svg><b data-dbar-pg></b></button>
+    <button type="button" class="dbar-find" data-find data-t-label="g_find" aria-label="Search"><svg class="ic"><use href="#i-search"/></svg></button>
+  </div>
+
+  <div class="dk wrap-w">
+    <aside class="side" data-side>
+      <button type="button" class="find" data-find>
+        <svg class="ic"><use href="#i-search"/></svg><span data-t="g_find">Search</span>
+        <span class="keys" dir="ltr"><kbd>Ctrl</kbd><kbd>K</kbd></span>
+      </button>
+      <nav class="tree" aria-label="Guide" data-t-label="nav_docs">
+        <div class="grp">
+          <span class="grp-h" data-t="g_grp_start">Get started</span>
+          <a href="#start"><svg class="ic"><use href="#i-start"/></svg><span data-t="g_start">Quick start</span></a>
+          <a href="#install"><svg class="ic"><use href="#i-install"/></svg><span data-t="g_install">Install</span></a>
+          <a href="#connect"><svg class="ic"><use href="#i-connect"/></svg><span data-t="g_connect">Connect your account</span></a>
+        </div>
+        <div class="grp">
+          <span class="grp-h" data-t="g_grp_use">Using Zubda</span>
+          <a href="#read"><svg class="ic"><use href="#i-read"/></svg><span data-t="g_read">Get the essence</span></a>
+          <a href="#tabs"><svg class="ic"><use href="#i-tabs"/></svg><span data-t="g_tabs">Several videos</span></a>
+          <a href="#essence"><svg class="ic"><use href="#i-essence"/></svg><span data-t="g_essence">Read the essence</span></a>
+          <a href="#ask"><svg class="ic"><use href="#i-ask"/></svg><span data-t="g_ask">Ask and save</span></a>
+        </div>
+        <div class="grp">
+          <span class="grp-h" data-t="g_grp_tune">Tuning</span>
+          <a href="#model"><svg class="ic"><use href="#i-model"/></svg><span data-t="g_model">Model and speed</span></a>
+          <a href="#settings"><svg class="ic"><use href="#i-settings"/></svg><span data-t="g_settings">Settings</span></a>
+          <a href="#updates"><svg class="ic"><use href="#i-updates"/></svg><span data-t="g_updates">Updates</span></a>
+        </div>
+        <div class="grp">
+          <span class="grp-h" data-t="g_grp_help">Help</span>
+          <a href="#privacy"><svg class="ic"><use href="#i-privacy"/></svg><span data-t="g_privacy">Privacy</span></a>
+          <a href="#faq"><svg class="ic"><use href="#i-faq"/></svg><span data-t="g_faq">FAQ</span></a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="pages" data-pages>
+      <!-- ============================================================ start -->
+      <section class="pg" id="start" data-grp="g_grp_start" data-ic="i-start">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_start">Get started</span></p>
+          <h1 data-t="g_start">Quick start</h1>
+          <p class="pg-lede" data-t="g_start_l">Five minutes is enough: install, connect your account, paste your first link.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="start-need" data-t="g_need">What you need</h2>
+          <dl class="kv">
+            <div><dt data-t="g_need_os_k">Computer</dt><dd data-t="g_need_os" data-html>Windows 10 or 11 (<bdi dir="ltr">64-bit</bdi>)</dd></div>
+            <div><dt data-t="g_need_plan_k">Account</dt><dd data-t="g_need_plan" data-html>A <bdi>ChatGPT</bdi> account (even a free one), or <bdi>Claude Pro</bdi> or <bdi>Max</bdi></dd></div>
+            <div><dt data-t="g_need_key_k">API key</dt><dd data-t="g_need_key">Not needed.</dd></div>
+            <div><dt data-t="g_need_space_k">Space</dt><dd data-t="g_need_space">About 1.3 GB for the engines (2.1 GB with an NVIDIA card), downloaded by themselves the first time.</dd></div>
+            <div><dt data-t="g_need_gpu_k">Graphics card</dt><dd data-t="g_need_gpu" data-html>Optional. An <bdi>NVIDIA</bdi> card speeds up listening; without one it uses the processor.</dd></div>
+          </dl>
+
+          <h2 id="start-steps" data-t="g_three">Three steps</h2>
+          <ol class="steps">
+            <li><h3 data-t="g_q1">Install Zubda</h3><p data-t="g_q1p">Download the installer and run it; it needs no admin rights.</p><a class="go" href="#install"><span data-t="g_install">Install</span><svg class="ic"><use href="#i-chev"/></svg></a></li>
+            <li><h3 data-t="g_q2">Connect your account</h3><p data-t="g_q2p">You sign in on Claude’s or ChatGPT’s own page, in one click.</p><a class="go" href="#connect"><span data-t="g_connect">Connect your account</span><svg class="ic"><use href="#i-chev"/></svg></a></li>
+            <li><h3 data-t="g_q3">Paste a link</h3><p data-t="g_q3p" data-html>Paste the video’s link and press <span class="ui">Get the essence</span>.</p><a class="go" href="#read"><span data-t="g_read">Get the essence</span><svg class="ic"><use href="#i-chev"/></svg></a></li>
+          </ol>
+          <figure class="clipbox"><video data-demo="youtube" autoplay muted loop playsinline disablepictureinpicture preload="none"></video></figure>
+        </div>
+      </section>
+
+      <!-- ============================================================ install -->
+      <section class="pg" id="install" data-grp="g_grp_start" data-ic="i-install">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_start">Get started</span></p>
+          <h1 data-t="g_install">Install</h1>
+          <p class="pg-lede" data-t="g_install_l">One installer, no admin rights, and it sets up the rest by itself.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="install-steps" data-t="g_i_steps">Steps</h2>
+          <ol class="steps">
+            <li><h3 data-t="g_i1">Download the installer</h3><p data-t="g_i1p" data-html>Download <b dir="ltr">Zubda-Setup.exe</b> from the download button at the top of the page.</p></li>
+            <li><h3 data-t="g_i2">Run it, and get past the Windows warning</h3><p data-t="g_i2p" data-html>Windows shows a <bdi>SmartScreen</bdi> warning because Zubda has no paid signing certificate. Click <span class="ui">More info</span>, then <span class="ui">Run anyway</span>.</p>
+              <div class="ss-stage">
+                <div class="ss" id="ss" aria-hidden="true">
+                  <h4 data-t="ss_title">Windows protected your PC</h4>
+                  <p data-t="ss_body">Microsoft Defender SmartScreen prevented an unrecognized app from starting. Running this app might put your PC at risk.</p>
+                  <span class="more" data-ss-more data-t="ss_more">More info</span>
+                  <div class="info"><span data-t="ss_app">App:</span> Zubda-Setup.exe<br><span data-t="ss_pub">Publisher:</span> <span data-t="ss_unknown">Unknown publisher</span></div>
+                  <div class="bar"><span class="run" data-ss-run data-t="ss_run">Run anyway</span><span data-t="ss_no">Don’t run</span></div>
+                  <svg class="cur" viewBox="0 0 26 26"><path d="M5 3l15 9.2-6.6 1.6 3.9 7.4-3 1.5-3.9-7.5L5 20Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                  <span class="ring" data-ss-ring></span>
+                </div>
+              </div>
+            </li>
+            <li><h3 data-t="g_i3">Let it set up</h3><p data-t="g_i3p">The first time, it downloads the app’s engine (about 400 MB), which takes a few minutes depending on your connection.</p></li>
+            <li><h3 data-t="g_i4">Open Zubda</h3><p data-t="g_i4p">From the Start menu or the desktop.</p></li>
+          </ol>
+
+          <h2 id="install-first" data-t="g_i_first">First run</h2>
+          <p data-t="g_i_first_p">When you first open Zubda, it downloads two engines by itself, and you can watch their progress in Settings:</p>
+          <dl class="kv">
+            <div><dt data-t="g_eng_listen_k">Listening engine</dt><dd data-t="g_eng_listen">About 0.8 GB, or 1.6 GB on a computer with an NVIDIA card. It listens to the video and writes down what is said.</dd></div>
+            <div><dt data-t="g_eng_yt_k">YouTube engine</dt><dd data-t="g_eng_yt">Fetches videos from YouTube and the other sites.</dd></div>
+          </dl>
+          <div class="co"><svg class="ic"><use href="#i-tip"/></svg><div><b class="co-h" data-t="g_tip">Good to know</b><p data-t="g_i_retry" data-html>If an engine’s download fails, you can retry it from <span class="ui">Settings</span> → <span class="ui">Engines</span>.</p></div></div>
+        </div>
+      </section>
+
+      <!-- ============================================================ connect -->
+      <section class="pg" id="connect" data-grp="g_grp_start" data-ic="i-connect">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_start">Get started</span></p>
+          <h1 data-t="g_connect">Connect your account</h1>
+          <p class="pg-lede" data-t="g_connect_l">Zubda sells nothing and asks for no API key: it runs on your own account — and a free ChatGPT account is enough.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="connect-plans" data-t="g_c_plans">Which account?</h2>
+          <div class="tbl"><table>
+            <thead><tr><th data-t="g_c_th1">Account</th><th data-t="g_c_th2">Plan</th><th data-t="g_c_th3">What Zubda installs</th></tr></thead>
+            <tbody>
+              <tr><td><span class="prov"><img src="../assets/claude.svg" alt="">Claude</span></td><td><bdi>Pro</bdi> · <bdi>Max</bdi></td><td data-t="g_c_tool1" data-html>The official <bdi>Claude Code</bdi> tool</td></tr>
+              <tr><td><span class="prov"><img src="../assets/openai.svg" alt="">ChatGPT</span></td><td><bdi>Free</bdi> · <bdi>Go</bdi> · <bdi>Plus</bdi> · <bdi>Pro</bdi></td><td data-t="g_c_tool2" data-html>The official <bdi>Codex</bdi> tool</td></tr>
+            </tbody>
+          </table></div>
+          <p data-t="g_c_free" data-html><b>No subscription?</b> Connect <bdi>ChatGPT</bdi> with your free account: Zubda works in full on the <bdi>Luna</bdi> model and you pay nothing. No account at all? Make a free one at <bdi>chatgpt.com</bdi> with your email, no card. Free has a smaller limit, and on a fifteen-minute video it found 22 key points against 30 with <bdi>Claude Opus</bdi>. <bdi>Claude</bdi>’s free plan doesn’t include <bdi>Claude Code</bdi>, so it needs <bdi>Pro</bdi> or above.</p>
+          <p data-t="g_c_both">You can connect both and switch between them in Settings.</p>
+
+          <h2 id="connect-steps" data-t="g_c_how">How it connects</h2>
+          <p data-t="g_c_how_p">The first run asks which language you want the app and the essence in, introduces Zubda in three screens, then asks one question: “Connect your account?”. After that you see every step with its time:</p>
+          <div class="connect" id="connect-live" aria-hidden="true">
+            <div class="cn-head"><span class="logo"><img src="../assets/claude.svg" alt=""></span><div><b>Claude</b><small data-t="claude_d">Pro or Max plan</small></div><span class="cn-time mono" data-clock>0:00</span></div>
+            <ol class="crail">
+              <li data-s="0"><i data-bar></i><div><b data-t="cs_dl">Downloading the official Claude tool</b><small><bdi data-mb>0 / 270 MB</bdi></small></div></li>
+              <li data-s="1"><i></i><div><b data-t="cs_setup">Setting the tool up on your computer</b><small data-t="cs_setup_d">A few seconds</small></div></li>
+              <li data-s="2"><i></i><div><b data-t="cs_signin">Signing in, in your browser</b><small data-t="cs_signin_d">Approve on the page that opened, then come back.</small><span class="reopen" data-t="cs_reopen">Didn’t open? Open it again</span></div></li>
+              <li data-s="3"><i></i><div><b data-t="cs_plan">Checking your plan</b><small><bdi>Max</bdi></small></div></li>
+            </ol>
+            <div class="cn-done"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 10.4 3.2 3.1L15 6.5"/></svg><span data-t="cs_ok">Connected</span></div>
+          </div>
+          <p data-t="g_c_reopen" data-html>The sign-in page didn’t open? Press <span class="ui">Open it again</span>.</p>
+          <div class="co safe"><svg class="ic"><use href="#i-safe"/></svg><div><b class="co-h" data-t="g_safe">Security</b><p data-t="g_c_safe">You sign in on the company’s own page, and your password never passes through Zubda.</p></div></div>
+
+          <h2 id="connect-after" data-t="g_c_after">After connecting</h2>
+          <p data-t="g_c_after_p" data-html>The email of the account that got connected shows with its plan, and a question: <span class="ui">Is it the right one?</span> Check it, especially if you have more than one account. Then you pick the model; the default is already selected.</p>
+
+          <h2 id="connect-switch" data-t="g_c_sw">Switch account or sign out</h2>
+          <p data-t="g_c_sw_p" data-html>The connected account’s email and plan always show in <span class="ui">Settings → Account</span>. Connected an account other than the one you pay with? Press <span class="ui">Switch account</span>. The sign-in page opens on the account that’s open in your browser, so if you want another, open <bdi>chatgpt.com</bdi> or <bdi>claude.ai</bdi> and switch there first, then come back and press <span class="ui">Continue</span>.</p>
+          <div class="co"><svg class="ic"><use href="#i-tip"/></svg><div><b class="co-h" data-t="g_tip">Good to know</b><p data-t="g_c_sw_t" data-html><span class="ui">Sign out</span> signs Zubda out only. Your account in the browser, and <bdi>Claude Code</bdi> or <bdi>Codex</bdi> if you have them, are untouched, and your library stays as it is.</p></div></div>
+
+          <h2 id="connect-none" data-t="g_c_none">Without an account</h2>
+          <p data-t="g_c_none_p">You can use Zubda with no account at all, in part: it downloads the video, writes down every word with its time, and catches every scene the screen shows. All of it on your computer. What takes understanding is done by the AI in your account, so it stays locked until you connect:</p>
+          <ul class="secs">
+            <li><svg class="ic"><use href="#i-essence"/></svg><b data-t="g_lk1">The essence and the key points</b><p data-t="g_lk1p">The AI writes them: it understands the words and the pictures, then picks what matters and puts it in order.</p></li>
+            <li><svg class="ic"><use href="#i-check"/></svg><b data-t="g_lk2">Is it worth your time?</b><p data-t="g_lk2p">Judging it takes understanding the whole video, not just hearing it.</p></li>
+            <li><svg class="ic"><use href="#i-device"/></svg><b data-t="g_lk3">Reading the screens</b><p data-t="g_lk3p">The code, numbers and links that appeared are read and explained by the AI.</p></li>
+            <li><svg class="ic"><use href="#i-ask"/></svg><b data-t="g_lk4">Ask the video and your library</b><p data-t="g_lk4p">An answer takes understanding your question and finding it in the words and scenes.</p></li>
+          </ul>
+          <p data-t="g_c_none_after" data-html>Once you connect an account, open the video and press <span class="ui">Finish the essence now</span>: it carries on from where it stopped, without downloading or hearing the video again.</p>
+          <a class="go" href="#model"><span data-t="g_model">Model and speed</span><svg class="ic"><use href="#i-chev"/></svg></a>
+        </div>
+      </section>
+
+      <!-- ============================================================ read -->
+      <section class="pg" id="read" data-grp="g_grp_use" data-ic="i-read">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_use">Using Zubda</span></p>
+          <h1 data-t="g_read">Get the essence</h1>
+          <p class="pg-lede" data-t="g_read_l">One link is enough; Zubda does the rest.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="read-paste" data-t="g_r_paste">Paste the link</h2>
+          <p data-t="g_r_paste_p" data-html>Paste the link in the field and press <span class="ui">Get the essence</span>, or press <kbd>Ctrl</kbd> <kbd>V</kbd> anywhere in the window and it starts right away.</p>
+          <p data-t="g_r_clip" data-html>Copied a video link somewhere else? As soon as you come back, Zubda asks <span class="ui">Read it?</span> and one click is enough.</p>
+
+          <h2 id="read-sources" data-t="g_r_src">What it takes</h2>
+          <ul class="plats">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="5" width="21" height="14" rx="4" fill="#FF0033"/><path d="M10 9v6l5.2-3Z" fill="#fff"/></svg>YouTube</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>X</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.8 3.2h-2.9v12.1a2.7 2.7 0 1 1-1.9-2.6V9.7a5.7 5.7 0 1 0 4.8 5.6V9.2a7.1 7.1 0 0 0 4.1 1.3V7.6a4.1 4.1 0 0 1-4.1-4.4Z"/></svg>TikTok</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".6" fill="currentColor"/></svg>Instagram</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M22 7.4c-.1 2-1.5 4.7-4.2 8.2-2.8 3.6-5.1 5.4-7.1 5.4-1.2 0-2.2-1.1-3-3.3L6.1 12c-.6-2.2-1.2-3.3-1.9-3.3-.1 0-.7.3-1.6 1L1.6 8.4 4.6 5.8c1.3-1.2 2.3-1.8 3-1.8 1.6-.2 2.6.9 3 3.3.4 2.6.7 4.2.9 4.8.5 2.1 1 3.2 1.5 3.2.4 0 1.1-.7 1.9-2 .9-1.3 1.3-2.4 1.4-3.1.1-1.2-.4-1.8-1.4-1.8-.5 0-1 .1-1.5.3 1-3.3 2.9-4.9 5.7-4.8 2.1.1 3.1 1.4 3 4Z"/></svg>Vimeo</li>
+            <li class="more" data-t="g_r_more" dir="auto">and more</li>
+          </ul>
+          <div class="tbl"><table>
+            <thead><tr><th data-t="g_r_th1">You add</th><th data-t="g_r_th2">Zubda</th></tr></thead>
+            <tbody>
+              <tr><td data-t="g_r_k1">A video link</td><td data-t="g_r_v1">Gets its essence.</td></tr>
+              <tr><td data-t="g_r_k2">A playlist link</td><td data-t="g_r_v2">Adds all its videos.</td></tr>
+              <tr><td data-t="g_r_k3">A channel link</td><td data-t="g_r_v3">Adds the latest ten videos.</td></tr>
+              <tr><td data-t="g_r_k4">A video or audio file</td><td data-t="g_r_v4">Drag it onto the window; it reads it like any video.</td></tr>
+            </tbody>
+          </table></div>
+          <p data-t="g_r_skip">Videos you already read are skipped, so nothing is done twice.</p>
+
+          <h2 id="read-stages" data-t="g_r_stages">The stages</h2>
+          <ol class="flow">
+            <li data-t="g_s1">Fetch</li><li data-t="g_s2">Listen and watch</li><li data-t="g_s3">Understand</li><li data-t="g_s4">Write the essence</li><li data-t="g_s5">Audit</li>
+          </ol>
+          <p data-t="g_r_bg">You see every stage as it works, and you can move around the app while it carries on in the background.</p>
+          <figure class="clipbox"><video data-demo="youtube" autoplay muted loop playsinline disablepictureinpicture preload="none"></video></figure>
+        </div>
+      </section>
+
+      <!-- ============================================================ tabs -->
+      <section class="pg" id="tabs" data-grp="g_grp_use" data-ic="i-tabs">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_use">Using Zubda</span></p>
+          <h1 data-t="g_tabs">Several videos</h1>
+          <p class="pg-lede" data-t="g_tabs_l">Each video in its own tab, like a browser.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="tabs-open" data-t="g_t_open">Open a tab</h2>
+          <p data-t="g_t_open_p" data-html>Across the top of the window is a tab strip. Press <span class="ui">+</span> for a new tab and paste a link from any site.</p>
+          <dl class="keyt">
+            <div><dt dir="ltr"><kbd>Ctrl</kbd><kbd>T</kbd></dt><dd data-t="g_k_t">New tab</dd></div>
+            <div><dt dir="ltr"><kbd>Ctrl</kbd><kbd>V</kbd></dt><dd data-t="g_k_v">Paste a link and start</dd></div>
+            <div><dt dir="ltr"><kbd>Ctrl</kbd><kbd>W</kbd></dt><dd data-t="g_k_w">Close the tab</dd></div>
+            <div><dt><kbd class="wide" data-t="g_k_mid">Middle click</kbd></dt><dd data-t="g_k_w2">Close the tab</dd></div>
+          </dl>
+          <p data-t="g_t_close">Closing a tab doesn’t stop the video; its essence waits in your library.</p>
+
+          <h2 id="tabs-state" data-t="g_t_state">Each tab’s state</h2>
+          <ul class="legend">
+            <li><svg class="tst" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="var(--line-2)" stroke-width="2"/><circle class="arc" cx="10" cy="10" r="7" fill="none" stroke="var(--butter)" stroke-width="2" stroke-linecap="round" pathLength="100" stroke-dasharray="62 100" transform="rotate(-90 10 10)"/></svg><b data-t="g_st_run">Working</b><span data-t="g_st_run_p">The ring fills as it goes.</span></li>
+            <li><svg class="tst" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="var(--ink-3)" stroke-width="2" stroke-dasharray="3 3.3"/></svg><b data-t="g_st_wait">Waiting its turn</b><span data-t="g_st_wait_p">A dashed ring; it starts as soon as a place frees up.</span></li>
+            <li><svg class="tst" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="var(--butter)"/><path d="m6.4 10.2 2.4 2.3 4.8-5" fill="none" stroke="var(--butter-ink)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><b data-t="g_st_done">Done</b><span data-t="g_st_done_p">A check, and the essence is ready.</span></li>
+          </ul>
+
+          <h2 id="tabs-load" data-t="g_t_load">How many at once</h2>
+          <p data-t="g_t_load_p" data-html>By default two run at once and the rest wait their turn. You can make it one or three in <span class="ui">Settings</span> → <span class="ui">Model</span>.</p>
+          <div class="co warn"><svg class="ic"><use href="#i-warn"/></svg><div><b class="co-h" data-t="g_warn">Heads-up</b><p data-t="g_t_load_w">Each extra video makes your computer work a little harder (processor, memory, graphics card) and uses your plan’s limit faster. The heavy steps on your computer take turns so it stays responsive.</p></div></div>
+        </div>
+      </section>
+
+      <!-- ============================================================ essence -->
+      <section class="pg" id="essence" data-grp="g_grp_use" data-ic="i-essence">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_use">Using Zubda</span></p>
+          <h1 data-t="g_essence">Read the essence</h1>
+          <p class="pg-lede" data-t="g_essence_l">One report that tells you whether it’s worth watching, what’s in it, and where.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="essence-reel" data-t="g_e_reel">The reel</h2>
+          <p data-t="g_e_reel_p">Above the report is a reel of all the video’s frames and sound, with the filler folded into pleats. Hover it to see the frame and the fact at any second; click anywhere to jump to that point.</p>
+
+          <h2 id="essence-parts" data-t="g_e_parts">What the report holds</h2>
+          <ol class="parts">
+            <li><b data-t="g_e1">The verdict</b><p data-t="g_e1p">Worth watching, partly worth it, or the essence is enough. With a usefulness score out of 10.</p></li>
+            <li><b data-t="g_e2">The essence</b><p data-t="g_e2p">The whole video in a few lines.</p></li>
+            <li><b data-t="g_e3">Key points</b><p data-t="g_e3p">Each point with its time and one idea per line, then the steps, the tools and the links.</p></li>
+            <li><b data-t="g_e4">Shown on screen, never said</b><p data-t="g_e4p">Code, settings and text with their frame and exact wording. Frames appear only when they add something the words don’t.</p></li>
+            <li><b data-t="g_e5">Watch these yourself</b><p data-t="g_e5p">The only moments where words don’t replace the picture.</p></li>
+            <li><b data-t="g_e6">Full transcript</b><p data-t="g_e6p">With its times and a search field: type a word and see where it was said.</p></li>
+          </ol>
+          <div class="co"><svg class="ic"><use href="#i-tip"/></svg><div><b class="co-h" data-t="g_tip">Good to know</b><p data-t="g_e_links">Every time you see is a link that opens the original video at that second. And every section has a copy button.</p></div></div>
+
+          <h2 id="essence-mode" data-t="g_e_mode">Brief or full</h2>
+          <p data-t="g_e_mode_p">Choose above the report, and Zubda remembers your choice:</p>
+          <div class="pair">
+            <div><b data-t="view_brief">Brief</b><p data-t="g_e_brief">The verdict and the essence in a few lines. For deciding fast.</p></div>
+            <div><b data-t="view_full">Full</b><p data-t="g_e_full">Everything: points, steps, frames and the full transcript.</p></div>
+          </div>
+          <figure class="clipbox"><video data-demo="x" autoplay muted loop playsinline disablepictureinpicture preload="none"></video></figure>
+        </div>
+      </section>
+
+      <!-- ============================================================ ask + save -->
+      <section class="pg" id="ask" data-grp="g_grp_use" data-ic="i-ask">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_use">Using Zubda</span></p>
+          <h1 data-t="g_ask">Ask and save</h1>
+          <p class="pg-lede" data-t="g_ask_l">Ask a video or your whole library, and save the essence as a file.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="ask-video" data-t="g_a_video">Ask the video</h2>
+          <p data-t="g_a_video_p" data-html>At the end of every report is <span class="ui">Ask the video</span>. Ask about anything unclear and it answers from the video itself, with the minute.</p>
+
+          <h2 id="ask-library" data-t="g_a_lib">Ask your library</h2>
+          <p data-t="g_a_lib_p" data-html>In the library is <span class="ui">Ask your whole library</span>. It gathers the answer from all your videos and says which video and which time each fact came from.</p>
+
+          <h2 id="save" data-t="g_a_save">Save it</h2>
+          <p data-t="g_a_save_p" data-html>In the report header press <span class="ui">Markdown</span> or <span class="ui">PDF</span>.</p>
+          <dl class="kv">
+            <div><dt data-t="g_sv_where_k">Where it goes</dt><dd data-t="g_sv_where">Your Downloads folder, under “Zubda”, with its frames.</dd></div>
+            <div><dt><bdi>Markdown</bdi></dt><dd data-t="g_sv_md" data-html>Moves straight into <bdi>Notion</bdi> and <bdi>Obsidian</bdi>.</dd></div>
+            <div><dt><bdi>PDF</bdi></dt><dd data-t="g_sv_pdf">A file ready to read and send.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ============================================================ model -->
+      <section class="pg" id="model" data-grp="g_grp_tune" data-ic="i-model">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_tune">Tuning</span></p>
+          <h1 data-t="g_model">Model and speed</h1>
+          <p class="pg-lede" data-t="g_model_l">The default suits most videos. Here’s how to change it if you like.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="model-pick" data-t="g_m_pick">Model</h2>
+          <p data-t="g_m_pick_p">Settings lists the models your plan offers, with one marked “Default”. On Claude the default is Opus 5.5; Fable 5.1 is there for the hardest videos, and Sonnet and Haiku are faster and lighter on your limit. Try it:</p>
+          <div class="settings" id="msettings">
+            <div class="st-top">
+              <div class="seg" data-prov role="radiogroup"><button type="button" role="radio" data-p="claude"><img src="../assets/claude.svg" alt="">Claude</button><button type="button" role="radio" data-p="chatgpt"><img src="../assets/openai.svg" alt="">ChatGPT</button></div>
+              <span class="chip"><img data-mlogo src="../assets/claude.svg" alt=""><span data-mchip>Opus 5.5</span></span>
+            </div>
+            <div class="mlist" data-mlist role="radiogroup"></div>
+            <div class="st-rows">
+              <div class="st-row"><span class="lab" data-t="set_thinking">Thinking</span>
+                <div class="seg" data-think role="radiogroup"><button type="button" role="radio" data-v="light" data-t="think_light">Light</button><button type="button" role="radio" data-v="balanced" data-t="think_balanced">Balanced</button><button type="button" role="radio" data-v="deep" data-t="think_deep">Deep</button></div></div>
+              <div class="st-row"><span class="lab" data-t="set_fast">Fast mode</span><button type="button" class="tog" data-fast role="switch" aria-checked="false" data-t-label="set_fast" aria-label="Fast mode"><i></i></button></div>
+            </div>
+            <p class="warn" data-fastwarn hidden></p>
+          </div>
+          <p data-t="g_m_top">The top of the window always shows which model is running, and at what thinking level.</p>
+
+          <h2 id="model-think" data-t="g_m_think">Thinking level</h2>
+          <ul class="levels">
+            <li><svg class="bars" viewBox="0 0 22 16" aria-hidden="true"><rect x="1" y="10" width="5" height="5" rx="1.2" class="f"/><rect x="8.5" y="6" width="5" height="9" rx="1.2"/><rect x="16" y="1" width="5" height="14" rx="1.2"/></svg><b data-t="think_light">Light</b><p data-t="g_lv1">Faster, and lighter on your limit.</p></li>
+            <li class="def"><span class="dtag" data-t="default_tag">Default</span><svg class="bars" viewBox="0 0 22 16" aria-hidden="true"><rect x="1" y="10" width="5" height="5" rx="1.2" class="f"/><rect x="8.5" y="6" width="5" height="9" rx="1.2" class="f"/><rect x="16" y="1" width="5" height="14" rx="1.2"/></svg><b data-t="think_balanced">Balanced</b><p data-t="g_lv2">Enough for most videos.</p></li>
+            <li><svg class="bars" viewBox="0 0 22 16" aria-hidden="true"><rect x="1" y="10" width="5" height="5" rx="1.2" class="f"/><rect x="8.5" y="6" width="5" height="9" rx="1.2" class="f"/><rect x="16" y="1" width="5" height="14" rx="1.2" class="f"/></svg><b data-t="think_deep">Deep</b><p data-t="g_lv3">Sharper understanding, more time, more of your limit.</p></li>
+          </ul>
+
+          <h2 id="model-fast" data-t="g_m_fast">Fast mode</h2>
+          <p data-t="g_m_fast_p">About twice as fast. How it works depends on your account:</p>
+          <div class="tbl"><table>
+            <tbody>
+              <tr><td><span class="prov"><img src="../assets/openai.svg" alt="">ChatGPT</span></td><td data-t="g_f_gpt">Works right away, and uses your limit faster.</td></tr>
+              <tr><td><span class="prov"><img src="../assets/claude.svg" alt="">Claude</span></td><td data-t="g_f_claude" data-html>Only works if <bdi>“Extra usage”</bdi> is on in your <bdi>claude.ai</bdi> account, which you pay <bdi>Anthropic</bdi> for on top of your plan. If it’s off, Zubda carries on at normal speed and tells you.</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+      </section>
+
+      <!-- ============================================================ settings -->
+      <section class="pg" id="settings" data-grp="g_grp_tune" data-ic="i-settings">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_tune">Tuning</span></p>
+          <h1 data-t="g_settings">Settings</h1>
+          <p class="pg-lede" data-t="g_settings_l">Five sections, and everything in its place.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="settings-all" data-t="g_set_all">The sections</h2>
+          <ul class="secs">
+            <li><svg class="ic"><use href="#i-user"/></svg><b data-t="g_set1">Account</b><p data-t="g_set1p">Connect Claude or ChatGPT and choose the one in use. The meter at the top shows how much of your plan’s limit is left and when it renews.</p></li>
+            <li><svg class="ic"><use href="#i-lang"/></svg><b data-t="g_set2">Language</b><p data-t="g_set2p">The app’s language, and the essence’s own language: read an English video’s essence in Arabic.</p></li>
+            <li><svg class="ic"><use href="#i-model"/></svg><b data-t="g_set3">Model</b><p data-t="g_set3p">The model, the thinking level, fast mode, and how many videos run at once.</p></li>
+            <li><svg class="ic"><use href="#i-wave"/></svg><b data-t="g_set4">Reading</b><p data-t="g_set4p">Using the video’s own captions, and keeping the video file.</p></li>
+            <li><svg class="ic"><use href="#i-gear"/></svg><b data-t="g_set5">Engines</b><p data-t="g_set5p">The YouTube engine, the listening engine and the graphics-card speed-up. They download by themselves, and any one can be retried.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================================================ updates -->
+      <section class="pg" id="updates" data-grp="g_grp_tune" data-ic="i-updates">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_tune">Tuning</span></p>
+          <h1 data-t="g_updates">Updates</h1>
+          <p class="pg-lede" data-t="g_updates_l">Updates reach you inside the app, and install in one click.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="updates-how" data-t="g_u_how">How it reaches you</h2>
+          <ol class="steps">
+            <li><h3 data-t="g_u1">The «What’s new» box opens</h3><p data-t="g_u1p">In the middle of the app, the first time you open it after a new version is out: what changed, and an «Update now» button.</p></li>
+            <li><h3 data-t="g_u2" data-html>You press <span class="ui">Update now</span></h3><p data-t="g_u2p">In the box, or on the button that stays at the top of the app if you chose «Later».</p></li>
+            <li><h3 data-t="g_u3">It installs and reopens</h3><p data-t="g_u3p">In seconds. Your library and settings are untouched.</p></li>
+          </ol>
+
+          <h2 id="updates-signed" data-t="g_u_sign">Signed and tested</h2>
+          <div class="co safe"><svg class="ic"><use href="#i-safe"/></svg><div><b class="co-h" data-t="g_safe">Security</b><p data-t="g_u_sign_p">Every update is digitally signed with Zubda’s key, and the app checks the signature and the file’s fingerprint before installing. Anything that doesn’t match is refused.</p></div></div>
+          <p data-t="g_u_tested">And an update only reaches you once it is published complete and tested.</p>
+          <a class="go" href="new.html"><span data-t="g_u_new">What’s new in each version</span><svg class="ic"><use href="#i-chev"/></svg></a>
+        </div>
+      </section>
+
+      <!-- ============================================================ privacy -->
+      <section class="pg" id="privacy" data-grp="g_grp_help" data-ic="i-privacy">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_help">Help</span></p>
+          <h1 data-t="g_privacy">Privacy</h1>
+          <p class="pg-lede" data-t="g_privacy_l">No account with us, no tracking, and your videos and library never reach us.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <h2 id="privacy-where" data-t="g_p_where">Where everything happens</h2>
+          <div class="pair where">
+            <div><span class="wh"><svg class="ic"><use href="#i-device"/></svg><b data-t="g_p_here">On your computer</b></span>
+              <ul><li data-t="g_p_h1">Downloading the video</li><li data-t="g_p_h2">Listening and watching</li><li data-t="g_p_h3" data-html>Your library, in <bdi class="path" dir="ltr">%LOCALAPPDATA%\Zubda</bdi></li></ul></div>
+            <div><span class="wh"><svg class="ic"><use href="#i-out"/></svg><b data-t="g_p_there">Goes to Claude or ChatGPT</b></span>
+              <ul><li data-t="g_p_t1">The video’s text and frames, so it can understand them</li><li data-t="g_p_t2">Through their official tool and your own account</li></ul></div>
+          </div>
+
+          <h2 id="privacy-count" data-t="g_p_count">The one thing that reaches us</h2>
+          <p data-t="g_p_count_p">The first time Zubda opens on a computer, it sends one signal with the version number and the app’s language, so we know how many computers installed it. It carries no name, nothing that identifies your computer and nothing from your library, and that computer never sends it again, not on updates and not on a reinstall.</p>
+
+          <h2 id="privacy-remove" data-t="g_p_rm">Uninstalling Zubda</h2>
+          <p data-t="g_p_rm_p" data-html>Windows Settings → Apps → <bdi>Zubda</bdi> → Uninstall. Your library stays in its folder in case you come back; delete the folder if you don’t want it.</p>
+        </div>
+      </section>
+
+      <!-- ============================================================ faq -->
+      <section class="pg" id="faq" data-grp="g_grp_help" data-ic="i-faq">
+        <header class="pg-head">
+          <p class="crumb"><span data-t="nav_docs">Guide</span><svg class="ic"><use href="#i-chev"/></svg><span data-t="g_grp_help">Help</span></p>
+          <h1 data-t="g_faq">FAQ</h1>
+          <p class="pg-lede" data-t="g_faq_l">The questions we get most, answered briefly.</p>
+          <div class="pg-meta"><span class="mins" data-mins></span><button type="button" class="cp" data-copy><svg class="ic"><use href="#i-copy"/></svg><span data-t="g_copy">Copy page</span></button></div>
+        </header>
+        <div class="pg-body">
+          <div class="faq">
+            <details id="faq-free"><summary data-t="q9">I don’t pay for anything. Does it work?</summary><p data-t="q9a" data-html>Yes. Connect a free <bdi>ChatGPT</bdi> account (or make one at <bdi>chatgpt.com</bdi> with your email) and Zubda works in full on the <bdi>Luna</bdi> model. A subscription gives stronger models and a bigger limit, but it isn’t required.</p></details>
+            <details id="faq-switch"><summary data-t="q10">I connected the wrong account. How do I switch?</summary><p data-t="q10a">In Settings → Account, press “Switch account”. The sign-in page opens on the account that’s open in your browser, so switch to the right one on the site first. The account’s email and plan always show, so you know which one is connected.</p></details>
+            <details id="faq-none"><summary data-t="q11">Can I use it with no account at all?</summary><p data-t="q11a">Yes, in part: it downloads the video, writes down every word and catches the scenes on your computer. The essence, the key points and asking the video need the AI, so they stay locked until you connect an account. A free ChatGPT account is enough.</p></details>
+            <details id="faq-limit"><summary data-t="q1">How much of my plan does it use?</summary><p data-t="q1a">It depends on the video’s length. A fifteen-minute video takes a small part of Claude Max’s five-hour limit. The meter at the top always shows what’s left.</p></details>
+            <details id="faq-gpu"><summary data-t="q2">I have no NVIDIA card. Does it work?</summary><p data-t="q2a">Yes. If the video has captions (most of YouTube) it reads them directly. If not, it listens on the processor: slower, but it works.</p></details>
+            <details id="faq-time"><summary data-t="q3">How long does it take?</summary><p data-t="q3a">A fifteen-minute video takes about three minutes with Claude, depending on your computer, the model and the thinking level. You can open several tabs and keep working.</p></details>
+            <details id="faq-cap"><summary data-t="q8">I hit my plan’s limit mid-way?</summary><p data-t="q8a">Nothing is lost. Zubda pauses, shows when the limit comes back, and carries on by itself then; just keep it open. And if you shut your computer down, unfinished videos carry on as soon as you open Zubda.</p></details>
+            <details id="faq-mac"><summary data-t="q4">Does it work on Mac or phones?</summary><p data-t="q4a">Windows 10 and 11 only, for now.</p></details>
+            <details id="faq-private"><summary data-t="q5">Private or paid videos?</summary><p data-t="q5a">Zubda reads public videos. For a private one, download it the legitimate way and drag the file onto the window.</p></details>
+            <details id="faq-remove"><summary data-t="q6">How do I uninstall it?</summary><p data-t="q6a">Windows Settings → Apps → Zubda → Uninstall. Your library stays in its folder in case you come back; delete the folder if you don’t want it.</p></details>
+            <details id="faq-bug"><summary data-t="q7">I found a problem</summary><p data-t="q7a" data-html>Zubda tells you on screen what happened and what to do next. If that doesn’t solve it, <a href="https://github.com/ABUGIZA/zubda/issues">report it here</a>.</p></details>
+          </div>
+        </div>
+      </section>
+
+      <nav class="pager" data-pager aria-label="الصفحات"></nav>
+      <p class="pg-end"><span data-t="g_updated">Last updated</span> <bdi data-t="g_date">19 October 2026</bdi><span class="dot"></span><a href="https://github.com/ABUGIZA/zubda/issues" data-t="g_fix">Spotted a mistake? Report it</a></p>
+    </main>
+
+    <aside class="rail" data-rail>
+      <span class="rail-h" data-t="g_onpage">On this page</span>
+      <nav class="onpage" data-onpage></nav>
+      <div class="rail-get">
+        <span class="rg-top"><b data-t="g_get">Get Zubda</b><bdi class="ver mono" dir="ltr">v1.1.0</bdi></span>
+        <span class="rg-d" data-t="g_get_d">Free · Windows 10 and 11</span>
+        <a class="btn primary small" href="https://github.com/ABUGIZA/zubda/releases/latest/download/Zubda-Setup.exe" data-t="nav_get">Download</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- search: one field, results under it as you type -->
+  <div class="pal" data-pal hidden>
+    <div class="pal-box" role="dialog" aria-modal="true" aria-label="Search" data-t-label="g_find">
+      <label class="pal-in"><svg class="ic"><use href="#i-search"/></svg><input type="search" data-palq autocomplete="off" spellcheck="false"><kbd>Esc</kbd></label>
+      <div class="pal-list" data-pall role="listbox"></div>
+      <div class="pal-foot"><span><kbd>↑</kbd><kbd>↓</kbd><span data-t="g_k_move">Move</span></span><span><kbd>Enter</kbd><span data-t="g_k_open">Open</span></span><span><kbd>Esc</kbd><span data-t="g_k_close">Close</span></span></div>
+    </div>
+  </div>
+
+  <footer class="foot">
+    <div class="wrap-w">
+      <a class="mark" href="./" aria-label="Zubda"><span>زبدة</span></a>
+      <nav>
+        <a href="docs.html" data-t="nav_docs">Guide</a>
+        <a href="new.html" data-t="nav_new">What’s new</a>
+        <a href="https://github.com/ABUGIZA/zubda/releases" data-t="nav_releases">Releases</a>
+        <a href="https://github.com/ABUGIZA/zubda/issues" data-t="nav_issue">Report a problem</a>
+      </nav>
+      <span class="end" data-t="foot">Free. Your plan, your computer.</span>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/site.js?v=5c13f02"></script>
+  <script type="module" src="../assets/docs.js?v=5c13f02"></script>
+</body>
+</html>

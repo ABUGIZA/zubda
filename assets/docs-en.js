@@ -133,8 +133,8 @@ export const DOCS_EN = {
   // updates
   g_updates: 'Updates', g_updates_l: 'Updates reach you inside the app, and install in one click.',
   g_u_how: 'How it reaches you',
-  g_u1: 'An <span class="ui">Update ready</span> button appears', g_u1p: 'At the top of the window, as soon as a new version is out.',
-  g_u2: 'You press it', g_u2p: 'It shows you what’s new before installing.',
+  g_u1: 'The «What’s new» box opens', g_u1p: 'In the middle of the app, the first time you open it after a new version is out: what changed, and an «Update now» button.',
+  g_u2: 'You press <span class="ui">Update now</span>', g_u2p: 'In the box, or on the button that stays at the top of the app if you chose «Later».',
   g_u3: 'It installs and reopens', g_u3p: 'In seconds. Your library and settings are untouched.',
   g_u_sign: 'Signed and tested',
   g_u_sign_p: 'Every update is digitally signed with Zubda’s key, and the app checks the signature and the file’s fingerprint before installing. Anything that doesn’t match is refused.',
@@ -142,7 +142,8 @@ export const DOCS_EN = {
   g_u_new: 'What’s new in each version',
 
   // privacy
-  g_privacy: 'Privacy', g_privacy_l: 'Zubda has no server, no account with us, and no tracking.',
+  g_privacy: 'Privacy', g_privacy_l: 'No account with us, no tracking, and your videos and library never reach us.',
+  g_p_count: 'The one thing that reaches us', g_p_count_p: 'The first time Zubda opens on a computer, it sends one signal with the version number and the app’s language, so we know how many computers installed it. It carries no name, nothing that identifies your computer and nothing from your library, and that computer never sends it again, not on updates and not on a reinstall.',
   g_p_where: 'Where everything happens',
   g_p_here: 'On your computer', g_p_h1: 'Downloading the video', g_p_h2: 'Listening and watching',
   g_p_h3: 'Your library, in <bdi class="path" dir="ltr">%LOCALAPPDATA%\\Zubda</bdi>',

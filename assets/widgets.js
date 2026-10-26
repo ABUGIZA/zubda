@@ -1,7 +1,7 @@
 // Behaviours that every design shows in its own form. Each one finds its parts by data- hooks
 // inside a root element, so the markup and the look stay the design's own.
-import { T, L, lang, onLang, still, whileSeen, fmt, esc } from './core.js?v=8f95cdc';
-import { S } from './sample.js?v=8f95cdc';
+import { T, L, lang, onLang, still, whileSeen, fmt, esc } from './core.js?v=5c13f02';
+import { S } from './sample.js?v=5c13f02';
 
 /* ---------------------------------------------------------------- the models a plan offers */
 export const MODELS = {
@@ -27,7 +27,7 @@ export function modelPicker(root, { row = rowDefault, onChange } = {}) {
   const list = $('[data-mlist]'), chip = $('[data-mchip]'), logo = $('[data-mlogo]'), warn = $('[data-fastwarn]'), fast = $('[data-fast]');
   const paint = () => {
     list.innerHTML = MODELS[st.p].map((m, i) => row(m, i, i === st.m)).join('');
-    if (logo) logo.src = `assets/${st.p === 'claude' ? 'claude' : 'openai'}.svg`;
+    if (logo) logo.src = new URL(`${st.p === 'claude' ? 'claude' : 'openai'}.svg`, import.meta.url).href;
     if (chip) chip.textContent = [MODELS[st.p][st.m][0], T(`think_${st.think}`), st.fast ? T('fast_tag') : ''].filter(Boolean).join(' · ');
     $$('[data-prov] [data-p]').forEach((b) => { b.classList.toggle('on', b.dataset.p === st.p); b.setAttribute('aria-checked', String(b.dataset.p === st.p)); });
     $$('[data-think] [data-v]').forEach((b) => { b.classList.toggle('on', b.dataset.v === st.think); b.setAttribute('aria-checked', String(b.dataset.v === st.think)); });

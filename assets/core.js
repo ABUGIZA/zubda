@@ -1,7 +1,7 @@
 // What every page of every design shares: the two languages, reveals, the real clips,
 // the latest release, and the guide's contents list. A design adds its own words with boot().
-import { EN as BASE } from './en.js?v=8f95cdc';
-import { DOCS_EN } from './docs-en.js?v=8f95cdc';
+import { EN as BASE } from './en.js?v=5c13f02';
+import { DOCS_EN } from './docs-en.js?v=5c13f02';
 
 export const EN = { ...BASE, ...DOCS_EN };
 // words only scripts use (the page has no element holding their Arabic)
@@ -23,7 +23,15 @@ export const fmt = (s) => { s = Math.max(0, Math.round(s)); return `${Math.floor
 export const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
 const TITLES = { home: 'title', docs: 'doc_title', new: 'new_title' };
-export function setLang(l) {
+// The published site gives each language its own address (Arabic at the root, English under en/), so
+// search engines index both: the build marks the page's language and links its twin. The source, opened
+// as it is, has neither and swaps the words in place.
+const PAGE_LANG = document.documentElement.dataset.pageLang || '';
+const twin = (l) => document.querySelector(`link[rel="alternate"][hreflang="${l}"]`)?.href;
+const BOT = /bot|crawl|spider|slurp|lighthouse|headless|preview/i;
+// files next to this script, wherever the page sits
+export const asset = (p) => new URL(p, import.meta.url).href;
+export function setLang(l, { remember = true } = {}) {
   lang = l === 'en' ? 'en' : 'ar';
   const root = document.documentElement;
   root.lang = lang;
@@ -40,10 +48,13 @@ export function setLang(l) {
     if (!(k in AR)) AR[k] = el.getAttribute('aria-label') || '';
     el.setAttribute('aria-label', lang === 'en' ? (EN[k] ?? AR[k]) : AR[k]);
   }
-  if (!AR.__title) AR.__title = document.title;
-  document.title = lang === 'en' ? EN[TITLES[document.body.dataset.page] || 'title'] : AR.__title;
+  // a built page keeps its own title (written for search engines); the source swaps it with the words
+  if (!PAGE_LANG) {
+    if (!AR.__title) AR.__title = document.title;
+    document.title = lang === 'en' ? EN[TITLES[document.body.dataset.page] || 'title'] : AR.__title;
+  }
   for (const b of document.querySelectorAll('[data-lang]')) b.textContent = lang === 'en' ? 'العربية' : 'English';
-  try { localStorage.setItem('zubda-lang', lang); } catch {}
+  if (remember) try { localStorage.setItem('zubda-lang', lang); } catch {}
   document.dispatchEvent(new CustomEvent('lang', { detail: lang }));
 }
 
@@ -63,9 +74,17 @@ export function boot({ en = {}, ar = {} } = {}) {
   Object.assign(AR, ar);
   let first = new URLSearchParams(location.search).get('lang');
   try { first = first || localStorage.getItem('zubda-lang'); } catch {}
-  if (!first) first = (navigator.language || '').startsWith('ar') ? 'ar' : 'en';
-  setLang(first);
-  for (const b of document.querySelectorAll('[data-lang]')) b.addEventListener('click', () => setLang(lang === 'en' ? 'ar' : 'en'));
+  if (!first) first = BOT.test(navigator.userAgent) && PAGE_LANG ? PAGE_LANG : (navigator.language || '').startsWith('ar') ? 'ar' : 'en';
+  if (PAGE_LANG) {
+    // a first visit in the other language (or a link asking for it) goes to the twin page
+    const to = first !== PAGE_LANG && twin(first === 'en' ? 'en' : 'ar');
+    if (to) { location.replace(to + location.hash); return; }
+    setLang(PAGE_LANG, { remember: false });  // reading a page isn't choosing its language; the button is
+    for (const b of document.querySelectorAll('[data-lang]')) b.addEventListener('click', () => { try { localStorage.setItem('zubda-lang', PAGE_LANG === 'en' ? 'ar' : 'en'); } catch {} });
+  } else {
+    setLang(first);
+    for (const b of document.querySelectorAll('[data-lang]')) b.addEventListener('click', () => setLang(lang === 'en' ? 'ar' : 'en'));
+  }
 
   // reveal on arrival
   const io = new IntersectionObserver((es) => {
@@ -86,7 +105,7 @@ function clips() {
   const clip = document.getElementById('clip');
   if (clip) {
     let which = 'youtube';
-    const load = () => { clip.src = `assets/demo/${which}-${lang}.mp4?v=8f95cdc`; clip.play().catch(() => {}); };
+    const load = () => { clip.src = asset(`demo/${which}-${lang}.mp4?v=5c13f02`); clip.play().catch(() => {}); };
     const tabs = document.querySelectorAll('[data-clip]');
     tabs.forEach((b) => b.addEventListener('click', () => {
       which = b.dataset.clip;
@@ -99,7 +118,7 @@ function clips() {
   }
   const demos = [...document.querySelectorAll('video[data-demo]')];
   if (demos.length) {
-    const load = (v) => { v.src = `assets/demo/${v.dataset.demo}-${lang}.mp4?v=8f95cdc`; v.play().catch(() => {}); };
+    const load = (v) => { v.src = asset(`demo/${v.dataset.demo}-${lang}.mp4?v=5c13f02`); v.play().catch(() => {}); };
     const vio = new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting && !e.target.src) load(e.target); }, { rootMargin: '300px' });
     demos.forEach((v) => { vio.observe(v); v.addEventListener('contextmenu', (e) => e.preventDefault()); });
     onLang(() => demos.forEach((v) => { if (v.src) load(v); }));

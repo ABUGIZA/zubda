@@ -1,15 +1,7 @@
-import { boot, T, lang, onLang, still, whileSeen, fmt, esc } from './core.js?v=8f95cdc';
-import { S, modelPicker, specCard, playJobs, playConnect, smartScreen, GLYPH } from './widgets.js?v=8f95cdc';
+import { boot, T, lang, onLang, still, whileSeen, fmt, esc } from './core.js?v=5c13f02';
+import { S, modelPicker, specCard, playJobs, playConnect, smartScreen, GLYPH } from './widgets.js?v=5c13f02';
 
 boot({
-  en: {
-    rd_label: 'A real video, read', rd_words: 'words', rd_caught: 'Caught', rd_score: 'Usefulness: 7 of 10',
-    rd_k1: 'Marked: made it into the essence', rd_k2: 'Struck: filler, folded away', rd_k3: '3,685 words of video → three lines',
-    fold_lab: 'Folded', sec_s: 's',
-    demo_h2: 'It does <em class="hl">the rest.</em>', tabs_h2: 'Each in <em class="hl">its own tab.</em>',
-    sp_h2: 'In about <em class="hl">half the time.</em>', es_h2: '<em class="hl">No filler,</em> no going around in circles.',
-    mo_h2: 'Or leave it on <em class="hl">the default.</em>', plan_h2: 'Stays on <em class="hl">your computer.</em>',
-  },
   ar: { fold_lab: 'انطوى', sec_s: 'ث' },
 });
 

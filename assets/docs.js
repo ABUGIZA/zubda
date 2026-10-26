@@ -1,6 +1,6 @@
 // The guide: one page at a time, a sidebar of groups, quick search, copy page, an on-this-page rail and a pager.
 // Without this script every page simply shows one under the other.
-import { T, lang, onLang, esc } from './core.js?v=8f95cdc';
+import { T, lang, onLang, esc } from './core.js?v=5c13f02';
 
 const AR_WORDS = {
   g_find_ph: 'اكتب كلمة: تثبيت، حد الاشتراك، PDF…', g_none: 'ما لقينا شي بهذي الكلمة. جرّب كلمة ثانية.', g_pages: 'الصفحات',
@@ -55,10 +55,12 @@ function show(hash, { scroll = true } = {}) {
 }
 
 // the page's words that change with the language: title, reading time, pager, phone bar
+// the published page's own title (written for search) stays while the guide opens on its first page
+const SEARCH_TITLE = document.documentElement.dataset.pageLang ? document.title : '';
 function paintFrame() {
   if (!cur) return;
   const title = textOf(cur.querySelector('h1'));
-  document.title = `${title} — ${lang === 'en' ? 'Zubda guide' : 'شرح زبدة'}`;
+  document.title = SEARCH_TITLE && cur === pages[0] && !location.hash ? SEARCH_TITLE : `${title} — ${lang === 'en' ? 'Zubda guide' : 'شرح زبدة'}`;
   pages.forEach((p) => { const m = p.querySelector('[data-mins]'); if (m) m.textContent = minutes(p); });
   const i = pages.indexOf(cur);
   const card = (p, dir) => p ? `<a class="pg-${dir}" href="#${p.id}"><span class="pl">${W(dir === 'prev' ? 'g_prev' : 'g_next')}</span>
