@@ -1,7 +1,7 @@
 // What every page of every design shares: the two languages, reveals, the real clips,
 // the latest release, and the guide's contents list. A design adds its own words with boot().
-import { EN as BASE } from './en.js?v=61934cf';
-import { DOCS_EN } from './docs-en.js?v=61934cf';
+import { EN as BASE } from './en.js?v=72e5a7d';
+import { DOCS_EN } from './docs-en.js?v=72e5a7d';
 
 export const EN = { ...BASE, ...DOCS_EN };
 // words only scripts use (the page has no element holding their Arabic)
@@ -28,7 +28,14 @@ const TITLES = { home: 'title', docs: 'doc_title', new: 'new_title' };
 // as it is, has neither and swaps the words in place.
 const PAGE_LANG = document.documentElement.dataset.pageLang || '';
 const twin = (l) => document.querySelector(`link[rel="alternate"][hreflang="${l}"]`)?.href;
-const BOT = /bot|crawl|spider|slurp|lighthouse|headless|preview/i;
+// crawlers and AI fetchers read the page they asked for (Google-InspectionTool and Claude-User say no
+// "bot"); the Claude and ChatGPT apps' own browsers name themselves too, and are people
+const BOT = /bot|crawl|spider|slurp|google-|googleother|claude-user|chatgpt-user|perplexity-user|facebookexternalhit|embedly|lighthouse|headless|preview/i;
+// so does a visitor a search engine or an AI answer sent here: Google asks sites not to redirect by
+// language, and the switch is one click away
+const FROM_SEARCH = (() => {
+  try { return /(^|\.)(google|bing|duckduckgo|yahoo|yandex|baidu|ecosia|brave|kagi|chatgpt|openai|claude|perplexity)\.[a-z.]+$/i.test(new URL(document.referrer).hostname); } catch { return false; }
+})();
 // files next to this script, wherever the page sits
 export const asset = (p) => new URL(p, import.meta.url).href;
 export function setLang(l, { remember = true } = {}) {
@@ -74,7 +81,7 @@ export function boot({ en = {}, ar = {} } = {}) {
   Object.assign(AR, ar);
   let first = new URLSearchParams(location.search).get('lang');
   try { first = first || localStorage.getItem('zubda-lang'); } catch {}
-  if (!first) first = BOT.test(navigator.userAgent) && PAGE_LANG ? PAGE_LANG : (navigator.language || '').startsWith('ar') ? 'ar' : 'en';
+  if (!first) first = PAGE_LANG && (BOT.test(navigator.userAgent) || FROM_SEARCH) ? PAGE_LANG : (navigator.language || '').startsWith('ar') ? 'ar' : 'en';
   if (PAGE_LANG) {
     // a first visit in the other language (or a link asking for it) goes to the twin page
     const to = first !== PAGE_LANG && twin(first === 'en' ? 'en' : 'ar');
@@ -105,7 +112,7 @@ function clips() {
   const clip = document.getElementById('clip');
   if (clip) {
     let which = 'youtube';
-    const load = () => { clip.src = asset(`demo/${which}-${lang}.mp4?v=61934cf`); clip.play().catch(() => {}); };
+    const load = () => { clip.src = asset(`demo/${which}-${lang}.mp4?v=72e5a7d`); clip.play().catch(() => {}); };
     const tabs = document.querySelectorAll('[data-clip]');
     tabs.forEach((b) => b.addEventListener('click', () => {
       which = b.dataset.clip;
@@ -118,7 +125,7 @@ function clips() {
   }
   const demos = [...document.querySelectorAll('video[data-demo]')];
   if (demos.length) {
-    const load = (v) => { v.src = asset(`demo/${v.dataset.demo}-${lang}.mp4?v=61934cf`); v.play().catch(() => {}); };
+    const load = (v) => { v.src = asset(`demo/${v.dataset.demo}-${lang}.mp4?v=72e5a7d`); v.play().catch(() => {}); };
     const vio = new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting && !e.target.src) load(e.target); }, { rootMargin: '300px' });
     demos.forEach((v) => { vio.observe(v); v.addEventListener('contextmenu', (e) => e.preventDefault()); });
     onLang(() => demos.forEach((v) => { if (v.src) load(v); }));

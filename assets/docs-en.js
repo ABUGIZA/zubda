@@ -10,7 +10,7 @@ export const DOCS_EN = {
   g_k_move: 'Move', g_k_open: 'Open', g_k_close: 'Close',
   g_onpage: 'On this page', g_copy: 'Copy page', g_copied: 'Copied',
   g_prev: 'Previous', g_next: 'Next',
-  g_updated: 'Last updated', g_date: '19 October 2026', g_fix: 'Spotted a mistake? Report it',
+  g_updated: 'Last updated', g_date: '26 October 2026', g_fix: 'Spotted a mistake? Report it',
   g_get: 'Get Zubda', g_get_d: 'Free · Windows 10 and 11',
   g_note: 'Note', g_warn: 'Heads-up', g_tip: 'Good to know', g_safe: 'Security',
 
@@ -104,6 +104,26 @@ export const DOCS_EN = {
   g_e_brief: 'The verdict and the essence in a few lines. For deciding fast.',
   g_e_full: 'Everything: points, steps, frames and the full transcript.',
 
+  // explain it
+  g_explain: 'Explain it', g_explain_l: 'A short explanation of the video as if you’d watched it, technical or not, with each part drawn the way it reads best.',
+  g_x_what: 'What it is',
+  g_x_what_p: 'Above the report are two buttons: <span class="ui">Explain it</span> and <span class="ui">Every detail</span>. «Explain it» opens first, with the video explained as if you’d watched it. Every point carries its time, and a click opens the video at that moment. «Every detail» holds the full report described in <a href="#essence">Read the essence</a>.',
+  g_x_frames: 'Beside the parts that need a picture is a frame from the video itself, as proof of what’s said. Press <span class="ui">Enlarge</span> to see it big.',
+  g_x_drawn: 'Each part drawn the way it reads best',
+  g_x_drawn_p: 'Zubda works out what kind of video it is and how its ideas connect, then draws each part in the shape that fits it. Among the shapes:',
+  g_x1: 'The steps', g_x1p: 'A list to tick, when there’s something to do.',
+  g_x2: 'Who is tied to whom', g_x2p: 'The sides and how they connect, when there are sides.',
+  g_x3: 'Cause and effect', g_x3p: 'What led to what.',
+  g_x4: 'The claim and its case', g_x4p: 'The opinion and the evidence the video gives for it, when it argues something.',
+  g_x5: 'The code', g_x5p: 'Line by line when code is on screen, with a copy button.',
+  g_x6: 'Comparisons, figures and events', g_x6p: 'Tables, comparisons and charts for the numbers, and a timeline of what happened.',
+  g_x_true_h: 'Nothing made up', g_x_true: 'Code, figures and times in the explanation must come from the video itself; anything without a source in it is left out.',
+  g_x_when: 'When it is written',
+  g_x_when_p: 'Once the report is done, Zubda writes the explanation while you read. It usually takes 1 to 3 minutes, and the full report is ready under <span class="ui">Every detail</span> meanwhile.',
+  g_x_set_k: 'The setting', g_x_set: '<span class="ui">Explain each video by itself</span> in <span class="ui">Settings</span> → <span class="ui">Analysis</span>. On from the start.',
+  g_x_old_k: 'An older video, or the setting off', g_x_old: 'Press <span class="ui">Explain the video</span> and it writes it for you.',
+  g_x_ask_k: 'A question?', g_x_ask: 'Under the explanation is <span class="ui">Ask anything about the video</span>.',
+
   // ask + save
   g_ask: 'Ask and save', g_ask_l: 'Ask a video or your whole library, and save the essence as a file.',
   g_a_video: 'Ask the video', g_a_video_p: 'At the end of every report is <span class="ui">Ask the video</span>. Ask about anything unclear and it answers from the video itself, with the minute.',
@@ -152,6 +172,10 @@ export const DOCS_EN = {
 
   // faq
   g_faq: 'FAQ', g_faq_l: 'The questions we get most, answered briefly.',
+  q12: 'Does it only read the captions?', q12a: 'No. It takes the video’s words (from its own captions, or by listening itself) and watches its frames, so it catches what was on screen but never said: code, settings, numbers and text.',
+  q13: 'What is «Explain it»?', q13a: 'A short explanation of the video as if you’d watched it, written by Zubda after the report. Each part is drawn the way it reads best, and every point carries its time. <a href="#explain">The full guide is here</a>.',
+  q14: 'Can I jump to a moment in the video?', q14a: 'Yes. Every time in the report and the explanation is a link that opens the original video at that second, and the reel above the report takes you to any point you click. The full transcript has a search field that shows where any word was said.',
+  q15: 'Which sites does it take?', q15a: 'YouTube, <bdi>X</bdi>, TikTok, Instagram, Vimeo and more, plus playlist and channel links, and video or audio files on your computer.',
   q10: 'I connected the wrong account. How do I switch?', q10a: 'In Settings → Account, press “Switch account”. The sign-in page opens on the account that’s open in your browser, so switch to the right one on the site first. The account’s email and plan always show, so you know which one is connected.',
   q11: 'Can I use it with no account at all?', q11a: 'Yes, in part: it downloads the video, writes down every word and catches the scenes on your computer. The essence, the key points and asking the video need the AI, so they stay locked until you connect an account. A free ChatGPT account is enough.',
   q9: 'I don’t pay for anything. Does it work?', q9a: 'Yes. Connect a free <bdi>ChatGPT</bdi> account (or make one at <bdi>chatgpt.com</bdi> with your email) and Zubda works in full on the <bdi>Luna</bdi> model. A subscription gives stronger models and a bigger limit, but it isn’t required.',
