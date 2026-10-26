@@ -1,5 +1,5 @@
-import { boot, T, lang, onLang, still, whileSeen, fmt, esc } from './core.js?v=5c13f02';
-import { S, modelPicker, specCard, playJobs, playConnect, smartScreen, GLYPH } from './widgets.js?v=5c13f02';
+import { boot, T, lang, onLang, still, whileSeen, fmt, esc } from './core.js?v=61934cf';
+import { S, modelPicker, specCard, playJobs, playConnect, smartScreen, GLYPH } from './widgets.js?v=61934cf';
 
 boot({
   ar: { fold_lab: 'انطوى', sec_s: 'ث' },

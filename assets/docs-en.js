@@ -143,7 +143,6 @@ export const DOCS_EN = {
 
   // privacy
   g_privacy: 'Privacy', g_privacy_l: 'No account with us, no tracking, and your videos and library never reach us.',
-  g_p_count: 'The one thing that reaches us', g_p_count_p: 'The first time Zubda opens on a computer, it sends one signal with the version number and the app’s language, so we know how many computers installed it. It carries no name, nothing that identifies your computer and nothing from your library, and that computer never sends it again, not on updates and not on a reinstall.',
   g_p_where: 'Where everything happens',
   g_p_here: 'On your computer', g_p_h1: 'Downloading the video', g_p_h2: 'Listening and watching',
   g_p_h3: 'Your library, in <bdi class="path" dir="ltr">%LOCALAPPDATA%\\Zubda</bdi>',
