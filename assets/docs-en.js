@@ -143,12 +143,15 @@ export const DOCS_EN = {
   g_f_claude: 'Only works if <bdi>“Extra usage”</bdi> is on in your <bdi>claude.ai</bdi> account, which you pay <bdi>Anthropic</bdi> for on top of your plan. If it’s off, Zubda carries on at normal speed and tells you.',
 
   // settings
-  g_settings: 'Settings', g_settings_l: 'Five sections, and everything in its place.', g_set_all: 'The sections',
+  g_settings: 'Settings', g_settings_l: 'Every section on one page, and everything in its place.', g_set_all: 'The sections',
   g_set1: 'Account', g_set1p: 'Connect Claude or ChatGPT and choose the one in use. The meter at the top shows how much of your plan’s limit is left and when it renews.',
-  g_set2: 'Language', g_set2p: 'The app’s language, and the essence’s own language: read an English video’s essence in Arabic.',
-  g_set3: 'Model', g_set3p: 'The model, the thinking level, fast mode, and how many videos run at once.',
-  g_set4: 'Reading', g_set4p: 'Using the video’s own captions, and keeping the video file.',
-  g_set5: 'Engines', g_set5p: 'The YouTube engine, the listening engine and the graphics-card speed-up. They download by themselves, and any one can be retried.',
+  g_set2: 'Model', g_set2p: 'The model, the thinking level and fast mode.',
+  g_set3: 'Look', g_set3p: 'Two looks for the same app: Tabs and Chat. Switch between them, and back in one click.',
+  g_set4: 'Analysis', g_set4p: 'How many videos run at once, using the video’s own captions, keeping the video file, and «Explain it» for each video by itself.',
+  g_set5: 'Language', g_set5p: 'The app’s language, and the essence’s own language: read an English video’s essence in Arabic.',
+  g_set6: 'Engines', g_set6p: 'The YouTube engine, the listening engine and the graphics-card speed-up. They download by themselves, and any one can be retried.',
+  g_set7: 'Updates', g_set7p: 'Your version number, and a button that looks for a new one. A new update also shows up by itself.',
+  g_set8: 'Your library', g_set8p: 'The folder holding your library, settings and engines. Updates never touch it.',
 
   // updates
   g_updates: 'Updates', g_updates_l: 'Updates reach you inside the app, and install in one click.',
