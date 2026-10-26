@@ -1,7 +1,7 @@
 // Behaviours that every design shows in its own form. Each one finds its parts by data- hooks
 // inside a root element, so the markup and the look stay the design's own.
-import { T, L, lang, onLang, still, whileSeen, fmt, esc } from './core.js?v=72e5a7d';
-import { S } from './sample.js?v=72e5a7d';
+import { T, L, lang, onLang, still, whileSeen, fmt, esc } from './core.js?v=e5626e5';
+import { S } from './sample.js?v=e5626e5';
 
 /* ---------------------------------------------------------------- the models a plan offers */
 export const MODELS = {
